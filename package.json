@@ -6,10 +6,10 @@
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
-    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
-    "client": "cd client && npm run start",
-    "install": "cd client && npm install",
-    "build": "cd client && npm run build",
+    "start:dev": "concurrently \"nodemon --ignore 'app/*'\" \"npm run app\"",
+    "app": "cd app && npm run start",
+    "install": "cd app && npm install",
+    "build": "cd app && npm run build",
     "heroku-postbuild": "npm run build"
   },
   "author": "",
@@ -24,5 +24,14 @@
     "express": "^4.16.3",
     "if-env": "^1.0.4",
     "yarn": "^1.13.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DPontzious/Are-We-There-Yet.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/DPontzious/Are-We-There-Yet/issues"
+  },
+  "homepage": "https://github.com/DPontzious/Are-We-There-Yet#readme"
 }
