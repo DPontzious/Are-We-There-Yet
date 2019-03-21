@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Main from "./pages/Main.js/Main";
 import Trip from "./pages/Trip/Trip";
-import NoMatch from "./pages/NoMatch";
+import NoMatch from "./pages/NoMatch/Nomatch";
 import Nav from "./components/Nav";
 import ButtonAppBar from "./components/Nav/index";
 import Gas from "./pages/Gas/gas";
