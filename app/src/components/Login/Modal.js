@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import '../../Login.css';
+import '../../pages/Register/Login.css';
 import Sign from './Sign';
 import SignExpanded from '../../SignExpanded';
 import SignCollapsed from './SignCollapsed';
@@ -22,26 +22,26 @@ class Modal extends Component {
 		})
 	}
 
-	onClickLeft = () =>{
-		this.setState({wasClickedLeft: !this.state.wasClickedLeft}, function() {
+	onClickLeft = () => {
+		this.setState({ wasClickedLeft: !this.state.wasClickedLeft }, function () {
 			if (this.state.wasClickedRight == true && this.state.wasClickedLeft == true) {
-				this.setState({wasClickedRight: false});
+				this.setState({ wasClickedRight: false });
 			};
 		});
-		
+
 	}
 
 	onClickRight = () => {
-		this.setState({wasClickedRight: !this.state.wasClickedRight}, function(){
+		this.setState({ wasClickedRight: !this.state.wasClickedRight }, function () {
 			if (this.state.wasClickedRight == true && this.state.wasClickedLeft == true) {
-				this.setState({wasClickedLeft: false});
+				this.setState({ wasClickedLeft: false });
 			};
 		});
 	}
 
-	render () {
+	render() {
 		let modalContent = null;
-		
+
 		if (this.state.wasClickedLeft == false && this.state.wasClickedRight == false) {
 			modalContent = (
 				<div className='Modal'>
@@ -64,7 +64,7 @@ class Modal extends Component {
 				</div>
 			);
 		}
-		
+
 		return (
 			<div className="Modal">
 				{modalContent}
