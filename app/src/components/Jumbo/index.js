@@ -3,8 +3,8 @@ import "./style.css";
 
 function Jumbo() {
     return (
-        <div class="jumbotron">
-            <h1 class="display-4"> ARE WE THERE YET?</h1>
+        <div className="jumbotron">
+            <h1 className="display-4"> ARE WE THERE YET?</h1>
         </div>
     )
 }

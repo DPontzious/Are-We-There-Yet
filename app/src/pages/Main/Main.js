@@ -1,10 +1,15 @@
 import React from "react";
+import Grid from '@material-ui/core/Grid';
 
 
 function Main() {
+    const { classes } = this.props;
+
     return (
         <div>
-            <h1>Hello!</h1>
+            <Grid container>
+            <h3>Hello World!</h3>
+            </Grid>
         </div>
     )
 }
