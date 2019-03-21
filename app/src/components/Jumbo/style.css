@@ -1,0 +1,13 @@
+.jumbotron{
+background-image: URL("https://files.slack.com/files-pri/TED5P44R1-FH5129HBM/road_trip.jpg");
+  height: 225px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  text-align: center;
+  line-height: 4.5;
+  font-family: 'Baloo Chettan', cursive;
+  font-size: 40px;
+  color: whitesmoke;
+  text-shadow: 4px 4px #bd974f;
+}
