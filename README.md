@@ -14,7 +14,7 @@ Start by installing front and backend dependencies. While in this directory, run
 npm install
 ```
 
-This should install node modules within the server and the client folder.
+This should install node modules within the server and the app folder.
 
 After both installations complete, run the following command in your terminal:
 
@@ -22,7 +22,7 @@ After both installations complete, run the following command in your terminal:
 npm start
 ```
 
-Your app should now be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
+Your app should now be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the app.
 
 ## Deployment (Heroku)
 
