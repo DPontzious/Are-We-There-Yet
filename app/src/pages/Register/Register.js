@@ -1,9 +1,9 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import './Login.css';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import {Motion, spring} from 'react-motion';
-import NavigationPanel from './components/Login/NavigationPanel';
-import Modal from './components/Login/Modal';
+// import { Motion, spring } from 'react-motion';
+import NavigationPanel from '../../components/Login/NavigationPanel';
+import Modal from '../../components/Login/Modal';
 
 class Register extends Component {
 
@@ -17,34 +17,34 @@ class Register extends Component {
 	componentDidMount() {
 		this.setState({ mounted: true });
 	}
-	
+
 	handleSubmit = (e) => {
 		this.setState({ mounted: false });
 		e.preventDefault();
 	}
 
 	render() {
-		const {mounted} = this.state;
+		const { mounted } = this.state;
 
 		let child;
 		let test = 12;
 
-		if(mounted) {
+		if (mounted) {
 			child = (
 				<div className="App_test">
 					<NavigationPanel></NavigationPanel>
-					<Modal onSubmit={this.handleSubmit}/>
+					<Modal onSubmit={this.handleSubmit} />
 				</div>
 			);
 		}
-		
-		return(
+
+		return (
 			<div className="App">
-				<ReactCSSTransitionGroup 
+				<ReactCSSTransitionGroup
 					transitionName="example"
 					transitionEnterTimeout={500}
 					transitionLeaveTimeout={300}>
-						{child}
+					{child}
 				</ReactCSSTransitionGroup>
 			</div>
 		);
