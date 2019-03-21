@@ -1,8 +1,16 @@
 import React from "react";
+import Grid from '@material-ui/core/Grid';
+
 function Gas() {
     return (
         <div>
-            <h1>Hello, testing Gas</h1>
+        <Grid
+            container
+            direction="row"
+            justify="center"
+            alignItems="center">
+       
+        </Grid>
         </div>
 
     )
