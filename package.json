@@ -4,13 +4,13 @@
   "description": "Mern Demo",
   "main": "server.js",
   "scripts": {
-    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start": "if-env NODE_ENV=production && yarn run start:prod || yarn run start:dev",
     "start:prod": "node server.js",
-    "start:dev": "concurrently \"nodemon --ignore 'app/*'\" \"npm run app\"",
-    "app": "cd app && npm run start",
-    "install": "cd app && npm install",
-    "build": "cd app && npm run build",
-    "heroku-postbuild": "npm run build"
+    "start:dev": "concurrently \"nodemon --ignore 'app/*'\" \"yarn run app\"",
+    "app": "cd app && yarn run start",
+    "install": "cd app && yarn ",
+    "build": "cd app && yarn run build",
+    "heroku-postbuild": "yarn run build"
   },
   "author": "",
   "license": "ISC",
