@@ -5,6 +5,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import { Link } from "react-router-dom";
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 
@@ -30,15 +31,16 @@ function ButtonAppBar(props) {
                     <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="h6" color="black" className={classes.grow}>
-                        Home
-          </Typography>
-                    <Typography variant="h6" color="black" className={classes.grow}>
-                        Plan A Trip
-          </Typography>
-                    <Typography variant="h6" color="black" className={classes.grow}>
-                        Gas Mileage
-          </Typography>
+                    <Link to="/" className={ window.location.pathname === "/" || window.location.pathname === "/about"
+                            ? "nav-link active" : "nav-link"}>
+                        <Typography variant="h6" color="black" className={classes.grow}>Home</Typography>
+                    </Link>
+                    <Link to="/trip" className={ window.location.pathname === "/trip" ? "nav-link active" : "nav-link"}>
+                        <Typography variant="h6" color="black" className={classes.grow}>Plan A Trip</Typography>
+                    </Link>
+                    <Link to="/gas" className={ window.location.pathname === "/gas" ? "nav-link active" : "nav-link"}>
+                        <Typography variant="h6" color="black" className={classes.grow}>Gas Mileage</Typography>
+                    </Link>
                     <Button color="black">Sign in</Button>
                 </Toolbar>
             </AppBar>
