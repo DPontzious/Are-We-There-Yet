@@ -1,8 +1,10 @@
+import React from "react";
+import "./Jumbo.css";
 function Jumbo() {
-    render(
-        <div class="jumbotron">
-            <h1 class="display-4">Hello, world!</h1>
+    return(
+        <div className="jumbotron">
+            <h1 className="display-4">Hello, world!</h1>
         </div>
-    )
+    );
 }
 export default Jumbo;
