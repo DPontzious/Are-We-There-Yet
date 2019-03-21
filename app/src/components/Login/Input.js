@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import '../../Login.css';
-import {MdVisibility} from 'react-icons/lib/md';
+import '../../pages/Register/Login.css';
+import { MdVisibility } from 'react-icons/md';
 
 const Input = (props) => {
 
@@ -9,13 +9,13 @@ const Input = (props) => {
 
 	if (props.type == 'password') {
 		iconVisibility = (
-			<MdVisibility className='iconVisibility'/>
+			<MdVisibility className='iconVisibility' />
 		);
 	}
 
 	return (
 		<div className="Input">
-			<input 
+			<input
 				id={props.name}
 				autoComplete="false"
 				required
