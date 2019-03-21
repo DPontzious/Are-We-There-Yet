@@ -16,8 +16,15 @@ function App() {
             <div>
                 <Switch>
                     <Route exact path="/" component={Main} />
+<<<<<<< HEAD
+                    <Route exact path="/login" component={Register} />
+                    {/* <Route exact path="/gas" component={Gas} /> */}
+
+                    {/* <Route exact path="/trip" component={Trip} /> */}
+=======
                     <Route exact path="/gas" component={Gas} />
                     <Route exact path="/trip" component={Trip} />
+>>>>>>> ba73373486c451f79e8d1d159ecb6387055ea181
                     <Route component={NoMatch} />
                 </Switch>
             </div >
