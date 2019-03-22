@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import '../../pages/Register/Login.css';
 import { MdArrowForward } from 'react-icons/md';
 import { FaGooglePlus, FaTwitter, FaFacebook } from 'react-icons/fa';
-import { Motion, spring } from 'react-motion';
+// import { Motion, spring } from 'react-motion';
 
 const SubmitButton = (props) => {
 
 	let socialNets = null;
 
-	if (props.type == 'signIn') {
+	if (props.type === 'signIn') {
 		socialNets = (
 			<div className='socialNets'>
 				<FaGooglePlus className='socialNetsIcon' />
@@ -26,7 +26,7 @@ const SubmitButton = (props) => {
 	return (
 		<div className={'submitButton'}>
 			{socialNets}
-			<button className={props.type == 'signIn' ? 'submitSignIn' : 'submitSignUp'}><MdArrowForward /></button>
+			<button className={props.type ==='signIn' ? 'submitSignIn' : 'submitSignUp'}><MdArrowForward /></button>
 		</div>
 	);
 }

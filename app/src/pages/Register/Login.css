@@ -31,8 +31,8 @@ body {
   justify-content: flex-start;
 }
 .Modal {
-  width: 600px;
-  height: 600px;
+  width: 400px;
+  height: 400px;
   display: flex;
   flex-direction: row;
   box-shadow: 0 6px 10px 0px rgba(0, 0, 0, 0.5);

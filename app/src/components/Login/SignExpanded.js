@@ -30,7 +30,7 @@ class SignExpanded extends Component {
 				flexVal: spring(this.state.flexState ? 8 : 1)
 			}} onRest={this.isFinished}>
 				{({ flexVal }) =>
-					<div className={this.props.type == 'signIn' ? 'signInExpanded' : 'signUpExpanded'} style={{
+					<div className={this.props.type === 'signIn' ? 'signInExpanded' : 'signUpExpanded'} style={{
 						flexGrow: `${flexVal}`
 					}}>
 						<Motion style={{
@@ -43,7 +43,7 @@ class SignExpanded extends Component {
 									transform: `translate3d(0, ${y}px, 0)`,
 									opacity: `${opacity}`
 								}}>
-									<h2>{this.props.type == 'signIn' ? 'SIGN IN' : 'SIGN UP'}</h2>
+									<h2>{this.props.type === 'signIn' ? 'SIGN IN' : 'SIGN UP'}</h2>
 									<Input
 										id="login"
 										type="text"
@@ -53,7 +53,7 @@ class SignExpanded extends Component {
 										type="password"
 										placeholder="PASSWORD" />
 									<SubmitButton type={this.props.type}></SubmitButton>
-									<a href="url" className='forgotPass'>{this.props.type == 'signIn' ? 'Forgot password?' : ''}</a>
+									<a href="url" className='forgotPass'>{this.props.type === 'signIn' ? 'Forgot password?' : ''}</a>
 								</form>
 							}
 						</Motion>
