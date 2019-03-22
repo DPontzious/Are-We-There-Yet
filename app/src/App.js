@@ -19,6 +19,7 @@ function App() {
                     <Route exact path="/" component={Main} />
                     <Route exact path="/gas" component={Gas} />
                     <Route exact path="/trip" component={Trip} />
+
                     {/* <Route exact path="/register" component={Register}/> */}
                     <Route component={NoMatch} />
                 </Switch>
