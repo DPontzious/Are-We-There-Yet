@@ -2,9 +2,9 @@ import { React, Component } from "react";
 
 
 
-class Trip extends Component(props) {
+class Trip extends Component {
 
-    handleFormSubmit() {
+    handleFormSubmit = () => {
         // api bing zip search
         // then update map
     }
@@ -30,14 +30,16 @@ class Trip extends Component(props) {
     }
 
     render() {
-        <div>
-            <div id="myMap"></div>
-            <form>
-                {/* more code */}
-                <button onClick={() => handleFormSubmit()}></button>
-            </form>
-            {/* everything else: form (zip), table, etc. */}
-        </div>
+        return (
+            <div>
+                <div id="myMap" style='position:relative;width:600px;height:400px;'></div>
+                <form>
+                    {/* more code */}
+                    <button onClick={() => this.handleFormSubmit()}></button>
+                </form>
+                {/* everything else: form (zip), table, etc. */}
+            </div>
+        )
     }
 };
 
