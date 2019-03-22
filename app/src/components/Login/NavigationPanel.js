@@ -1,17 +1,18 @@
 import React from 'react';
 import '../../pages/Register/Login.css';
 import { MdArrowBack } from 'react-icons/md';
-import { FaCircle } from 'react-icons/fa';
+import { Link } from "react-router-dom";
+
 
 const NavigationPanel = (props) => {
 
 	return (
 		<div className='NavigationPanel'>
-			<MdArrowBack onClick={props.initialState} className='back' />
 			<div className='dots'>
-				<FaCircle className='dotSelected' />
-				<FaCircle className='dot' />
-				<FaCircle className='dot' />
+			<Link to="/" className={ window.location.pathname === "/" || window.location.pathname === "/about"
+            	? "nav-link active" : "nav-link"}>
+				<MdArrowBack />
+			</Link>
 			</div>
 			<div style={{ flex: 2 }}></div>
 		</div>
