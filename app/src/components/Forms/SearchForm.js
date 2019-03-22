@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import API from "../utils/API";
-import CarDetail from ".Gas/CarDetail";
-import Search from "./pages/Gas";
+import API from "../../utils/API";
+import CarDetail from "../../pages/Gas/CarDetails";
+import Search from "../../pages/Gas/gas";
 
 class SearchMPG extends Component {
     state = {
@@ -19,11 +19,17 @@ class SearchMPG extends Component {
     handleInputChange = event => {
         this.setState({ search: event.target.value });
     };
-    searchCar = carId => {
-        API.search(carId)
+
+    // searchCar = carId => {
+    //     API.getMPG(carId)
+    //         .then(res => this.setState({ result: res.data.message }))
+    //         .catch(err => console.log(err));
+    // };
+    searchCar = () => {
+        API.getMPG
             .then(res => this.setState({ result: res.data.message }))
             .catch(err => console.log(err));
-    };
+    }
     handleFormSubmit = event => {
         event.preventDefault();
         this.searchCar(this.state.search);

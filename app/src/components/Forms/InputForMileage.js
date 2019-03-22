@@ -22,10 +22,11 @@ const styles = theme => ({
     },
 });
 
-class FilledTextFields extends React.Component {
+class FilledText extends React.Component {
     state = {
-        start: '',
-        destination: ""
+        make: '',
+        model: "",
+        year: "",
     };
 
     handleChange = name => event => {
@@ -40,31 +41,31 @@ class FilledTextFields extends React.Component {
         return (
             <form className={classes.container} noValidate autoComplete="off">
                 <TextField
-                    id="filled-start"
-                    label="Start"
+                    id="filled-make"
+                    label="Make"
                     className={classes.textField}
-                    value={this.state.start}
-                    onChange={this.handleChange('start')}
+                    value={this.state.make}
+                    onChange={this.handleChange('make')}
                     margin="normal"
                     variant="filled"
                 />
 
                 <TextField
-                    id="filled-destination"
-                    label="Destination"
+                    id="filled-model"
+                    label="Model"
                     className={classes.textField}
-                    value={this.state.name}
-                    onChange={this.handleChange('destination')}
+                    value={this.state.model}
+                    onChange={this.handleChange('model')}
                     margin="normal"
                     variant="filled"
                 />
 
                 <TextField
-                    id="filled-name"
-                    label="Name"
+                    id="filled-year"
+                    label="Year"
                     className={classes.textField}
-                    value={this.state.name}
-                    onChange={this.handleChange('name')}
+                    value={this.state.year}
+                    onChange={this.handleChange('year')}
                     margin="normal"
                     variant="filled"
                 />
@@ -84,8 +85,8 @@ class FilledTextFields extends React.Component {
     }
 }
 
-FilledTextFields.propTypes = {
+FilledText.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(FilledTextFields);
+export default withStyles(styles)(FilledText);
