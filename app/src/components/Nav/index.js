@@ -41,7 +41,9 @@ function ButtonAppBar(props) {
                     <Link to="/gas" className={ window.location.pathname === "/gas" ? "nav-link active" : "nav-link"}>
                         <Typography variant="h6" color="black" className={classes.grow}>Gas Mileage</Typography>
                     </Link>
-                    <Button color="black">Sign in</Button>
+                    <Link to="/register" className={ window.location.pathname === "/register" ? "nav-link active" : "nav-link"}>
+                    <Button color="black">SignIn</Button>
+                    </Link>
                 </Toolbar>
             </AppBar>
         </div>
