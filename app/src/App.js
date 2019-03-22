@@ -6,7 +6,8 @@ import NoMatch from "./pages/NoMatch/Nomatch";
 import Nav from "./components/Nav/index"
 import Gas from "./pages/Gas/gas"
 import Jumbo from "./components/Jumbo/index"
-import Register from "./pages/Register/Register"
+// import Register from "./pages/Register/Register"
+
 
 function App() {
     return (
@@ -18,6 +19,8 @@ function App() {
                     <Route exact path="/" component={Main} />
                     <Route exact path="/gas" component={Gas} />
                     <Route exact path="/trip" component={Trip} />
+
+                    {/* <Route exact path="/register" component={Register}/> */}
                     <Route component={NoMatch} />
                 </Switch>
             </div >

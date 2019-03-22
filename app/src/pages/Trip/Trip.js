@@ -1,3 +1,4 @@
+
 import { React, Component } from "react";
 
 
@@ -37,8 +38,19 @@ class Trip extends Component(props) {
                 <button onClick={() => handleFormSubmit()}></button>
             </form>
             {/* everything else: form (zip), table, etc. */}
+import Gas from "../../components/Forms/Input"
+import { format } from "url";
+function Trip() {
+    return (
+        <div>
+            <Gas components={Gas} />
+            <h1>Hello, testing Trip</h1>
         </div>
     }
 };
+
+
+    )
+}
 
 export default Trip;
