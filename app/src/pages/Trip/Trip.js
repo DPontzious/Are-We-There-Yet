@@ -7,18 +7,7 @@ import "./style.css";
 class Trip extends Component {
 
     state = {
-        pushPins: [
-            {
-                "location": ["45.511792",
-                    "-122.675632"],
-                "option": { color: "green" }
-            },
-            {
-                "location": ["45.511792",
-                    "-122.675632"],
-                "option": { color: "red" }
-            }
-        ],
+        pushPins: [],
         mapTypeId: "road",
         destination: "",
         origin: "",
@@ -70,16 +59,15 @@ class Trip extends Component {
 
     render() {
         return (
-            <div>
-                <div id="mapTarget">
+            <div className="containerDiv">
                     <ReactBingmaps
-                        className="searchmap" bingmapKey="AswFsvLf2w5DotjCEdVZ8m8KpOrZ41ADV4r43PDIMcknbmlhVUhPv2B8amujy5Gq"
-                        center={this.state.pushPins.length > 0 ? this.state.pushPins[0].location : null}
+                        className="searchmap" 
+                        bingmapKey="AswFsvLf2w5DotjCEdVZ8m8KpOrZ41ADV4r43PDIMcknbmlhVUhPv2B8amujy5Gq"
+                        center={this.state.pushPins.length > 0 ? this.state.pushPins[0].location : []}
                         pushPins={this.state.pushPins}
                         mapTypeId={this.state.mapTypeId}
                         directions={this.state.directions}
                     />
-                </div>
                 <form>
                     <FilledTextFields
                         clickSearch={this.handleFormSubmit}
