@@ -38,7 +38,7 @@ class FilledTextFields extends React.Component {
         const { classes } = this.props;
 
         return (
-            <form className={classes.container} noValidate autoComplete="off">
+            <div className={classes.container} noValidate autoComplete="off">
                 <TextField
                     id="filled-start"
                     label="Start"
@@ -53,33 +53,13 @@ class FilledTextFields extends React.Component {
                     id="filled-destination"
                     label="Destination"
                     className={classes.textField}
-                    value={this.state.name}
+                    value={this.state.destination}
                     onChange={this.handleChange('destination')}
                     margin="normal"
                     variant="filled"
                 />
-
-                <TextField
-                    id="filled-name"
-                    label="Name"
-                    className={classes.textField}
-                    value={this.state.name}
-                    onChange={this.handleChange('name')}
-                    margin="normal"
-                    variant="filled"
-                />
-
-                <TextField
-                    id="filled-name"
-                    label="Name"
-                    className={classes.textField}
-                    value={this.state.name}
-                    onChange={this.handleChange('name')}
-                    margin="normal"
-                    variant="filled"
-                />
-
-            </form>
+                <button onClick={(e)=>this.props.clickSearch(e,this.state.start, this.state.destination)}>Search by Destination</button>
+            </div>
         );
     }
 }

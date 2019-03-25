@@ -3,12 +3,13 @@ import { ReactBingmaps } from "react-bingmaps";
 import axios from "axios";
 import FilledTextFields from "../../components/Forms/Input.js";
 import "./style.css";
+
 var lat = 35.0278;
 var long = -111.0222;
 
 
 class Trip extends Component {
-    // https://dev.virtualearth.net/REST/v1/Routes?wayPoint.1=,&wayPoint.2=,&optimize=time&distanceUnit=mi&key=AswFsvLf2w5DotjCEdVZ8m8KpOrZ41ADV4r43PDIMcknbmlhVUhPv2B8amujy5Gq
+
     state = {
         pushPins: [
             {
@@ -23,18 +24,17 @@ class Trip extends Component {
             }
         ],
         mapTypeId: "road",
-        destCity: "",
-        destState: "",
-        originCity: "",
-        originState: ""
+        destination: "",
+        origin: "",
+        directions: {}
     }
 
-    handleFormSubmit = () => {
+    handleFormSubmit = (e, formOrigin, formDestination) => {
+        e.preventDefault();
+        console.log(formDestination)
+        console.log(formOrigin)
 
-        var query = "https://dev.virtualearth.net/REST/v1/Routes?wayPoint.1=Portland,OR&wayPoint.2=Portland,ME&optimize=time&distanceUnit=mi&key=AswFsvLf2w5DotjCEdVZ8m8KpOrZ41ADV4r43PDIMcknbmlhVUhPv2B8amujy5Gq";
-
-        // var query = "https://dev.virtualearth.net/REST/v1/Routes?wayPoint.1=" + this.state.originCity + "," + this.state.originState + "&wayPoint.2=" + this.state.destCity + "," + this.state.destState + "&optimize=time&distanceUnit=mi&key=AswFsvLf2w5DotjCEdVZ8m8KpOrZ41ADV4r43PDIMcknbmlhVUhPv2B8amujy5Gq";
-        console.log(query)
+        var query = "https://dev.virtualearth.net/REST/v1/Routes?wayPoint.1=" + formOrigin + "&wayPoint.2=" + formDestination + "&optimize=time&distanceUnit=mi&key=AswFsvLf2w5DotjCEdVZ8m8KpOrZ41ADV4r43PDIMcknbmlhVUhPv2B8amujy5Gq";
 
         axios.get(query).then(res => {
 
@@ -52,17 +52,25 @@ class Trip extends Component {
                     }
                 ]
 
-
             console.log(res)
             console.log(newPins)
+
             this.setState({
-                pushPins: newPins
+                pushPins: newPins,
+                directions: {
+                    requestOptions: {
+                        routeMode: "driving",
+                        maxRoutes: 2
+                    },
+                    wayPoints: [{
+                        address: formOrigin
+                    },
+                    { address: formDestination }
+                    ]
+                }
             })
 
-
         }).catch(e => console.log(e))
-    }
-    componentDidMount() {
     }
 
     render() {
@@ -74,13 +82,14 @@ class Trip extends Component {
                         center={this.state.pushPins.length > 0 ? this.state.pushPins[0].location : null}
                         pushPins={this.state.pushPins}
                         mapTypeId={this.state.mapTypeId}
+                        directions={this.state.directions}
                     />
                 </div>
-                {/* <div id="myMap" style='position:relative;width:600px;height:400px;'></div> */}
                 <form>
-                    <FilledTextFields></FilledTextFields>
+                    <FilledTextFields
+                    clickSearch={this.handleFormSubmit}
+                    ></FilledTextFields>
                 </form>
-                <button onClick={() => this.handleFormSubmit()}>Search by Destination</button>
             </div >
         )
     }
