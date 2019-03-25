@@ -16,6 +16,7 @@ function App() {
         <Router>
             <Jumbo />
             <Nav />
+
             <Switch>
                 <Route exact path="/" component={Main} />
                 <Route exact path="/gas" component={Gas} />
