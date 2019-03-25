@@ -13,7 +13,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("app/build"));
 }
 
-app.use(routes);
+// app.use(routes);
 
 
 // Connect to the Mongo DB

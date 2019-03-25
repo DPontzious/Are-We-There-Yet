@@ -4,26 +4,10 @@ import axios from "axios";
 import FilledTextFields from "../../components/Forms/Input.js";
 import "./style.css";
 
-var lat = 35.0278;
-var long = -111.0222;
-
-// class Trip extends Component(props) {
-
 class Trip extends Component {
 
     state = {
-        pushPins: [
-            {
-                "location": ["45.511792",
-                    "-122.675632"],
-                "option": { color: "green" }
-            },
-            {
-                "location": ["45.511792",
-                    "-122.675632"],
-                "option": { color: "red" }
-            }
-        ],
+        pushPins: [],
         mapTypeId: "road",
         destination: "",
         origin: "",
@@ -76,16 +60,15 @@ class Trip extends Component {
 
     render() {
         return (
-            <div>
-                <div id="mapTarget">
+            <div className="containerDiv">
                     <ReactBingmaps
-                        className="searchmap" bingmapKey="AswFsvLf2w5DotjCEdVZ8m8KpOrZ41ADV4r43PDIMcknbmlhVUhPv2B8amujy5Gq"
-                        center={this.state.pushPins.length > 0 ? this.state.pushPins[0].location : null}
+                        className="searchmap" 
+                        bingmapKey="AswFsvLf2w5DotjCEdVZ8m8KpOrZ41ADV4r43PDIMcknbmlhVUhPv2B8amujy5Gq"
+                        center={this.state.pushPins.length > 0 ? this.state.pushPins[0].location : []}
                         pushPins={this.state.pushPins}
                         mapTypeId={this.state.mapTypeId}
                         directions={this.state.directions}
                     />
-                </div>
                 <form>
                     <FilledTextFields
                         clickSearch={this.handleFormSubmit}

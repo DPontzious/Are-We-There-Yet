@@ -1,4 +1,11 @@
 .searchmap {
-    width: 100vw !important;
-    height: 100vh !important;
+    /* width: 50vw !important; */
+    /* height: 50vh !important; */
+    height: 75vh;
+    width: 75vh
+}
+
+.containerDiv {
+    height: 75vh;
+    width: 75vh
 }
