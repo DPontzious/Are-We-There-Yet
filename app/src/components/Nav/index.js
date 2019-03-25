@@ -70,6 +70,7 @@ function ButtonAppBar(props) {
                     </Link>
                     <Link to="/register" className={window.location.pathname === "/register" ? "nav-link active" : "nav-link"}>
                     <Button color="black">Sign in</Button>
+
                     </Link>
                 </Toolbar>
             </AppBar>
