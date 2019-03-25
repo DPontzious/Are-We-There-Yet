@@ -1,11 +1,9 @@
-.searchmap {
-    /* width: 50vw !important; */
-    /* height: 50vh !important; */
-    height: 75vh;
-    width: 75vh
-}
+/* .searchmap {
+    height: 50vh;
+    width: 100
+} */
 
 .containerDiv {
-    height: 75vh;
-    width: 75vh
+    height: 50vh;
+    width: 50vh
 }
