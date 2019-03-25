@@ -1,0 +1,10 @@
+main{
+    background-image: url("https://slack-imgs.com/?c=1&url=https%3A%2F%2F101clipart.com%2Fwp-content%2Fuploads%2F17%2FStreet%2520Sign%2520Images%252008.jpg");
+    height: 500px;
+     background-size: cover;
+  background-position: center;
+}
+*{
+  text-align: center;
+  justify-content: center;
+}

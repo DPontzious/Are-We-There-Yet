@@ -4,11 +4,13 @@ import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
+import Grid from '@material-ui/core/Grid';
 
 const styles = theme => ({
     container: {
         display: 'flex',
         flexWrap: 'wrap',
+        justify: 'center'
     },
     textField: {
         marginLeft: theme.spacing.unit,
@@ -58,7 +60,7 @@ class FilledTextFields extends React.Component {
                     margin="normal"
                     variant="filled"
                 />
-                <button onClick={(e)=>this.props.clickSearch(e,this.state.start, this.state.destination)}>Search by Destination</button>
+                <button onClick={(e) => this.props.clickSearch(e, this.state.start, this.state.destination)}>Search by Destination</button>
             </div>
         );
     }

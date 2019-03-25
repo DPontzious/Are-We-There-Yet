@@ -7,6 +7,7 @@ import "./style.css";
 var lat = 35.0278;
 var long = -111.0222;
 
+// class Trip extends Component(props) {
 
 class Trip extends Component {
 
@@ -87,7 +88,7 @@ class Trip extends Component {
                 </div>
                 <form>
                     <FilledTextFields
-                    clickSearch={this.handleFormSubmit}
+                        clickSearch={this.handleFormSubmit}
                     ></FilledTextFields>
                 </form>
             </div >
