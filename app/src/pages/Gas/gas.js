@@ -5,7 +5,7 @@ function Gas() {
     return (
         <div>
             <FilledText />
-            <SearchMPG />
+            {/* <SearchMPG /> */}
             <h1>Hello, testing Gas</h1>
         </div>
 
