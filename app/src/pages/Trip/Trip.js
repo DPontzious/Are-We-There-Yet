@@ -31,8 +31,6 @@ class Trip extends Component {
 
     handleFormSubmit = (e, formOrigin, formDestination) => {
         e.preventDefault();
-        console.log(formDestination)
-        console.log(formOrigin)
 
         var query = "https://dev.virtualearth.net/REST/v1/Routes?wayPoint.1=" + formOrigin + "&wayPoint.2=" + formDestination + "&optimize=time&distanceUnit=mi&key=AswFsvLf2w5DotjCEdVZ8m8KpOrZ41ADV4r43PDIMcknbmlhVUhPv2B8amujy5Gq";
 
@@ -52,9 +50,6 @@ class Trip extends Component {
                     }
                 ]
 
-            console.log(res)
-            console.log(newPins)
-
             this.setState({
                 pushPins: newPins,
                 directions: {
@@ -62,11 +57,15 @@ class Trip extends Component {
                         routeMode: "driving",
                         maxRoutes: 2
                     },
-                    wayPoints: [{
-                        address: formOrigin
-                    },
-                    { address: formDestination }
-                    ]
+                    wayPoints:
+                        [
+                            {
+                                address: formOrigin
+                            },
+                            {
+                                address: formDestination
+                            }
+                        ]
                 }
             })
 
@@ -87,7 +86,7 @@ class Trip extends Component {
                 </div>
                 <form>
                     <FilledTextFields
-                    clickSearch={this.handleFormSubmit}
+                        clickSearch={this.handleFormSubmit}
                     ></FilledTextFields>
                 </form>
             </div >
