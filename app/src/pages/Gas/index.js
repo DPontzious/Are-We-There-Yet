@@ -8,6 +8,7 @@ class Events extends Component {
         search: '',
         result: []
     }
+    handleFormSunb
     componentDidMount() {
         axios.get("http://api.eventful.com/json/events/search?&app_key=xrgnP4GQZxFmGt2n&keywords=books&location=San+Diego&date=Future")
             .then(res => this.setState(
