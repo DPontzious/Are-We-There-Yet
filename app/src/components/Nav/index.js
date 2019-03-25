@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
+// import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import { Link } from "react-router-dom";
-import IconButton from '@material-ui/core/IconButton';
+// import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 
 
@@ -68,8 +68,8 @@ function ButtonAppBar(props) {
                     <Link to="/gas" className={window.location.pathname === "/gas" ? "nav-link active" : "nav-link"}>
                         <Button color="black">Gas Mileage</Button>
                     </Link>
-                    <Button color="black">Sign in</Button>
                     <Link to="/register" className={window.location.pathname === "/register" ? "nav-link active" : "nav-link"}>
+                    <Button color="black">Sign in</Button>
                     </Link>
                 </Toolbar>
             </AppBar>
