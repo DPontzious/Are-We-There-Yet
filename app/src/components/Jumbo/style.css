@@ -2,6 +2,7 @@
   background-image: URL("img/road_trip.jpg");
   background-size: cover;
   background-position: center;
+  height: 225px;
   position: relative;
   text-align: center;
   line-height: 4.5;
@@ -9,4 +10,8 @@
   font-size: 40px;
   color: whitesmoke;
   text-shadow: 4px 4px #bd974f;
+}
+
+*{
+  max-width: 100%;
 }

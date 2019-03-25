@@ -5,12 +5,15 @@
   "dependencies": {
     "@material-ui/core": "^3.9.2",
     "@material-ui/icons": "^3.0.2",
+    "axios": "^0.18.0",
+    "bingmaps": "^2.0.3",
     "react": "^16.8.4",
+    "react-addons-css-transition-group": "^15.6.2",
+    "react-bingmaps": "^3.6.1",
     "react-dom": "^16.8.4",
     "react-icons": "^3.5.0",
     "react-motion": "^0.5.2",
     "react-scripts": "2.1.8",
-    "react-addons-css-transition-group": "^15.6.2",
     "react-transition-group": "^2.6.1"
   },
   "scripts": {

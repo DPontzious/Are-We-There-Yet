@@ -68,8 +68,9 @@ function ButtonAppBar(props) {
                     <Link to="/gas" className={window.location.pathname === "/gas" ? "nav-link active" : "nav-link"}>
                         <Button color="black">Gas Mileage</Button>
                     </Link>
+
                     <Link to="/register" className={window.location.pathname === "/register" ? "nav-link active" : "nav-link"}>
-                    <Button color="black">Sign in</Button>
+                        <Button color="black">Sign in</Button>
                     </Link>
                 </Toolbar>
             </AppBar>
