@@ -40,34 +40,28 @@ class FilledTextFields extends React.Component {
         const { classes } = this.props;
 
         return (
-            <form className={classes.container} noValidate autoComplete="off">
-                <Grid justify-content="center">
-                    <TextField
-                        id="filled-start"
-                        label="Start"
-                        className={classes.textField}
-                        value={this.state.start}
-                        onChange={this.handleChange('start')}
-                        margin="normal"
-                        variant="filled"
-                    />
-                </Grid>
-
-
-
+            <div className={classes.container} noValidate autoComplete="off">
+                <TextField
+                    id="filled-start"
+                    label="Start"
+                    className={classes.textField}
+                    value={this.state.start}
+                    onChange={this.handleChange('start')}
+                    margin="normal"
+                    variant="filled"
+                />
 
                 <TextField
                     id="filled-destination"
                     label="Destination"
                     className={classes.textField}
-                    value={this.state.name}
+                    value={this.state.destination}
                     onChange={this.handleChange('destination')}
                     margin="normal"
                     variant="filled"
                 />
-
-
-            </form>
+                <button onClick={(e) => this.props.clickSearch(e, this.state.start, this.state.destination)}>Search by Destination</button>
+            </div>
         );
     }
 }
