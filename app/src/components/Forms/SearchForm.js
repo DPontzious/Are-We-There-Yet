@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import CarDetail from "../../pages/Gas/CarDetails";
-import Search from "../../pages/Gas/gas";
+import Search from "../../pages/Gas";
 
 class SearchMPG extends Component {
     state = {
