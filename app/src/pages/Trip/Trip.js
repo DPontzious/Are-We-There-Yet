@@ -61,14 +61,14 @@ class Trip extends Component {
     render() {
         return (
             <div className="containerDiv">
-                    <ReactBingmaps
-                        className="searchmap" 
-                        bingmapKey="AswFsvLf2w5DotjCEdVZ8m8KpOrZ41ADV4r43PDIMcknbmlhVUhPv2B8amujy5Gq"
-                        center={this.state.pushPins.length > 0 ? this.state.pushPins[0].location : []}
-                        pushPins={this.state.pushPins}
-                        mapTypeId={this.state.mapTypeId}
-                        directions={this.state.directions}
-                    />
+                <ReactBingmaps
+                    className="searchmap"
+                    bingmapKey="AswFsvLf2w5DotjCEdVZ8m8KpOrZ41ADV4r43PDIMcknbmlhVUhPv2B8amujy5Gq"
+                    center={this.state.pushPins.length > 0 ? this.state.pushPins[0].location : []}
+                    pushPins={this.state.pushPins}
+                    mapTypeId={this.state.mapTypeId}
+                    directions={this.state.directions}
+                />
                 <form>
                     <FilledTextFields
                         clickSearch={this.handleFormSubmit}
