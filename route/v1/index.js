@@ -2,6 +2,7 @@ const router = require("express").Router();
 const db = require("../../models");
 const jwt = require("jsonwebtoken");
 const config = require("../../config");
+const passport = require("passport");
 const { requireAuth, requireSignin } = require("../auth");
 
 function tokenizer(user) {
@@ -43,7 +44,7 @@ router.post("/signup", function(req, res) {
       // save the user
       user.save().then(user => {
         // respond with the success if the user existed
-        res.json({ token: tokenizer(user), user: { email: user.email } });
+        res.json({ token: tokenizer(user) });
       });
     })
     .catch(err => {
