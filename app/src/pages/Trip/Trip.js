@@ -17,6 +17,14 @@ class Trip extends Component {
     handleFormSubmit = (e, formOrigin, formDestination) => {
         e.preventDefault();
 
+        this.setState({
+            pushPins: [],
+            mapTypeId: "road",
+            destination: "",
+            origin: "",
+            directions: {}
+        })
+
         var query = "https://dev.virtualearth.net/REST/v1/Routes?wayPoint.1=" + formOrigin + "&wayPoint.2=" + formDestination + "&optimize=time&distanceUnit=mi&key=AswFsvLf2w5DotjCEdVZ8m8KpOrZ41ADV4r43PDIMcknbmlhVUhPv2B8amujy5Gq";
 
         axios.get(query).then(res => {
@@ -60,14 +68,14 @@ class Trip extends Component {
     render() {
         return (
             <div className="containerDiv">
-                    <ReactBingmaps
-                        className="searchmap" 
-                        bingmapKey="AswFsvLf2w5DotjCEdVZ8m8KpOrZ41ADV4r43PDIMcknbmlhVUhPv2B8amujy5Gq"
-                        center={this.state.pushPins.length > 0 ? this.state.pushPins[0].location : []}
-                        pushPins={this.state.pushPins}
-                        mapTypeId={this.state.mapTypeId}
-                        directions={this.state.directions}
-                    />
+                <ReactBingmaps
+                    className="searchmap"
+                    bingmapKey="AswFsvLf2w5DotjCEdVZ8m8KpOrZ41ADV4r43PDIMcknbmlhVUhPv2B8amujy5Gq"
+                    center={this.state.pushPins.length > 0 ? this.state.pushPins[0].location : []}
+                    pushPins={this.state.pushPins}
+                    mapTypeId={this.state.mapTypeId}
+                    directions={this.state.directions}
+                />
                 <form>
                     <FilledTextFields
                         clickSearch={this.handleFormSubmit}
