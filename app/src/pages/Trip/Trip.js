@@ -60,7 +60,7 @@ import "./style.css";
 // }
 
 // export default Trip;
-=======
+
 var lat = 35.0278;
 var long = -111.0222;
 
