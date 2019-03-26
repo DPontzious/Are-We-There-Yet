@@ -5,6 +5,10 @@ const app = express();
 const path = require("path");
 const PORT = process.env.PORT || 3000;
 const routes = require("./routes");
+<<<<<<< HEAD
+=======
+// const PORT = process.env.PORT || 8080;
+>>>>>>> 6de1d45dc56bac49dcd92f7e4b617b89b1abe0da
 
 // Passport configuration
 // const passport = require("passport");
@@ -29,17 +33,24 @@ if (process.env.NODE_ENV === "production") {
 
 app.use(require("./route"));
 
+// Connect to the Mongo DB
+// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist");
+
 app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname + "/app/build/index.html"));
 });
 
-app.listen(PORT, function() {
+app.listen(PORT, function () {
   console.log(`App listening on PORT ${PORT}`);
 });
 
 
 
 // app.use(routes);
+
+
+// Connect to the Mongo DB
+// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist");
 
 
 // Connect to the Mongo DB
