@@ -10,8 +10,7 @@
   font-size: 75px;
   color:whitesmoke;
   text-shadow: 4px 4px #bd974f;
-  line-height: 4;
-  margin-bottom: -1px
+  margin-bottom: 0px !important;
 }
 .display-4{
 font-size: 75px;
