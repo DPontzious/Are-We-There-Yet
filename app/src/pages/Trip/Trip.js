@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { ReactBingmaps } from "react-bingmaps";
 import axios from "axios";
-import FilledTextFields from "../../components/Forms/Input.js";
+import FormInput from "../../components/Forms/input";
+import SearchButton from "../../components/button/button";
 import "./style.css";
 
 class Trip extends Component {
@@ -76,11 +77,24 @@ class Trip extends Component {
                     mapTypeId={this.state.mapTypeId}
                     directions={this.state.directions}
                 />
-                <form>
-                    <FilledTextFields
-                        clickSearch={this.handleFormSubmit}
-                    ></FilledTextFields>
-                </form>
+                <FormInput
+                    type="text"
+                    name="text"
+                    id="mapFormOrigin"
+                    placeholder="origin" />
+
+                <FormInput
+                    type="text"
+                    name="text"
+                    id="mapFormDestination"
+                    placeholder="destination" />
+
+                <SearchButton
+                    id="mapButton"
+                    text="Search" />
+
+                {/* clickSearch={this.handleFormSubmit} */}
+
             </div >
         )
     }

@@ -7,8 +7,6 @@ import Nav from "./components/Nav/index"
 import Events from "./pages/Events/index"
 import Jumbo from "./components/Jumbo/index"
 import Register from "./pages/Register/Register"
-import Grid from "./components/Grid"
-import Contain from "./components/Container/container"
 
 
 
