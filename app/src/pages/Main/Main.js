@@ -4,29 +4,37 @@ import Input from "../../components/Forms/input";
 import Button from "../../components/button/button";
 
 
-function Main() {   
+function Main() {
     return (
-        
-       <main>
-           <div className="container">
-           <h3>Enter the city you are traveling to below</h3>
-            <Input 
-            type ="text"
-            name = "text"
-            id = "topInput"
-            placeholder = "starting point"/>
 
-            <Input
-            type ="text"
-            name = "text" 
-            id = "bottomInput"
-            placeholder = "destination"/>
+        <main>
+            <div className="container">
+                <row className="homeHead">
+                    <h3 className="title">Enter the city you are traveling to below</h3>
+                </row>
+                <row className="test">
+                    <Input
+                        type="text"
+                        name="text"
+                        id="topInput"
+                        placeholder="starting point" />
+                </row>
+                <row>
+                    <Input
+                        type="text"
+                        name="text"
+                        id="bottomInput"
+                        placeholder="destination" />
+                </row>
 
-            <Button
-            id = "main"
-            text = "Submit"/>
-           </div>
-       </main>
+                <row>
+                    <Button
+                        id="main"
+                        text="Submit" />
+                </row>
+
+            </div>
+        </main>
     )
 }
 
