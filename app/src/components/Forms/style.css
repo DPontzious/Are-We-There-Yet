@@ -1,23 +1,33 @@
 #topInput
 {
     position: relative;
-    top: 50px;
-    width: 300px;
+    top: 30px;
+    width: 65%;
     display: initial;
+    font-size: 50px;
+    background-color:#eee0d7;
 }
 
 #bottomInput
 {
     position: relative;
-    top: 80px;
-    width: 300px;
+    top: 30px;
+    width: 65%;
     display: initial;
+    font-size: 50px;
+    font: white;
+     background-color:#eee0d7;
 }
 
 #furtherBottom
 {
     position: relative;
     top: 100px;
-    width: 300px;
+    width: 400px;
+    height: 150px;
     display: initial;
+    /* font-size: xx-large; */
+}
+.form-group{
+    margin-top: 70px;
 }

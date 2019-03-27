@@ -26,8 +26,8 @@ export default class Example extends React.Component {
   render() {
     return (
       <div>
-        <Navbar style={{backgroundColor: "#f8f8ff"}} light expand="md">
-          <NavbarBrand href="/">Are we there yet?</NavbarBrand>
+        <Navbar style={{ backgroundColor: "#d6ccbb" }} light expand="md">
+          <NavbarBrand href="/">Welcome</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
@@ -38,10 +38,10 @@ export default class Example extends React.Component {
                 <NavLink href="/trip">Trip</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/event">Gas Mileage</NavLink>
+                <NavLink href="/event">Event</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="register">Sign in</NavLink>
+                <NavLink href="register">Sign in/ Sign Up</NavLink>
               </NavItem>
             </Nav>
           </Collapse>
