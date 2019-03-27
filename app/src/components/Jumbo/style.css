@@ -7,13 +7,13 @@
   text-align: center;
   /* line-height: 12; */
   font-family: 'Baloo Chettan', cursive;
-  font-size: 75px;
+  /* font-size: 75px; */
   color:whitesmoke;
   text-shadow: 4px 4px #bd974f;
   margin-bottom: 0px !important;
 }
-.display-4{
-font-size: 75px;
+.display-3{
+font-size: 60px !important;
 line-height: 4;
 }
 /* *{
