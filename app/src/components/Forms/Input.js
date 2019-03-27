@@ -52,7 +52,7 @@ class FilledTextFields extends React.Component {
                             label="Start"
                             className={classes.textField}
                             value={this.state.start}
-                            // onChange={this.handleChange('start')}
+                            onChange={this.handleChange('start')}
                             margin="normal"
                             variant="filled"
                         />
@@ -65,7 +65,7 @@ class FilledTextFields extends React.Component {
                         label="Destination"
                         className={classes.textField}
                         value={this.state.destination}
-                        // onChange={this.handleChange('destination')}
+                        onChange={this.handleChange('destination')}
                         margin="normal"
                         variant="filled"
                     />

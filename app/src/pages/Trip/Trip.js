@@ -3,6 +3,7 @@ import { ReactBingmaps } from "react-bingmaps";
 import axios from "axios";
 import FilledTextFields from "../../components/Forms/Input.js";
 import "./style.css";
+import Main from "../Main/Main"
 
 class Trip extends Component {
 
