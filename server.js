@@ -3,12 +3,9 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const path = require("path");
-const PORT = process.env.PORT || 3000;
-const routes = require("./routes");
-<<<<<<< HEAD
-=======
+const PORT = process.env.PORT || 3001;
+const route = require("./route");
 // const PORT = process.env.PORT || 8080;
->>>>>>> 6de1d45dc56bac49dcd92f7e4b617b89b1abe0da
 
 // Passport configuration
 // const passport = require("passport");
@@ -43,15 +40,3 @@ app.get("*", (req, res) => {
 app.listen(PORT, function () {
   console.log(`App listening on PORT ${PORT}`);
 });
-
-
-
-// app.use(routes);
-
-
-// Connect to the Mongo DB
-// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist");
-
-
-// Connect to the Mongo DB
-// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist");

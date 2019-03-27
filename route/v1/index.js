@@ -23,10 +23,12 @@ router.get("/protected", requireAuth, function(req, res) {
 });
 
 router.post("/signin", requireSignin, function(req, res) {
+  console.log("/signin")
   res.json({ token: tokenizer(req.user) });
 });
 
 router.post("/signup", function(req, res) {
+  console.log("/signup")
   const { email, password } = req.body;
 
   if (!email || !password) {
