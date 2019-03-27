@@ -30,9 +30,6 @@ if (process.env.NODE_ENV === "production") {
 
 app.use(require("./route"));
 
-// Connect to the Mongo DB
-// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist");
-
 app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname + "/app/build/index.html"));
 });
@@ -40,3 +37,5 @@ app.get("*", (req, res) => {
 app.listen(PORT, function () {
   console.log(`App listening on PORT ${PORT}`);
 });
+
+
