@@ -60,25 +60,6 @@ class FilledText extends React.Component {
                     variant="filled"
                 />
 
-                <TextField
-                    id="filled-year"
-                    label="Year"
-                    className={classes.textField}
-                    value={this.state.year}
-                    onChange={this.handleChange('year')}
-                    margin="normal"
-                    variant="filled"
-                />
-
-                <TextField
-                    id="filled-name"
-                    label="Name"
-                    className={classes.textField}
-                    value={this.state.name}
-                    onChange={this.handleChange('name')}
-                    margin="normal"
-                    variant="filled"
-                />
 
             </form>
         );

@@ -1,6 +1,6 @@
 import React from "react";
 
-function CarDetail(props) {
+function SearchEvent(props) {
     return (
         <div className="text-center">
             <img alt={props} />
@@ -8,4 +8,4 @@ function CarDetail(props) {
     );
 }
 
-export default CarDetail;
+export default SearchEvent;

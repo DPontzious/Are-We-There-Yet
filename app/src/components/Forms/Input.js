@@ -15,6 +15,7 @@ const styles = theme => ({
     textField: {
         marginLeft: theme.spacing.unit,
         marginRight: theme.spacing.unit,
+
     },
     dense: {
         marginTop: 16,
@@ -22,6 +23,8 @@ const styles = theme => ({
     menu: {
         width: 200,
     },
+
+
 });
 
 class FilledTextFields extends React.Component {
@@ -40,28 +43,38 @@ class FilledTextFields extends React.Component {
         const { classes } = this.props;
 
         return (
-            <div className={classes.container} noValidate autoComplete="off">
-                <TextField
-                    id="filled-start"
-                    label="Start"
-                    className={classes.textField}
-                    value={this.state.start}
-                    onChange={this.handleChange('start')}
-                    margin="normal"
-                    variant="filled"
-                />
+            // <div className={classes.container} noValidate autoComplete="off">
+            <main>
+                <row>
+                    <row>
+                        <TextField
+                            id="filled-start"
+                            label="Start"
+                            className={classes.textField}
+                            value={this.state.start}
+                            // onChange={this.handleChange('start')}
+                            margin="normal"
+                            variant="filled"
+                        />
+                    </row>
 
-                <TextField
-                    id="filled-destination"
-                    label="Destination"
-                    className={classes.textField}
-                    value={this.state.destination}
-                    onChange={this.handleChange('destination')}
-                    margin="normal"
-                    variant="filled"
-                />
-                <button onClick={(e) => this.props.clickSearch(e, this.state.start, this.state.destination)}>Search by Destination</button>
-            </div>
+                </row>
+                <row>
+                    <TextField
+                        id="filled-destination"
+                        label="Destination"
+                        className={classes.textField}
+                        value={this.state.destination}
+                        // onChange={this.handleChange('destination')}
+                        margin="normal"
+                        variant="filled"
+                    />
+                </row>
+                <row>
+                    <button onClick={(e) => this.props.clickSearch(e, this.state.start, this.state.destination)}>Search by Destination</button>
+                </row>
+
+            </main>
         );
     }
 }
