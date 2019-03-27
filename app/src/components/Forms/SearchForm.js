@@ -2,22 +2,43 @@ import React, { Component } from "react";
 import API from "../../utils/API";
 import CarDetail from "../../pages/Gas/CarDetails";
 import Search from "../../pages/Gas";
-
-class SearchMPG extends Component {
+import axios from "axios"
+class Events extends Component {
     state = {
-        search: "",
+        searchEvents: '',
         result: []
     }
-    componentDidMount() {
-        API.getEvent()
-            .then(res => this.setState(
-                { result: res.data }))
-            .catch(err => console.log(err))
-        console.log(this.state.result)
-    }
     handleInputChange = event => {
-        this.setState({ search: event.target.value });
+        const { name, value } = event.target;
+        this.setState({
+            [name]: value
+        });
     };
+    handleFormSubmit = event => {
+        event.preventDefault();
+        var query = "http://api.eventful.com/json/events/search?&app_key=xrgnP4GQZxFmGt2n&keywords=books&location=San+Diego&date=Future"
+        axios.get(query)
+            .then(res => {
+                console.log(res.data);
+                this.setState({ results: res.data });
+            })
+            .catch(err => console.log(err))
+    }
+    // class SearchMPG extends Component {
+    //     state = {
+    //         search: "",
+    //         result: []
+    //     }
+    //     componentDidMount() {
+    //         API.getEvent()
+    //             .then(res => this.setState(
+    //                 { result: res.data }))
+    //             .catch(err => console.log(err))
+    //         console.log(this.state.result)
+    //     }
+    //     handleInputChange = event => {
+    //         this.setState({ search: event.target.value });
+    //     };
 
     // searchCar = carId => {
     //     API.getMPG(carId)
@@ -29,10 +50,10 @@ class SearchMPG extends Component {
     //         .then(res => this.setState({ result: res.data }))
     //         .catch(err => console.log(err));
     // }
-    handleFormSubmit = event => {
-        event.preventDefault();
-        this.searchCar(this.state);
-    };
+    // handleFormSubmit = event => {
+    //     event.preventDefault();
+    //     this.searchCar(this.state);
+    // };
     render() {
         return (
             <div className="container">
@@ -63,4 +84,4 @@ class SearchMPG extends Component {
         );
     }
 }
-export default SearchMPG;
+export default Event;
