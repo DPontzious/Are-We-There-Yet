@@ -9,22 +9,30 @@ function Main() {
 
         <main>
             <div className="container">
-                <h3>Enter the city you are traveling to below</h3>
-                <Input
-                    type="text"
-                    name="text"
-                    id="topInput"
-                    placeholder="starting point" />
+                <row className="homeHead">
+                    <h3 className="title">Enter the city you are traveling to below</h3>
+                </row>
+                <row className="test">
+                    <Input
+                        type="text"
+                        name="text"
+                        id="topInput"
+                        placeholder="starting point" />
+                </row>
+                <row>
+                    <Input
+                        type="text"
+                        name="text"
+                        id="bottomInput"
+                        placeholder="destination" />
+                </row>
 
-                <Input
-                    type="text"
-                    name="text"
-                    id="bottomInput"
-                    placeholder="destination" />
+                <row>
+                    <Button
+                        id="main"
+                        text="Submit" />
+                </row>
 
-                <Button
-                    id="main"
-                    text="Submit" />
             </div>
         </main>
     )

@@ -7,7 +7,7 @@ const jumbo = (props) => {
     <div>
       <Jumbotron fluid>
         <Container fluid>
-          <h1 className="display-3">ARE WE THERE YET?</h1>
+          ARE WE THERE YET?
         </Container>
       </Jumbotron>
     </div>
