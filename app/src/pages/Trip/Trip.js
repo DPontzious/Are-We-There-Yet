@@ -4,6 +4,7 @@ import axios from "axios";
 import FormInput from "../../components/Forms/input";
 import SearchButton from "../../components/button/button";
 import "./style.css";
+import Main from "../Main/Main"
 
 class Trip extends Component {
 
