@@ -77,24 +77,24 @@ class Trip extends Component {
                     mapTypeId={this.state.mapTypeId}
                     directions={this.state.directions}
                 />
-                    <FormInput
+                <FormInput
                     type="text"
                     name="text"
                     id="mapFormOrigin"
-                    placeholder="origin"/>
+                    placeholder="origin" />
 
-                    <FormInput
+                <FormInput
                     type="text"
                     name="text"
                     id="mapFormDestination"
-                    placeholder="destination"/>
+                    placeholder="destination" />
 
-                    <SearchButton
+                <SearchButton
                     id="mapButton"
-                    text="Search"/>
+                    text="Search" />
 
-                        {/* clickSearch={this.handleFormSubmit} */}
-                
+                {/* clickSearch={this.handleFormSubmit} */}
+
             </div >
         )
     }
