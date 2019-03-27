@@ -47,6 +47,8 @@ class Trip extends Component {
             this.setState({
                 pushPins: newPins,
                 directions: {
+                    // inputPanel: inputPanel,
+                    // renderOptions: { itineraryContainer: "itineraryContainer" },
                     requestOptions: {
                         routeMode: "driving",
                         maxRoutes: 2
