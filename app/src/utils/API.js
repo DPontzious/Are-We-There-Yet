@@ -5,5 +5,6 @@ export default {
     getEvents: function (query) {
         return axios.get("/api/events", { params: { q: query } });
     }
+
+
 };
-// xrgnP4GQZxFmGt2n
