@@ -29,7 +29,6 @@ class Register extends Component {
 		const { mounted } = this.state;
 
 		let child;
-		let test = 12;
 
 		if (mounted) {
 			child = (
