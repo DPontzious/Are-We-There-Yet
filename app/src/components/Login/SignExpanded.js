@@ -9,13 +9,6 @@ import axios from 'axios';
 
 class SignExpanded extends Component {
 
-	// constructor(props) {
-	// 	super(props);
-	// 	this.state = {
-	// 		flexState: false,
-	// 		animIsFinished: false
-	// 	};
-	// }
 
 	state = {
 		email: "",
@@ -74,6 +67,11 @@ class SignExpanded extends Component {
 							email: "",
 							password: ""
 						})
+						//if token
+						// use react router to redirect
+						//else
+						//alert
+						
 					})
 					.catch(err => console.log(err));
 				}
@@ -115,7 +113,7 @@ class SignExpanded extends Component {
 										onChange={this.handleInputChange}
 										placeholder="PASSWORD" />
 									<SubmitButton type={this.props.type} clickListenerFn={this.handleSubmit}></SubmitButton>
-									<a href="url" className='forgotPass'>{this.props.type === 'signIn' ? 'Forgot password?' : ''}</a>
+									<a href="url" className='forgotPass'>{this.props.type === 'signIn'}</a>
 									<a href="url" className='forgotPass'>{this.props.type === 'signUp'}</a>
 									
 								</form>
