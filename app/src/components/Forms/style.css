@@ -1,0 +1,23 @@
+#topInput
+{
+    position: relative;
+    top: 50px;
+    width: 300px;
+    display: initial;
+}
+
+#bottomInput
+{
+    position: relative;
+    top: 80px;
+    width: 300px;
+    display: initial;
+}
+
+#furtherBottom
+{
+    position: relative;
+    top: 100px;
+    width: 300px;
+    display: initial;
+}

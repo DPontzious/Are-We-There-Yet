@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { ReactBingmaps } from "react-bingmaps";
 import axios from "axios";
-import FilledTextFields from "../../components/Forms/Input.js";
+import FormInput from "../../components/Forms/input";
+import SearchButton from "../../components/button/button";
 import "./style.css";
 
 class Trip extends Component {
@@ -16,8 +17,14 @@ class Trip extends Component {
 
     handleFormSubmit = (e, formOrigin, formDestination) => {
         e.preventDefault();
-        console.log(formDestination)
-        console.log(formOrigin)
+
+        this.setState({
+            pushPins: [],
+            mapTypeId: "road",
+            destination: "",
+            origin: "",
+            directions: {}
+        })
 
         var query = "https://dev.virtualearth.net/REST/v1/Routes?wayPoint.1=" + formOrigin + "&wayPoint.2=" + formDestination + "&optimize=time&distanceUnit=mi&key=AswFsvLf2w5DotjCEdVZ8m8KpOrZ41ADV4r43PDIMcknbmlhVUhPv2B8amujy5Gq";
 
@@ -37,9 +44,6 @@ class Trip extends Component {
                     }
                 ]
 
-            console.log(res)
-            console.log(newPins)
-
             this.setState({
                 pushPins: newPins,
                 directions: {
@@ -47,11 +51,15 @@ class Trip extends Component {
                         routeMode: "driving",
                         maxRoutes: 2
                     },
-                    wayPoints: [{
-                        address: formOrigin
-                    },
-                    { address: formDestination }
-                    ]
+                    wayPoints:
+                        [
+                            {
+                                address: formOrigin
+                            },
+                            {
+                                address: formDestination
+                            }
+                        ]
                 }
             })
 
@@ -69,11 +77,24 @@ class Trip extends Component {
                     mapTypeId={this.state.mapTypeId}
                     directions={this.state.directions}
                 />
-                <form>
-                    <FilledTextFields
-                        clickSearch={this.handleFormSubmit}
-                    ></FilledTextFields>
-                </form>
+                    <FormInput
+                    type="text"
+                    name="text"
+                    id="mapFormOrigin"
+                    placeholder="origin"/>
+
+                    <FormInput
+                    type="text"
+                    name="text"
+                    id="mapFormDestination"
+                    placeholder="destination"/>
+
+                    <SearchButton
+                    id="mapButton"
+                    text="Search"/>
+
+                        {/* clickSearch={this.handleFormSubmit} */}
+                
             </div >
         )
     }
