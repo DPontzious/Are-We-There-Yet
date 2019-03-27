@@ -4,14 +4,13 @@ html {
   font-family: "Roboto Condensed", sans-serif;
 }
 body {
-  background-image: url('/road_trip.jpg');
+  background-image: url("");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   color: #3E363F;
   font-family: "Roboto Condensed", sans-serif;
   height: 100vh;
-  overflow: hidden;
 }
 
 .App {

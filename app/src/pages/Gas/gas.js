@@ -1,12 +1,32 @@
 import React from "react";
-import FilledText from "../../components/Forms/InputForMileage"
-import SearchMPG from "../../components/Forms/SearchForm"
+import Input from "../../components/Forms/input";
+import Button from "../../components/button/button";
+
 function Gas() {
     return (
         <div>
-            <FilledText />
-            {/* <SearchMPG /> */}
-            <h1>Hello, testing Gas</h1>
+            <Input
+            type ="text"
+            name = "text"
+            id= "topInput"
+            placeholder = "Make"/>
+
+            <Input
+            type ="text"
+            name = "text"
+            id= "bottomInput"
+            placeholder = "Model"/>
+
+            <Input
+            type ="number"
+            name = "number"
+            id= "furtherBottom"
+            placeholder = "Year"/>
+
+            <Button
+            id= "main"
+            text = "Submit"/>
+
         </div>
 
     )

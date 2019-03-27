@@ -7,7 +7,6 @@ import Nav from "./components/Nav/index"
 import Gas from "./pages/Gas/gas"
 import Jumbo from "./components/Jumbo/index"
 import Register from "./pages/Register/Register"
-import Grid from "./components/Grid"
 
 
 
@@ -17,13 +16,13 @@ function App() {
             <Jumbo />
             <Nav />
 
-            <Switch>
+             <Switch>
                 <Route exact path="/" component={Main} />
                 <Route exact path="/gas" component={Gas} />
                 <Route exact path="/trip" component={Trip} />
                 <Route exact path="/register" component={Register} />
                 <Route component={NoMatch} />
-            </Switch>
+            </Switch> 
  </Router >
     );
 }

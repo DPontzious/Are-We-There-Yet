@@ -1,36 +1,33 @@
 import React from "react";
 import "./style.css"
-import Grid from '@material-ui/core/Grid';
-import Form from "../../components/Forms/Input"
+// import Grid from '@material-ui/core/Grid';
+import Input from "../../components/Forms/input";
+import Button from "../../components/button/button";
 
 
-function Main() {
+function Main() {   
     return (
+        
+       <main>
+           <div className="container">
+           <h3>Enter the city you are traveling to below</h3>
+            <Input 
+            type ="text"
+            name = "text"
+            id = "topInput"
+            placeholder = "starting point"/>
 
-        <main>
-            <Grid>
-                <Grid className="spaces" item xs={24}></Grid>
-                <Grid item xs={24}></Grid>
-                <Grid item xs={24}></Grid>
-                <Grid spacing={16} justify="center">
+            <Input
+            type ="text"
+            name = "text" 
+            id = "bottomInput"
+            placeholder = "destination"/>
 
-                    <div>
-                        <h1 justify="center" >Enter a </h1>
-                    </div>
-                    <div>
-                        <Form></Form>
-                    </div>
-
-                </Grid >
-            </Grid>
-
-            <div className="main">
-                <row>
-
-                </row>
-            </div>
-
-        </main >
+            <Button
+            id = "main"
+            text = "Submit"/>
+           </div>
+       </main>
     )
 }
 export default Main;

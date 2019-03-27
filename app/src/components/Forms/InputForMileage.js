@@ -24,7 +24,7 @@ const styles = theme => ({
 
 class FilledText extends React.Component {
     state = {
-        make: '',
+        make: "",
         model: "",
         year: "",
     };
