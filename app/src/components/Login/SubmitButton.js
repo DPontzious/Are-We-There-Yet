@@ -26,8 +26,10 @@ const SubmitButton = (props) => {
 	return (
 		<div className={'submitButton'}>
 			{socialNets}
-			<button className={props.type ==='signIn' ? 'submitSignIn' : 'submitSignUp'}><MdArrowForward /></button>
+			<button onClick={(e)=>props.clickListenerFn(e)} className={props.type ==='signIn' ? 'submitSignIn' : 'submitSignUp'}><MdArrowForward /></button>
 		</div>
+		
+		
 	);
 }
 // esint-disable-next-line react/no-typos

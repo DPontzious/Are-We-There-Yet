@@ -2,8 +2,9 @@
 import axios from "axios"
 
 export default {
-    getEvent: function () {
-        return axios.get("http://api.eventful.com/json/events/search?&app_key=xrgnP4GQZxFmGt2n&keywords=books&location=San+Diego&date=Future");
+    getEvents: function (query) {
+        return axios.get("/api/events", { params: { q: query } });
     }
+
+
 };
-// xrgnP4GQZxFmGt2n

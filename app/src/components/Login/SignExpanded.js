@@ -4,16 +4,24 @@ import '../../pages/Register/Login.css';
 import { Motion, spring } from 'react-motion';
 import Input from './Input';
 import SubmitButton from './SubmitButton';
+// import API from "../../utils/API";
+import axios from 'axios';
 
 class SignExpanded extends Component {
 
-	constructor(props) {
-		super(props);
-		this.state = {
-			flexState: false,
-			animIsFinished: false
-		};
+	// constructor(props) {
+	// 	super(props);
+	// 	this.state = {
+	// 		flexState: false,
+	// 		animIsFinished: false
+	// 	};
+	// }
+
+	state = {
+		email: "",
+		password: ""
 	}
+
 
 	componentDidMount() {
 		this.setState({ flexState: !this.state.flexState });
@@ -22,6 +30,54 @@ class SignExpanded extends Component {
 
 	isFinished = () => {
 		this.setState({ animIsFinished: true });
+	}
+
+	handleInputChange = event => {
+		const { name, value } = event.target;
+		this.setState({
+			[name]: value
+		});
+	};
+
+
+	handleSubmit = (e) => {
+		e.preventDefault();
+
+		if (this.props.type === 'signIn') {
+			let userInfo = {
+				email: this.state.email,
+				password: this.state.password
+			}
+			//send signin call to server
+			//axios /v1/signin
+			axios.post("/v1/signin", userInfo)
+				.then(({ data }) => {
+					console.log(data);
+					this.setState({
+						email: "",
+						password: ""
+					})
+				})
+				.catch(err => console.log(err));
+			}
+			if (this.props.type === 'signUp') {
+				let userInfo = {
+					email: this.state.email,
+					password: this.state.password
+				}
+				//send signin call to server
+				//axios /v1/signin
+			  axios.post("/v1/signup", userInfo)
+					.then(({ data }) => {
+						console.log(data);
+						this.setState({
+							email: "",
+							password: ""
+						})
+					})
+					.catch(err => console.log(err));
+				}
+		
 	}
 
 	render() {
@@ -45,15 +101,23 @@ class SignExpanded extends Component {
 								}}>
 									<h2>{this.props.type === 'signIn' ? 'SIGN IN' : 'SIGN UP'}</h2>
 									<Input
-										id="login"
+										id="email"
 										type="text"
-										placeholder="LOGIN" />
+										name="email"
+										value={this.state.email}
+										onChange={this.handleInputChange}
+										placeholder="EMAIL" />
 									<Input
 										id="password"
 										type="password"
+										name="password"
+										value={this.state.password}
+										onChange={this.handleInputChange}
 										placeholder="PASSWORD" />
-									<SubmitButton type={this.props.type}></SubmitButton>
+									<SubmitButton type={this.props.type} clickListenerFn={this.handleSubmit}></SubmitButton>
 									<a href="url" className='forgotPass'>{this.props.type === 'signIn' ? 'Forgot password?' : ''}</a>
+									<a href="url" className='forgotPass'>{this.props.type === 'signUp'}</a>
+									
 								</form>
 							}
 						</Motion>

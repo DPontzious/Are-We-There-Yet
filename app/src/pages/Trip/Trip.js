@@ -94,4 +94,3 @@ class Trip extends Component {
 };
 
 export default Trip;
-

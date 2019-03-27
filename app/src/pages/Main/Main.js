@@ -1,6 +1,5 @@
 import React from "react";
 import "./style.css"
-// import Grid from '@material-ui/core/Grid';
 import Input from "../../components/Forms/input";
 import Button from "../../components/button/button";
 

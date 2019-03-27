@@ -16,11 +16,13 @@ class Register extends Component {
 
 	componentDidMount() {
 		this.setState({ mounted: true });
+		console.log("fired")
 	}
 
 	handleSubmit = (e) => {
 		this.setState({ mounted: false });
 		e.preventDefault();
+		console.log("fired")
 	}
 
 	render() {

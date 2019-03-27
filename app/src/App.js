@@ -4,7 +4,7 @@ import Main from "./pages/Main/Main";
 import Trip from "./pages/Trip/Trip";
 import NoMatch from "./pages/NoMatch/Nomatch";
 import Nav from "./components/Nav/index"
-import Gas from "./pages/Gas/gas"
+import Events from "./pages/Events/index"
 import Jumbo from "./components/Jumbo/index"
 import Register from "./pages/Register/Register"
 
@@ -15,15 +15,14 @@ function App() {
         <Router>
             <Jumbo />
             <Nav />
-
-             <Switch>
+            <Switch>
                 <Route exact path="/" component={Main} />
-                <Route exact path="/gas" component={Gas} />
+                <Route exact path="/event" component={Events} />
                 <Route exact path="/trip" component={Trip} />
                 <Route exact path="/register" component={Register} />
                 <Route component={NoMatch} />
-            </Switch> 
- </Router >
+            </Switch>
+        </Router >
     );
 }
 

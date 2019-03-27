@@ -2,7 +2,9 @@ const router = require("express").Router();
 const db = require("../../models");
 const jwt = require("jsonwebtoken");
 const config = require("../../config");
+const passport = require("passport");
 const { requireAuth, requireSignin } = require("../auth");
+const axios = require("axios");
 
 function tokenizer(user) {
   return jwt.sign(
@@ -13,19 +15,21 @@ function tokenizer(user) {
   );
 }
 
-router.get("/", function(req, res) {
+router.get("/", function (req, res) {
   res.send("Welcome to the v1 routes!");
 });
 
-router.get("/protected", requireAuth, function(req, res) {
+router.get("/protected", requireAuth, function (req, res) {
   res.send("You have been protected!");
 });
 
 router.post("/signin", requireSignin, function(req, res) {
+  console.log("/signin")
   res.json({ token: tokenizer(req.user) });
 });
 
 router.post("/signup", function(req, res) {
+  console.log("/signup")
   const { email, password } = req.body;
 
   if (!email || !password) {
@@ -43,12 +47,18 @@ router.post("/signup", function(req, res) {
       // save the user
       user.save().then(user => {
         // respond with the success if the user existed
-        res.json({ token: tokenizer(user), user: { email: user.email } });
+        res.json({ token: tokenizer(user) });
       });
     })
     .catch(err => {
       return next(err);
     });
 });
+// router.get("/events", function (req, res) {
+//   axios
+//     .get("http://api.eventful.com/json/events/search?&app_key=xrgnP4GQZxFmGt2n&keywords=books&location=San+Diego&date=Future", { params: req.query })
+//     .then(({ data: { results } }) => res.json(results))
+//     .catch(err => res.status(422).json(err));
+// })
 
 module.exports = router;

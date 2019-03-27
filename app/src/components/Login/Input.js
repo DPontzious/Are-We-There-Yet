@@ -19,6 +19,8 @@ const Input = (props) => {
 				id={props.name}
 				autoComplete="false"
 				required
+				name={props.name}
+				onChange={props.onChange}
 				type={props.type}
 				placeholder={props.placeholder}
 			/>
