@@ -2,6 +2,7 @@ const router = require("express").Router();
 const db = require("../../models");
 const jwt = require("jsonwebtoken");
 const config = require("../../config");
+const passport = require("passport");
 const { requireAuth, requireSignin } = require("../auth");
 const axios = require("axios");
 
@@ -22,11 +23,13 @@ router.get("/protected", requireAuth, function (req, res) {
   res.send("You have been protected!");
 });
 
-router.post("/signin", requireSignin, function (req, res) {
+router.post("/signin", requireSignin, function(req, res) {
+  console.log("/signin")
   res.json({ token: tokenizer(req.user) });
 });
 
-router.post("/signup", function (req, res) {
+router.post("/signup", function(req, res) {
+  console.log("/signup")
   const { email, password } = req.body;
 
   if (!email || !password) {
@@ -44,7 +47,7 @@ router.post("/signup", function (req, res) {
       // save the user
       user.save().then(user => {
         // respond with the success if the user existed
-        res.json({ token: tokenizer(user), user: { email: user.email } });
+        res.json({ token: tokenizer(user) });
       });
     })
     .catch(err => {
