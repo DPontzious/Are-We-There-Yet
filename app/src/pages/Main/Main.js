@@ -32,7 +32,6 @@ function Main() {
                     <Button 
                         id="main"
                         text="Submit" />
-                        {/* onClick={(e) => this.props.clickSearch(e, this.state.start, this.state.destination)}>Search by Destination</Button> */}
                 </row>
 
             </div>

@@ -71,8 +71,7 @@ class SignExpanded extends Component {
 
 						}else {
 							console.log(
-							  `**(Nav) User not found in local storage. Checking if user is logged in...`
-							)
+							  "not working")
 							}
 						//if token
 						// use react router to redirect

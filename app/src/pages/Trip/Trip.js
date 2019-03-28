@@ -5,7 +5,8 @@ import FormInput from "../../components/Forms/input";
 import SearchButton from "../../components/button/button";
 import "./style.css";
 import { Container, Row, Col } from 'reactstrap';
-import Main from "../Main/Main"
+import { Button } from 'reactstrap';
+// import Main from "../Main/Main"
 
 class Trip extends Component {
 
@@ -101,17 +102,13 @@ class Trip extends Component {
 
                         </Row>
                         <Row>
-                            <SearchButton
-                                id="mapButton"
-                                text="Search" />
+                            <Button color="danger" id="mapButton" onClick={(e)=>this.handleFormSubmit(e, this.state.origin, this.state.destination)}>Search</Button>
 
                         </Row>
                     </Col>
 
 
                 </Row>
-
-                {/* clickSearch={this.handleFormSubmit} */}
             </div >
         )
     }
