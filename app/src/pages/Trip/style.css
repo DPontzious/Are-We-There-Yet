@@ -1,23 +1,16 @@
-/* .searchmap {
-    height: 50vh;
-    width: 100
-} */
-
-/* .containerDiv {
-    height: 100vh;
-    width: 50%;
-    /* width: 50vh; */
-   /* border: #2f4c6d solid 5px; */
-   /* align-content: center; */
-
 .searchmap{
     height: 75vh;
     width: 100%;
-    /* width: 50vh; */
    border: #2f4c6d solid 6px;
    align-content: center;
    margin-top: 15px;
    margin-right: 15px;
     margin-left: 30px;
+}
 
+#mapButton
+{
+    position: relative;
+    width: 75px;
+    height: 40px;
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css"
 import Input from "../../components/Forms/input";
-import Button from "../../components/button/button";
+import { Button } from 'reactstrap';
 
 
 function Main() {
@@ -28,9 +28,7 @@ function Main() {
                 </row>
 
                 <row>
-                    <Button
-                        id="main"
-                        text="Submit" />
+                <Button color="info" id="main">Submit</Button>
                 </row>
 
             </div>
