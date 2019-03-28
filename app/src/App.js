@@ -9,10 +9,7 @@ import Jumbo from "./components/Jumbo/index"
 import Register from "./pages/Register/Register"
 import SignExpanded from "./components/Login/SignExpanded"
 
-function requireAuth(nextState, replaceState) {
-    if (!auth.loggedIn())
-      replaceState({ nextPathname: nextState.location.pathname }, '/signin')
-  }
+
 
 
 function App() {
@@ -25,7 +22,7 @@ function App() {
                 <Route exact path="/event" component={Events} />
                 <Route exact path="/trip" component={Trip} />
                 <Route exact path="/register" component={Register} />
-                <Route path="/" component={SignExpanded} onEnter={requireAuth} />
+                <Route exact path="/" component={SignExpanded} />
                 <Route component={NoMatch} />
             </Switch>
         </Router >

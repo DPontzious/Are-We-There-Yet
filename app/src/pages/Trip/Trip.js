@@ -4,6 +4,7 @@ import axios from "axios";
 import FormInput from "../../components/Forms/input";
 import SearchButton from "../../components/button/button";
 import "./style.css";
+import Main from "../Main/Main"
 
 class Trip extends Component {
 
@@ -17,6 +18,7 @@ class Trip extends Component {
 
     handleFormSubmit = (e, formOrigin, formDestination) => {
         e.preventDefault();
+        console.log("firesss");
 
         this.setState({
             pushPins: [],
@@ -89,11 +91,16 @@ class Trip extends Component {
                     id="mapFormDestination"
                     placeholder="destination" />
 
-                <SearchButton
-                    id="mapButton"
-                    text="Search" />
+                {/* <SearchButton clickSearch={this.handleFormSubmit}/> */}
+                    {/* // id="mapButton"
+                    // text="Search" /> */}
 
                 {/* clickSearch={this.handleFormSubmit} */}
+               
+                <SearchButton
+                    id="mapButton"
+                    text="Search"
+                    />
 
             </div >
         )

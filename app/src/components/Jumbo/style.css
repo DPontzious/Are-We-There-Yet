@@ -5,17 +5,17 @@
   height: 255px;
   position: relative;
   text-align: center;
-  /* line-height: 12; */
+  line-height: 3.75;
   font-family: 'Baloo Chettan', cursive;
   font-size: 75px;
   color:whitesmoke;
   text-shadow: 4px 4px #bd974f;
   margin-bottom: 0px !important;
 }
-.display-4{
+/* .display-3{
 font-size: 75px;
 line-height: 4;
-}
+} */
 /* *{
   font-size: 25px;
   line-height: 9;

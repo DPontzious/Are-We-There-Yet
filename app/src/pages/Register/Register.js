@@ -34,7 +34,7 @@ class Register extends Component {
 			child = (
 				<div className="App_test">
 					<NavigationPanel></NavigationPanel>
-					<Modal onSubmit={this.handleSubmit} />
+					<Modal onSubmit={this.handleSubmit} history={this.props.history}/>
 				</div>
 			);
 		}

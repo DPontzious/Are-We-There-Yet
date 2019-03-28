@@ -1,10 +1,12 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+// import PropTypes from 'propTextField'
 // import classNames from 'classnames';
-// import { withStyles } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
 // import MenuItem from '@material-ui/core/MenuItem';
 // import TextField from '@material-ui/core/TextField';
 // import Grid from '@material-ui/core/Grid';
+import { Form, FormGroup, Input } from 'reactstrap';
+import "./style.css";
 
 // const styles = theme => ({
 //     container: {
@@ -27,7 +29,7 @@ import React from 'react';
 
 // });
 
-// class FilledTextFields extends React.Component {
+// class input extends React.Component {
 //     state = {
 //         start: '',
 //         destination: ""
@@ -50,7 +52,7 @@ import React from 'react';
 //                         <TextField
 //                             id="filled-start"
 //                             label="Start"
-//                             className={classes.textField}
+//                             className={classes.TextField}
 //                             value={this.state.start}
 //                             onChange={this.handleChange('start')}
 //                             margin="normal"
@@ -63,7 +65,7 @@ import React from 'react';
 //                     <TextField
 //                         id="filled-destination"
 //                         label="Destination"
-//                         className={classes.textField}
+//                         className={classes.TextField}
 //                         value={this.state.destination}
 //                         onChange={this.handleChange('destination')}
 //                         margin="normal"
@@ -75,22 +77,24 @@ import React from 'react';
 //                 </row>
 
 //             </main>
-import { Form, FormGroup, Input } from 'reactstrap';
-import "./style.css";
+//         );
+//     };
+// }
+// import { Form, FormGroup, Input } from 'reactstrap';
+// import "./style.css";
 
-function input(props)
-{
-  return (
-          <Form>
+function input(props) {
+    return (
+        <Form>
             <FormGroup>
-              <Input
-                type={props.type}
-                name={props.name}
-                id={props.id}
-                placeholder={props.placeholder}/>
+                <Input
+                    type={props.type}
+                    name={props.name}
+                    id={props.id}
+                    placeholder={props.placeholder} />
             </FormGroup>
-          </Form>
-        );
+        </Form>
+    );
 }
 
 export default input;

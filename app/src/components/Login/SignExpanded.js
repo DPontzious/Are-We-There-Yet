@@ -66,6 +66,14 @@ class SignExpanded extends Component {
 							email: "",
 							password: ""
 						})
+						if(data.token.user){
+						this.props.history.push("/")
+
+						}else {
+							console.log(
+							  `**(Nav) User not found in local storage. Checking if user is logged in...`
+							)
+							}
 						//if token
 						// use react router to redirect
 						//else
