@@ -24,9 +24,7 @@ class Events extends Component {
             result: []
         })
         console.log("helllooooo!")
-        // var formSearch = "Phoenix"
-        // var query = "http://api.eventful.com/json/events/search?&app_key=xrgnP4GQZxFmGt2n&keywords=books&location=" + formSearch;
-        axios.get("api/events")
+        axios.get("v1/events")
             .then(({ data }) => {
                 console.log(data);
                 this.setState({ result: data });

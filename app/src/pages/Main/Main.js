@@ -1,7 +1,8 @@
 import React from "react";
 import "./style.css"
-import Input from "../../components/Forms/input";
-import { Button } from 'reactstrap';
+import Input from "../../components/Forms/Input";
+import { Button, Row, Col } from 'reactstrap';
+
 
 
 function Main() {
@@ -25,21 +26,11 @@ function Main() {
                         name="text"
                         id="bottomInput"
                         placeholder="destination" />
-<<<<<<< HEAD
                 </Row>
                 <Row>
-                    <Button
-                        id="main"
-                        text="Submit" />
+                    <Button id="main" color="info"  >Submit</Button>
+
                 </Row>
-=======
-                </row>
-
-                <row>
-                <Button color="info" id="main">Submit</Button>
-                </row>
-
->>>>>>> ed2b8a083cf031971bd20b1ffa6e13facab3b34f
             </div>
         </main >
     )
