@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import "./style.css"
 import Input from "../../components/Forms/input";
 import { Button, Row } from 'reactstrap';

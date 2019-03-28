@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import API from "../../utils/API";
+// import API from "../../utils/API";
 import axios from "axios";
 // import Event from '../../components/Forms/index'
 import SearchEvent from "./SearchEvent"

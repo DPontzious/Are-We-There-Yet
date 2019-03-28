@@ -9,13 +9,6 @@ import axios from 'axios';
 
 class SignExpanded extends Component {
 
-	// constructor(props) {
-	// 	super(props);
-	// 	this.state = {
-	// 		flexState: false,
-	// 		animIsFinished: false
-	// 	};
-	// }
 
 	state = {
 		email: "",
@@ -42,13 +35,12 @@ class SignExpanded extends Component {
 
 	handleSubmit = (e) => {
 		e.preventDefault();
-
+		//send signIn call to server
 		if (this.props.type === 'signIn') {
 			let userInfo = {
 				email: this.state.email,
 				password: this.state.password
 			}
-			//send signin call to server
 			//axios /v1/signin
 			axios.post("/v1/signin", userInfo)
 				.then(({ data }) => {
@@ -60,13 +52,13 @@ class SignExpanded extends Component {
 				})
 				.catch(err => console.log(err));
 			}
+			//send signUp call to server
 			if (this.props.type === 'signUp') {
 				let userInfo = {
 					email: this.state.email,
 					password: this.state.password
 				}
-				//send signin call to server
-				//axios /v1/signin
+			  //axios /v1/signup
 			  axios.post("/v1/signup", userInfo)
 					.then(({ data }) => {
 						console.log(data);
@@ -74,6 +66,18 @@ class SignExpanded extends Component {
 							email: "",
 							password: ""
 						})
+						if(data.token.user){
+						this.props.history.push("/")
+
+						}else {
+							console.log(
+							  "not working")
+							}
+						//if token
+						// use react router to redirect
+						//else
+						//alert
+						
 					})
 					.catch(err => console.log(err));
 				}
@@ -115,7 +119,7 @@ class SignExpanded extends Component {
 										onChange={this.handleInputChange}
 										placeholder="PASSWORD" />
 									<SubmitButton type={this.props.type} clickListenerFn={this.handleSubmit}></SubmitButton>
-									<a href="url" className='forgotPass'>{this.props.type === 'signIn' ? 'Forgot password?' : ''}</a>
+									<a href="url" className='forgotPass'>{this.props.type === 'signIn'}</a>
 									<a href="url" className='forgotPass'>{this.props.type === 'signUp'}</a>
 									
 								</form>
