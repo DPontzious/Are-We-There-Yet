@@ -1,8 +1,7 @@
 import React from "react";
 import "./style.css"
 import Input from "../../components/Forms/input";
-import Button from "../../components/button/button";
-import { Container, Row, Col } from 'reactstrap';
+import { Button } from 'reactstrap';
 
 
 function Main() {
@@ -26,12 +25,21 @@ function Main() {
                         name="text"
                         id="bottomInput"
                         placeholder="destination" />
+<<<<<<< HEAD
                 </Row>
                 <Row>
                     <Button
                         id="main"
                         text="Submit" />
                 </Row>
+=======
+                </row>
+
+                <row>
+                <Button color="info" id="main">Submit</Button>
+                </row>
+
+>>>>>>> ed2b8a083cf031971bd20b1ffa6e13facab3b34f
             </div>
         </main >
     )
