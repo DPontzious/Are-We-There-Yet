@@ -84,6 +84,16 @@ class SignExpanded extends Component {
 		
 	}
 
+	constructor(props) {
+        super(props)
+        this.routeChange = this.routeChange.bind(this);
+      }
+    
+      routeChange() {
+        let path = `/trip`;
+        this.props.history.push(path);
+      }
+
 	render() {
 		return (
 			<Motion style={{
@@ -118,10 +128,11 @@ class SignExpanded extends Component {
 										value={this.state.password}
 										onChange={this.handleInputChange}
 										placeholder="PASSWORD" />
-									<SubmitButton type={this.props.type} clickListenerFn={this.handleSubmit}></SubmitButton>
+									<SubmitButton type={this.props.type}clickListenerFn={this.handleSubmit}></SubmitButton>
 									<a href="url" className='forgotPass'>{this.props.type === 'signIn'}</a>
 									<a href="url" className='forgotPass'>{this.props.type === 'signUp'}</a>
 									
+									{/* onClick={this.routeChange} */}
 								</form>
 							}
 						</Motion>
