@@ -23,13 +23,11 @@ router.get("/protected", requireAuth, function (req, res) {
   res.send("You have been protected!");
 });
 
-router.post("/signin", requireSignin, function (req, res) {
-  console.log("/signin")
+router.post("/signin", function (req, res) {
   res.json({ token: tokenizer(req.user) });
 });
 
 router.post("/signup", function (req, res) {
-  console.log("/signup")
   const { email, password } = req.body;
 
   if (!email || !password) {

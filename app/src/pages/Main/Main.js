@@ -1,39 +1,56 @@
-import React from "react";
+import React, { Component } from "react";
 import "./style.css"
 import Input from "../../components/Forms/Input";
 import { Button, Row, Col } from 'reactstrap';
 
 
+class Main extends Component {
 
-function Main() {
-    return (
+    constructor(props) {
+        super(props)
+        this.routeChange = this.routeChange.bind(this);
+    }
 
-        <main>
-            <div className="container">
-                <Row>
-                    <h3 className="title">Enter your travel destination.</h3>
-                </Row>
-                <Row>
-                    <Input
-                        type="text"
-                        name="text"
-                        id="topInput"
-                        placeholder="starting point" />
-                </Row>
-                <Row className="test">
-                    <Input
-                        type="text"
-                        name="text"
-                        id="bottomInput"
-                        placeholder="destination" />
-                </Row>
-                <Row>
-                    <Button id="main" color="info"  >Submit</Button>
+    routeChange() {
+        let path = `/trip`;
+        this.props.history.push(path);
+    }
 
-                </Row>
-            </div>
-        </main >
-    )
+    render() {
+        return (
+            <main>
+                <div className="container">
+                    <Row className="homeHead">
+                        <h3 className="title">Enter your travel destination.</h3>
+                    </Row>
+                    <Row className="test">
+                        <Input
+                            type="text"
+                            name="text"
+                            id="topInput"
+                            placeholder="starting point" />
+                    </Row>
+                    <Row>
+                        <Input
+                            type="text"
+                            name="text"
+                            id="bottomInput"
+                            placeholder="destination" />
+                    </Row>
+
+                    <Row>
+                        <Button color="info" id="main"
+                            onClick={this.routeChange}
+                        >
+                            Submit
+                        </Button>
+                    </Row>
+
+                </div>
+            </main >
+        );
+    };
+
 }
 
 export default Main;
