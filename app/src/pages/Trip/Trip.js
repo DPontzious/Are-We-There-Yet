@@ -20,10 +20,6 @@ class Trip extends Component {
         e.stopPropagation();
         e.nativeEvent.stopImmediatePropagation();
 
-        console.log("clicked");
-        console.log(formOrigin);
-        console.log(formDestination);
-
         var query = "https://dev.virtualearth.net/REST/v1/Routes?wayPoint.1=" + formOrigin + "&wayPoint.2=" + formDestination + "&optimize=time&distanceUnit=mi&key=AswFsvLf2w5DotjCEdVZ8m8KpOrZ41ADV4r43PDIMcknbmlhVUhPv2B8amujy5Gq";
 
         axios.get(query).then(res => {

@@ -16,7 +16,7 @@
 }
 
 #itineraryContainer{
-    overflow-y: hidden;
+    overflow-y: show;
     height: 70vh;
     background-color: aliceblue
 }
