@@ -17,15 +17,8 @@ class Trip extends Component {
     }
 
     handleFormSubmit = (e, formOrigin, formDestination) => {
-        e.preventDefault();
-
-        this.setState({
-            pushPins: [],
-            mapTypeId: "road",
-            destination: "",
-            origin: "",
-            directions: {}
-        })
+        e.stopPropagation();
+        e.nativeEvent.stopImmediatePropagation();
 
         var query = "https://dev.virtualearth.net/REST/v1/Routes?wayPoint.1=" + formOrigin + "&wayPoint.2=" + formDestination + "&optimize=time&distanceUnit=mi&key=AswFsvLf2w5DotjCEdVZ8m8KpOrZ41ADV4r43PDIMcknbmlhVUhPv2B8amujy5Gq";
 
@@ -48,6 +41,10 @@ class Trip extends Component {
             this.setState({
                 pushPins: newPins,
                 directions: {
+                    inputPanel: "inputPanel",
+                    renderOptions: {
+                        itineraryContainer: "itineraryContainer"
+                    },
                     requestOptions: {
                         routeMode: "driving",
                         maxRoutes: 2
@@ -67,10 +64,22 @@ class Trip extends Component {
         }).catch(e => console.log(e))
     }
 
+    handleInputChange = event => {
+        console.log(this.state.destination);
+        const { name, value } = event.target;
+        this.setState({
+            [name]: value
+        })
+    }
+
     render() {
         return (
             <div className="containerDiv">
                 <Row>
+                    <Col>
+                    <div className="input-panel" id='inputPanel'></div>
+                        <div className="itinerary-container" id='itineraryContainer'></div>
+                    </Col>
                     <Col>
                         <ReactBingmaps
                             className="searchmap"
@@ -84,22 +93,26 @@ class Trip extends Component {
 
                     <Col className="test">
                         <Row>
-                            <FormInput
+                            <input
                                 type="text"
-                                name="text"
+                                name="origin"
+                                onChange={(e)=>this.handleInputChange(e)}
+                                value={this.state.origin}
                                 id="mapFormOrigin"
                                 placeholder="origin" />
                         </Row>
                         <Row>
-                            <FormInput
+                            <input
                                 type="text"
-                                name="text"
+                                name="destination"
+                                onChange={(e)=>this.handleInputChange(e)}
+                                value={this.state.destination}
                                 id="mapFormDestination"
                                 placeholder="destination" />
 
                         </Row>
                         <Row>
-                        <Button color="info" id="mapButton" onClick={(e)=>this.handleFormSubmit(e, this.state.origin, this.state.destination)}>Search</Button>
+                            <Button color="info" id="mapButton" onClick={(e) => this.handleFormSubmit(e, this.state.origin, this.state.destination)}>Search</Button>
                         </Row>
                     </Col>
                 </Row>

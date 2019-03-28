@@ -14,3 +14,9 @@
     width: 75px;
     height: 40px;
 }
+
+#itineraryContainer{
+    overflow-y: hidden;
+    height: 70vh;
+    background-color: aliceblue
+}
