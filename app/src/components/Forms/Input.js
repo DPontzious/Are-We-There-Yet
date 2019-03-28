@@ -1,4 +1,6 @@
 import React from 'react';
+import { Form, FormGroup, Input } from 'reactstrap';
+import "./style.css";
 // import PropTypes from 'prop-types';
 // import classNames from 'classnames';
 // import { withStyles } from '@material-ui/core/styles';
@@ -75,8 +77,6 @@ import React from 'react';
 //                 </row>
 
 //             </main>
-import { Form, FormGroup, Input } from 'reactstrap';
-import "./style.css";
 
 function input(props) {
     return (
