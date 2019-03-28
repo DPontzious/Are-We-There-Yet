@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.css"
-import Input from "../../components/Forms/input";
+import Input from "../../components/Forms/Input";
 import { Button } from 'reactstrap';
 
 
