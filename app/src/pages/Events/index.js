@@ -26,7 +26,7 @@ class Events extends Component {
         console.log("helllooooo!")
         axios.get("v1/events")
             .then(({ data }) => {
-                console.log(data.events.event);
+                console.log(data, "data");
                 this.setState({ result: data });
             })
             .catch(err => console.log(err))

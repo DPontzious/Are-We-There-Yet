@@ -54,8 +54,8 @@ router.post("/signup", function (req, res) {
 });
 router.get("/events", function (req, res) {
   axios
-    .get("http://api.eventful.com/json/events/search?&app_key=xrgnP4GQZxFmGt2n&keywords=books&location=San+Diego&date=Future")
-    // { params: req.query })
+    .get("http://api.eventful.com/json/events/search?&app_key=xrgnP4GQZxFmGt2n&keywords=books&location=San+Diego&date=Future",
+      { params: req.query })
     .then(({ data: { results } }) => res.json(results))
     .catch(err => res.status(422).json(err));
 })

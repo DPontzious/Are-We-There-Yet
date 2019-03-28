@@ -85,10 +85,6 @@ class Trip extends Component {
             <div className="containerDiv">
                 <Row>
                     <Col>
-                        <div className="input-panel" id='inputPanel'></div>
-                        <div className="itinerary-container" id='itineraryContainer'></div>
-                    </Col>
-                    <Col>
                         <ReactBingmaps
                             className="searchmap"
                             bingmapKey="AswFsvLf2w5DotjCEdVZ8m8KpOrZ41ADV4r43PDIMcknbmlhVUhPv2B8amujy5Gq"
@@ -98,30 +94,34 @@ class Trip extends Component {
                             directions={this.state.directions}
                         />
                     </Col>
+                    <Col>
+                        <div className="input-panel" id='inputPanel'></div>
+                        <div className="itinerary-container" id='itineraryContainer'></div>
+                    </Col>
+                </Row>
+                <br></br>
+                <Row>
 
                     <Col>
-                        <Row>
-                            <input
-                                type="text"
-                                name="origin"
-                                onChange={(e) => this.handleInputChange(e)}
-                                value={this.state.origin}
-                                id="mapFormOrigin"
-                                placeholder="origin" />
-                        </Row>
-                        <Row>
-                            <input
-                                type="text"
-                                name="destination"
-                                onChange={(e) => this.handleInputChange(e)}
-                                value={this.state.destination}
-                                id="mapFormDestination"
-                                placeholder="destination" />
-
-                        </Row>
-                        <Row>
-                            <Button color="info" id="mapButton" onClick={(e) => this.handleFormSubmit(e, this.state.origin, this.state.destination)}>Search</Button>
-                        </Row>
+                        <input
+                            type="text"
+                            name="origin"
+                            onChange={(e) => this.handleInputChange(e)}
+                            value={this.state.origin}
+                            id="mapFormOrigin"
+                            placeholder="origin" />
+                    </Col>
+                    <Col>
+                        <input
+                            type="text"
+                            name="destination"
+                            onChange={(e) => this.handleInputChange(e)}
+                            value={this.state.destination}
+                            id="mapFormDestination"
+                            placeholder="destination" />
+                    </Col>
+                    <Col>
+                        <Button color="info" id="mapButton" onClick={(e) => this.handleFormSubmit(e, this.state.origin, this.state.destination)}>Search</Button>
                     </Col>
                 </Row>
             </div >
