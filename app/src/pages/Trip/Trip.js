@@ -2,11 +2,9 @@ import React, { Component } from "react";
 import { ReactBingmaps } from "react-bingmaps";
 import axios from "axios";
 import FormInput from "../../components/Forms/input";
-import SearchButton from "../../components/button/button";
-import "./style.css";
-import { Container, Row, Col } from 'reactstrap';
 import { Button } from 'reactstrap';
-// import Main from "../Main/Main"
+import "./style.css";
+import { Row, Col } from 'reactstrap';
 
 class Trip extends Component {
 
@@ -21,6 +19,8 @@ class Trip extends Component {
     handleFormSubmit = (e, formOrigin, formDestination) => {
         e.preventDefault();
         console.log("firesss");
+
+       console.log("clicked");
 
         this.setState({
             pushPins: [],
@@ -102,12 +102,9 @@ class Trip extends Component {
 
                         </Row>
                         <Row>
-                            <Button color="danger" id="mapButton" onClick={(e)=>this.handleFormSubmit(e, this.state.origin, this.state.destination)}>Search</Button>
-
+                        <Button color="info" id="mapButton" onClick={(e)=>this.handleFormSubmit(e, this.state.origin, this.state.destination)}>Search</Button>
                         </Row>
                     </Col>
-
-
                 </Row>
             </div >
         )
