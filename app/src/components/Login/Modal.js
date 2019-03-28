@@ -53,13 +53,13 @@ class Modal extends Component {
 			modalContent = (
 				<div className='Modal'>
 					<SignCollapsed type='signIn' onChange={this.onClickLeft}></SignCollapsed>
-					<SignExpanded type='signUp' ></SignExpanded>
+					<SignExpanded type='signUp' history={this.props.history}></SignExpanded>
 				</div>
 			);
 		} else if (this.state.wasClickedLeft === true && this.state.wasClickedRight === false) {
 			modalContent = (
 				<div className='Modal'>
-					<SignExpanded type='signIn' ></SignExpanded>
+					<SignExpanded type='signIn' history={this.props.history}></SignExpanded>
 					<SignCollapsed type='signUp' onChange={this.onClickRight}></SignCollapsed>
 				</div>
 			);

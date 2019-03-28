@@ -20,9 +20,13 @@ class Trip extends Component {
         e.stopPropagation();
         e.nativeEvent.stopImmediatePropagation();
 
-        console.log("clicked");
-        console.log(formOrigin);
-        console.log(formDestination);
+        this.setState({
+            pushPins: [],
+            mapTypeId: "road",
+            destination: "",
+            origin: "",
+            directions: {}
+        })
 
         var query = "https://dev.virtualearth.net/REST/v1/Routes?wayPoint.1=" + formOrigin + "&wayPoint.2=" + formDestination + "&optimize=time&distanceUnit=mi&key=AswFsvLf2w5DotjCEdVZ8m8KpOrZ41ADV4r43PDIMcknbmlhVUhPv2B8amujy5Gq";
 
@@ -120,7 +124,6 @@ class Trip extends Component {
                         </Row>
                     </Col>
                 </Row>
-
             </div >
         )
     }
