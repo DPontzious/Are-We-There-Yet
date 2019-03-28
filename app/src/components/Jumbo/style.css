@@ -2,10 +2,10 @@
   background-image: URL("img/road_trip.jpg");
   background-size: cover;
   background-position: center;
-  height: 255px;
+  height: 200px;
   position: relative;
   text-align: center;
-  line-height: 3.75;
+  line-height: 2.5;
   font-family: 'Baloo Chettan', cursive;
   font-size: 75px;
   color:whitesmoke;

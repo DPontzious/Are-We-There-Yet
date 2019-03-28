@@ -3,12 +3,9 @@ import { Button } from 'reactstrap';
 import "./style.css"
 
 
-function button(props)
-{
+function button(props) {
   return (
-    <div>
-      <Button color="info" id={props.id}>{props.text}</Button>
-    </div>
+    <Button color="info" id={props.id}>{props.text}</Button>
   );
 };
 

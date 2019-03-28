@@ -22,7 +22,7 @@ class Events extends Component {
         axios.get(query)
             .then(res => {
                 console.log(res.data);
-                this.setState({ results: res.data });
+                this.setState({ result: res.data });
             })
             .catch(err => console.log(err))
     }
