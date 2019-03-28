@@ -1,10 +1,8 @@
-// const router = require("express").Router();
+const router = require("express").Router();
 // const booksController = require("../../controllers/booksController");
-
-// Matches with "/api/books"
-// router.route("/events")
-    // .get(events.get)
-// .post(response.data);
+router.route("api/events")
+    .get("http://api.eventful.com/json/events/search?&app_key=xrgnP4GQZxFmGt2n&keywords=books&location=Phoenix")
+    .post(response.data);
 
 // Matches with "/api/books/:id"
 // router

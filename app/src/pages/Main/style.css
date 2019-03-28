@@ -12,6 +12,7 @@ main{
   padding-top: 20px;
   font-size: 40px;
   font-family: 'Lora', serif;
+  font-weight: bolder;
 }
 Input{
   padding-top: 40px;

@@ -10,19 +10,26 @@ class Events extends Component {
         searchEvents: '',
         result: []
     }
-    handleInputChange = event => {
-        const { name, value } = event.target;
+    // handleInputChange = event => {
+    //     const { name, value } = event.target;
+    //     this.setState({
+    //         [name]: value
+    //     });
+    // };
+    // handleFormSubmit = (event, formSearch) => {
+    componentDidMount = (event, formSearch) => {
+        // event.preventDefault();
         this.setState({
-            [name]: value
-        });
-    };
-    handleFormSubmit = event => {
-        event.preventDefault();
-        var query = "http://api.eventful.com/json/events/search?&app_key=xrgnP4GQZxFmGt2n&keywords=books&location=San+Diego&date=Future"
-        axios.get(query)
-            .then(res => {
-                console.log(res.data);
-                this.setState({ result: res.data });
+            searchEvents: "",
+            result: []
+        })
+        console.log("helllooooo!")
+        // var formSearch = "Phoenix"
+        // var query = "http://api.eventful.com/json/events/search?&app_key=xrgnP4GQZxFmGt2n&keywords=books&location=" + formSearch;
+        axios.get("api/events")
+            .then(({ data }) => {
+                console.log(data);
+                this.setState({ result: data });
             })
             .catch(err => console.log(err))
     }
@@ -37,7 +44,8 @@ class Events extends Component {
                                 // this.state.result.map(result => (
                                 //     <CarDetail result={this.state.result} />
                                 // ))
-                                <SearchEvent result={this.state.result} />
+                                <SearchEvent result={this.state.result}
+                                    key={this.state.result} />
                             ) : (
                                     <h3>No Results to Display</h3>
                                 )}

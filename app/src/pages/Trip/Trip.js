@@ -5,7 +5,6 @@ import FormInput from "../../components/Forms/input";
 import SearchButton from "../../components/button/button";
 import "./style.css";
 import { Container, Row, Col } from 'reactstrap';
-import Main from "../Main/Main"
 
 class Trip extends Component {
 
@@ -83,7 +82,7 @@ class Trip extends Component {
                         />
                     </Col>
 
-                    <Col className="test">
+                    <Col>
                         <Row>
                             <FormInput
                                 type="text"

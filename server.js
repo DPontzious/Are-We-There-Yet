@@ -4,7 +4,7 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const PORT = process.env.PORT || 3001;
-const route = require("./route");
+const routes = require("./routes");
 // const PORT = process.env.PORT || 8080;
 
 // Passport configuration

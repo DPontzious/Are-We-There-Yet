@@ -2,6 +2,7 @@ import React from "react";
 import "./style.css"
 import Input from "../../components/Forms/input";
 import Button from "../../components/button/button";
+import { Container, Row, Col } from 'reactstrap';
 
 
 function Main() {
@@ -9,32 +10,30 @@ function Main() {
 
         <main>
             <div className="container">
-                <row className="homeHead">
+                <Row>
                     <h3 className="title">Enter your travel destination.</h3>
-                </row>
-                <row className="test">
+                </Row>
+                <Row>
                     <Input
                         type="text"
                         name="text"
                         id="topInput"
                         placeholder="starting point" />
-                </row>
-                <row>
+                </Row>
+                <Row className="test">
                     <Input
                         type="text"
                         name="text"
                         id="bottomInput"
                         placeholder="destination" />
-                </row>
-
-                <row>
+                </Row>
+                <Row>
                     <Button
                         id="main"
                         text="Submit" />
-                </row>
-
+                </Row>
             </div>
-        </main>
+        </main >
     )
 }
 
