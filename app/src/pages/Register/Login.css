@@ -318,3 +318,9 @@ button:active {
   opacity: .01;
   transition: opacity .3s ease, margin .5s ease;
 }
+/* .test{
+  background-image: url("https://img.freepik.com/free-vector/travel-background-with-van-earth_23-2147774015.jpg?size=338&ext=jpg");
+  width: 100%;
+  height: 200px;
+
+} */
