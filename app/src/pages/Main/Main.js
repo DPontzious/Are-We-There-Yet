@@ -11,7 +11,7 @@ function Main() {
         <main>
             <div className="container">
                 <row className="homeHead">
-                    <h3 className="title">Enter the city you are traveling to below</h3>
+                    <h3 className="title">Enter your travel destination.</h3>
                 </row>
                 <row className="test">
                     <Input
