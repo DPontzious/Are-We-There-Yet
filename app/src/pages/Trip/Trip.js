@@ -4,6 +4,7 @@ import axios from "axios";
 import FormInput from "../../components/Forms/input";
 import SearchButton from "../../components/button/button";
 import "./style.css";
+import { Container, Row, Col } from 'reactstrap';
 import Main from "../Main/Main"
 
 class Trip extends Component {
@@ -70,32 +71,46 @@ class Trip extends Component {
     render() {
         return (
             <div className="containerDiv">
-                <ReactBingmaps
-                    className="searchmap"
-                    bingmapKey="AswFsvLf2w5DotjCEdVZ8m8KpOrZ41ADV4r43PDIMcknbmlhVUhPv2B8amujy5Gq"
-                    center={this.state.pushPins.length > 0 ? this.state.pushPins[0].location : []}
-                    pushPins={this.state.pushPins}
-                    mapTypeId={this.state.mapTypeId}
-                    directions={this.state.directions}
-                />
-                <FormInput
-                    type="text"
-                    name="text"
-                    id="mapFormOrigin"
-                    placeholder="origin" />
+                <Row>
+                    <Col>
+                        <ReactBingmaps
+                            className="searchmap"
+                            bingmapKey="AswFsvLf2w5DotjCEdVZ8m8KpOrZ41ADV4r43PDIMcknbmlhVUhPv2B8amujy5Gq"
+                            center={this.state.pushPins.length > 0 ? this.state.pushPins[0].location : []}
+                            pushPins={this.state.pushPins}
+                            mapTypeId={this.state.mapTypeId}
+                            directions={this.state.directions}
+                        />
+                    </Col>
 
-                <FormInput
-                    type="text"
-                    name="text"
-                    id="mapFormDestination"
-                    placeholder="destination" />
+                    <Col className="test">
+                        <Row>
+                            <FormInput
+                                type="text"
+                                name="text"
+                                id="mapFormOrigin"
+                                placeholder="origin" />
+                        </Row>
+                        <Row>
+                            <FormInput
+                                type="text"
+                                name="text"
+                                id="mapFormDestination"
+                                placeholder="destination" />
 
-                <SearchButton
-                    id="mapButton"
-                    text="Search" />
+                        </Row>
+                        <Row>
+                            <SearchButton
+                                id="mapButton"
+                                text="Search" />
+
+                        </Row>
+                    </Col>
+
+
+                </Row>
 
                 {/* clickSearch={this.handleFormSubmit} */}
-
             </div >
         )
     }
