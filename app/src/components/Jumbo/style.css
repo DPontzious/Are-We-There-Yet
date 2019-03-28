@@ -7,15 +7,16 @@
   text-align: center;
   line-height: 2.5;
   font-family: 'Baloo Chettan', cursive;
-  /* font-size: 75px; */
+  font-size: 75px;
   color:whitesmoke;
   text-shadow: 4px 4px #bd974f;
   margin-bottom: 0px !important;
-}
-.display-3{
+ }
+ 
+/* .display-3{
 font-size: 60px !important;
 line-height: 4;
-}
+} */
 
 /* *{
   font-size: 25px;
