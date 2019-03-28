@@ -128,7 +128,7 @@ class SignExpanded extends Component {
 										value={this.state.password}
 										onChange={this.handleInputChange}
 										placeholder="PASSWORD" />
-									<SubmitButton type={this.props.type}clickListenerFn={this.handleSubmit}></SubmitButton>
+									<SubmitButton  type={this.props.type}clickListenerFn={this.handleSubmit}></SubmitButton>
 									<a href="url" className='forgotPass'>{this.props.type === 'signIn'}</a>
 									<a href="url" className='forgotPass'>{this.props.type === 'signUp'}</a>
 									
@@ -140,6 +140,7 @@ class SignExpanded extends Component {
 				}
 			</Motion>
 		);
+
 	}
 
 }

@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import "./style.css"
 import Input from "../../components/Forms/Input";
 import { Button } from 'reactstrap';
+import { Row, Col } from 'reactstrap';
+
 
 
 class Main extends Component {
