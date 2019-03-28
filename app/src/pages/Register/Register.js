@@ -29,13 +29,12 @@ class Register extends Component {
 		const { mounted } = this.state;
 
 		let child;
-		let test = 12;
 
 		if (mounted) {
 			child = (
 				<div className="App_test">
 					<NavigationPanel></NavigationPanel>
-					<Modal onSubmit={this.handleSubmit} />
+					<Modal onSubmit={this.handleSubmit} history={this.props.history}/>
 				</div>
 			);
 		}
