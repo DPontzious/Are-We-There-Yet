@@ -4,17 +4,6 @@ import axios from "axios";
 import { Button, Row, Col } from 'reactstrap';
 import "./style.css";
 
-<<<<<<< HEAD
-// window.onbeforeunload = function() {
-//     localStorage.removeItem("origin");
-//     localStorage.removeItem("destination");
-//     return '';
-//   };
-
-
-
-=======
->>>>>>> 06add5bbd35005db86aaaf5c59d37220b015dc72
 class Trip extends Component {
 
     state = {
