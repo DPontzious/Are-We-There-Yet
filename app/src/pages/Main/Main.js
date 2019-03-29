@@ -14,7 +14,6 @@ class Main extends Component {
         destination: "",
         origin: ""
     }
-
     routeChange() {
         if (this.state.origin === "" || this.state.destination == "") {
             return alert("Please Enter a Starting Point or Destination");
