@@ -16,12 +16,18 @@ class Main extends Component {
     }
     
       routeChange() {
+          if(this.state.origin === "" || this.state.destination == "")
+          {
+              return alert("Please Enter a Starting Point or Destination");
+          }
+
+          localStorage.setItem("origin", this.state.origin);
+          localStorage.setItem("destination", this.state.destination);
         let path = `/trip`;
         this.props.history.push(path);
       }
 
       handleInputChange = event => {
-        console.log(this.state.destination);
         const { name, value } = event.target;
         this.setState({
             [name]: value
@@ -42,7 +48,7 @@ class Main extends Component {
                                 onChange={(e)=>this.handleInputChange(e)}
                                 value={this.state.origin}
                                 id="mapFormOrigin"
-                                placeholder="origin" />
+                                placeholder="Origin" />
                         {/* <Input
                             type="text"
                             name="text"
@@ -62,7 +68,7 @@ class Main extends Component {
                                 onChange={(e)=>this.handleInputChange(e)}
                                 value={this.state.destination}
                                 id="mapFormDestination"
-                                placeholder="destination"/>
+                                placeholder="Destination"/>
                     </Row>
 
                     <Row>
