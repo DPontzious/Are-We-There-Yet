@@ -57,7 +57,7 @@ router.get("/events", function (req, res) {
     .get("http://api.eventful.com/json/events/search?&app_key=xrgnP4GQZxFmGt2n&keywords=books&location=San+Diego&date=Future",
       { params: req.query })
     .then(response => {
-      console.log("response", response.data)
+      // console.log("response", response.data)
       res.status(200).send(response.data)
     })
     .catch(err => {
