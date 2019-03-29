@@ -8,14 +8,18 @@ import axios from 'axios';
 
 class SignExpanded extends Component {
 
-	constructor(props) {
-		super(props)
-		this.routeChange = this.routeChange.bind(this);
-	}
+	// constructor(props) {
+	// 	super(props)
+	// 	this.routeChange = this.routeChange.bind(this);
+	// }
 
-	routeChange() {
-		this.props.history.push();
-	}
+	// routeChange() {
+	// 	let path = `/trip`;
+	// 	this.props.history.push(path);
+	// 	// localStorage.setItem("email", this.state.email)
+	// 	// localStorage.setItem("password", this.state.password);
+	// 	console.log(this.state)
+	// }
 
 	state = {
 		email: "",
@@ -56,10 +60,23 @@ class SignExpanded extends Component {
 						email: "",
 						password: ""
 					})
-					console.log(this.props)
-					console.log(this)
-					let path = `/trip`;
-					this.props.history.push(path);
+
+					if(data.token !== null){
+					//set token in local storage
+					localStorage.setItem("token", data.token);
+
+						//new axios call to "/api/save" send req.body = {origin: ..., destination: ....}
+						
+						
+						console.log(this.props)
+						console.log(this)
+						let path = `/trip`;
+						this.props.history.push(path);
+					}else{
+						alert("Bad signin. Try again!");
+					}
+
+
 				})
 				.catch(err => console.log(err));
 		}

@@ -16,12 +16,13 @@ class Main extends Component {
     }
     
       routeChange() {
-        let path = `/trip`;
+          localStorage.setItem("origin", this.state.origin);
+          localStorage.setItem("destination", this.state.destination);
+         let path = `/trip`;
         this.props.history.push(path);
       }
 
       handleInputChange = event => {
-        console.log(this.state.destination);
         const { name, value } = event.target;
         this.setState({
             [name]: value
