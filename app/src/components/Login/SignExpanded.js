@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import '../../pages/Register/Login.css';
 import { Motion, spring } from 'react-motion';
-import Input from './input';
+import Input from './Input';
 import SubmitButton from './SubmitButton';
 import axios from 'axios';
 
@@ -61,18 +61,30 @@ class SignExpanded extends Component {
 						password: ""
 					})
 
-					if(data.token !== null){
-					//set token in local storage
-					localStorage.setItem("token", data.token);
-
+					if (data.token !== null) {
+						//set token in local storage
+						localStorage.setItem("token", data.token);
 						//new axios call to "/api/save" send req.body = {origin: ..., destination: ....}
-						
-						
+						var currentTrip = {
+							origin : localStorage.getItem("origin"),
+							destination : localStorage.getItem("destination"),
+							userId : localStorage.getItem("userId")
+						}
+						axios.post("/api/save", currentTrip)
+							.then(({ data }) => {
+								console.log(data);
+								this.setState({
+									origin: "",
+									destination: ""
+								})
+
+							})
+
 						console.log(this.props)
 						console.log(this)
-						let path = `/trip`;
+						let path = `/api/save`;
 						this.props.history.push(path);
-					}else{
+					} else {
 						alert("Bad signin. Try again!");
 					}
 
@@ -101,10 +113,6 @@ class SignExpanded extends Component {
 						console.log(
 							"not working")
 					}
-					//if token
-					// use react router to redirect
-					//else
-					//alert
 
 				})
 				.catch(err => console.log(err));

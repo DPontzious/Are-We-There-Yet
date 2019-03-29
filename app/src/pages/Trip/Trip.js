@@ -4,11 +4,11 @@ import axios from "axios";
 import { Button, Row, Col } from 'reactstrap';
 import "./style.css";
 
-window.onbeforeunload = function() {
-    localStorage.removeItem("origin");
-    localStorage.removeItem("destination");
-    return '';
-  };
+// window.onbeforeunload = function() {
+//     localStorage.removeItem("origin");
+//     localStorage.removeItem("destination");
+//     return '';
+//   };
 
 
 

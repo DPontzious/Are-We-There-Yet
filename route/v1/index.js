@@ -66,4 +66,22 @@ router.get("/events", function (req, res) {
     });
 })
 
+//DO #2
+router.post("/api/save", function(req, res){
+  //mongoose findOneAndUpdate({$push {origin: req.body.origin, destination: req.body.destination}})
+  findOneAndUpdate(({$push {
+    origin: req.body.origin, 
+    destination: req.body.destination}},function(err, doc){
+    if(err){
+        console.log("Something wrong when updating data!");
+    }
+
+    console.log(doc);
+});
+//DO #3
+router.get("/api/save", function(req, res){
+ findById({req.body.userId}).then(dbUser=>{
+        res.json(dbUser.trips)
+   })
+})
 module.exports = router;
