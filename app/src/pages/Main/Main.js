@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./style.css"
-import Input from "../../components/Forms/Input";
 import { Button, Row, Col } from 'reactstrap';
 
 
@@ -9,15 +8,28 @@ class Main extends Component {
     constructor(props) {
         super(props)
         this.routeChange = this.routeChange.bind(this);
-    }
+      }
 
-    routeChange() {
+      state = {
+        destination: "",
+        origin: ""
+    }
+    
+      routeChange() {
         let path = `/trip`;
         this.props.history.push(path);
-    }
+      }
 
-    render() {
-        return (
+      handleInputChange = event => {
+        console.log(this.state.destination);
+        const { name, value } = event.target;
+        this.setState({
+            [name]: value
+        })
+    }
+   
+    render(){
+        return(
             <main>
                 <div className="container">
                     <Row className="homeHead">
