@@ -51,37 +51,37 @@ class SignExpanded extends Component {
 					})
 				})
 				.catch(err => console.log(err));
+		}
+		//send signUp call to server
+		if (this.props.type === 'signUp') {
+			let userInfo = {
+				email: this.state.email,
+				password: this.state.password
 			}
-			//send signUp call to server
-			if (this.props.type === 'signUp') {
-				let userInfo = {
-					email: this.state.email,
-					password: this.state.password
-				}
-			  //axios /v1/signup
-			  axios.post("/v1/signup", userInfo)
-					.then(({ data }) => {
-						console.log(data);
-						this.setState({
-							email: "",
-							password: ""
-						})
-						if(data.token.user){
+			//axios /v1/signup
+			axios.post("/v1/signup", userInfo)
+				.then(({ data }) => {
+					console.log(data);
+					this.setState({
+						email: "",
+						password: ""
+					})
+					if (data.token.user) {
 						this.props.history.push("/")
 
-						}else {
-							console.log(
-							  "not working")
-							}
-						//if token
-						// use react router to redirect
-						//else
-						//alert
-						
-					})
-					.catch(err => console.log(err));
-				}
-		
+					} else {
+						console.log(
+							"not working")
+					}
+					//if token
+					// use react router to redirect
+					//else
+					//alert
+
+				})
+				.catch(err => console.log(err));
+		}
+
 	}
 
 	render() {
@@ -121,7 +121,7 @@ class SignExpanded extends Component {
 									<SubmitButton type={this.props.type} clickListenerFn={this.handleSubmit}></SubmitButton>
 									<a href="url" className='forgotPass'>{this.props.type === 'signIn'}</a>
 									<a href="url" className='forgotPass'>{this.props.type === 'signUp'}</a>
-									
+
 								</form>
 							}
 						</Motion>

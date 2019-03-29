@@ -1,8 +1,8 @@
 #topInput
 {
     position: relative;
-    top: 30px;
-    width: 65%;
+    /* top: 30px; */
+    width: 100%;
     display: initial;
     font-size: 50px;
     background-color:#eee0d7;
@@ -11,8 +11,8 @@
 #bottomInput
 {
     position: relative;
-    top: 30px;
-    width: 65%;
+    /* top: 30px; */
+    width: 100%;
     display: initial;
     font-size: 50px;
     font: white;
@@ -22,7 +22,7 @@
 #furtherBottom
 {
     position: relative;
-    top: 100px;
+    /* top: 100px; */
     width: 400px;
     height: 150px;
     display: initial;
