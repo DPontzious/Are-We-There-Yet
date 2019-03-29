@@ -7,7 +7,7 @@ import "./style.css";
 
 
 
-class Trip extends Component {
+class SavedTrips extends Component {
 
     state = {
         pushPins: [],
@@ -177,4 +177,4 @@ class Trip extends Component {
     }
 };
 
-export default Trip;
+export default SavedTrips;
