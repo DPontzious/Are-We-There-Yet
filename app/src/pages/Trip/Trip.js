@@ -3,18 +3,11 @@ import { ReactBingmaps } from "react-bingmaps";
 import axios from "axios";
 import { Button, Row, Col } from 'reactstrap';
 import "./style.css";
-
-<<<<<<< HEAD
 // window.onbeforeunload = function() {
 //     localStorage.removeItem("origin");
 //     localStorage.removeItem("destination");
 //     return '';
 //   };
-
-
-
-=======
->>>>>>> 06add5bbd35005db86aaaf5c59d37220b015dc72
 class Trip extends Component {
 
     state = {
@@ -24,17 +17,14 @@ class Trip extends Component {
         origin: "",
         directions: {}
     }
-
-
     componentDidMount = () => {
-        this.setState({origin: localStorage.getItem('origin'), destination: localStorage.getItem('destination')},() => this.queryMap());
+        this.setState({ origin: localStorage.getItem('origin'), destination: localStorage.getItem('destination') }, () => this.queryMap());
     }
 
-    queryMap = () =>{
+    queryMap = () => {
         var query = "https://dev.virtualearth.net/REST/v1/Routes?wayPoint.1=" + this.state.origin + "&wayPoint.2=" + this.state.destination + "&optimize=time&distanceUnit=mi&key=AswFsvLf2w5DotjCEdVZ8m8KpOrZ41ADV4r43PDIMcknbmlhVUhPv2B8amujy5Gq";
 
         axios.get(query).then(res => {
-
             var newPins =
                 [
                     {
@@ -48,7 +38,6 @@ class Trip extends Component {
                         "option": { color: "red" }
                     }
                 ]
-
             this.setState({
                 pushPins: newPins,
                 directions: {
@@ -74,15 +63,11 @@ class Trip extends Component {
 
         }).catch(e => console.log(e))
     }
-
-
     handleFormSubmit = (e, formOrigin, formDestination) => {
         e.stopPropagation();
         e.nativeEvent.stopImmediatePropagation();
         var query = "https://dev.virtualearth.net/REST/v1/Routes?wayPoint.1=" + formOrigin + "&wayPoint.2=" + formDestination + "&optimize=time&distanceUnit=mi&key=AswFsvLf2w5DotjCEdVZ8m8KpOrZ41ADV4r43PDIMcknbmlhVUhPv2B8amujy5Gq";
-
         axios.get(query).then(res => {
-
             var newPins =
                 [
                     {
@@ -96,7 +81,6 @@ class Trip extends Component {
                         "option": { color: "red" }
                     }
                 ]
-
             this.setState({
                 pushPins: newPins,
                 directions: {
@@ -122,8 +106,6 @@ class Trip extends Component {
 
         }).catch(e => console.log(e))
     }
-
-
     handleInputChange = event => {
         console.log(this.state.destination);
         const { name, value } = event.target;
@@ -131,10 +113,6 @@ class Trip extends Component {
             [name]: value
         })
     }
-
-
-
-
     render() {
         return (
             <div className="containerDiv">
@@ -150,13 +128,19 @@ class Trip extends Component {
                         />
                     </Col>
                     <Col>
-                        <div className="input-panel" id='inputPanel'></div>
                         <div className="itinerary-container" id='itineraryContainer'></div>
+
                     </Col>
                 </Row>
                 <br></br>
                 <Row>
-
+                    <Col xs="1" />
+                    <Col>
+                        <h5>
+                            Search For Something Else
+                    </h5>
+                        <div className="input-panel" id='inputPanel'></div>
+                    </Col>
                     <Col>
                         <input
                             type="text"
