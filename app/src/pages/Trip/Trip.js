@@ -4,14 +4,6 @@ import axios from "axios";
 import { Button, Row, Col } from 'reactstrap';
 import "./style.css";
 
-window.onbeforeunload = function() {
-    localStorage.removeItem("origin");
-    localStorage.removeItem("destination");
-    return '';
-  };
-
-
-
 class Trip extends Component {
 
     state = {
@@ -24,13 +16,11 @@ class Trip extends Component {
 
 
     componentDidMount = () => {
-        var tempStorageOrigin = localStorage.getItem('origin')
-        var tempStorageDestination = localStorage.getItem('destination')
-        tempStorageDestination = "Phoenix,AZ"
-        tempStorageOrigin = "Seattle,WA"
+        this.setState({origin: localStorage.getItem('origin'), destination: localStorage.getItem('destination')},() => this.queryMap());
+    }
 
-
-        var query = "https://dev.virtualearth.net/REST/v1/Routes?wayPoint.1=" + tempStorageOrigin + "&wayPoint.2=" + tempStorageDestination + "&optimize=time&distanceUnit=mi&key=AswFsvLf2w5DotjCEdVZ8m8KpOrZ41ADV4r43PDIMcknbmlhVUhPv2B8amujy5Gq";
+    queryMap = () =>{
+        var query = "https://dev.virtualearth.net/REST/v1/Routes?wayPoint.1=" + this.state.origin + "&wayPoint.2=" + this.state.destination + "&optimize=time&distanceUnit=mi&key=AswFsvLf2w5DotjCEdVZ8m8KpOrZ41ADV4r43PDIMcknbmlhVUhPv2B8amujy5Gq";
 
         axios.get(query).then(res => {
 
@@ -62,10 +52,10 @@ class Trip extends Component {
                     wayPoints:
                         [
                             {
-                                address: tempStorageOrigin
+                                address: this.state.origin
                             },
                             {
-                                address: tempStorageDestination
+                                address: this.state.destination
                             }
                         ]
                 }
@@ -73,6 +63,7 @@ class Trip extends Component {
 
         }).catch(e => console.log(e))
     }
+
 
     handleFormSubmit = (e, formOrigin, formDestination) => {
         e.stopPropagation();
