@@ -3,7 +3,6 @@ import { ReactBingmaps } from "react-bingmaps";
 import axios from "axios";
 import { Button, Row, Col } from 'reactstrap';
 import "./style.css";
-
 // window.onbeforeunload = function() {
 //     localStorage.removeItem("origin");
 //     localStorage.removeItem("destination");
@@ -64,13 +63,10 @@ class Trip extends Component {
 
         }).catch(e => console.log(e))
     }
-
-
     handleFormSubmit = (e, formOrigin, formDestination) => {
         e.stopPropagation();
         e.nativeEvent.stopImmediatePropagation();
         var query = "https://dev.virtualearth.net/REST/v1/Routes?wayPoint.1=" + formOrigin + "&wayPoint.2=" + formDestination + "&optimize=time&distanceUnit=mi&key=AswFsvLf2w5DotjCEdVZ8m8KpOrZ41ADV4r43PDIMcknbmlhVUhPv2B8amujy5Gq";
-
         axios.get(query).then(res => {
             var newPins =
                 [
