@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./style.css"
-import Input from "../../components/Forms/Input";
 import { Button, Row } from 'reactstrap';
 
 class Main extends Component {
@@ -9,11 +8,24 @@ class Main extends Component {
         super(props)
         this.routeChange = this.routeChange.bind(this);
       }
+
+      state = {
+        destination: "",
+        origin: ""
+    }
     
       routeChange() {
         let path = `/trip`;
         this.props.history.push(path);
       }
+
+      handleInputChange = event => {
+        console.log(this.state.destination);
+        const { name, value } = event.target;
+        this.setState({
+            [name]: value
+        })
+    }
    
     render(){
         return(
@@ -23,18 +35,33 @@ class Main extends Component {
                         <h3 className="title">Enter your travel destination.</h3>
                     </Row>
                     <Row className="test">
-                        <Input
+                            <input
+                                type="text"
+                                name="origin"
+                                onChange={(e)=>this.handleInputChange(e)}
+                                value={this.state.origin}
+                                id="mapFormOrigin"
+                                placeholder="origin" />
+                        {/* <Input
                             type="text"
                             name="text"
                             id="topInput"
-                            placeholder="starting point" />
+                            placeholder="starting point" /> */}
                     </Row>
                     <Row>
-                        <Input
+                        {/* <Input
                             type="text"
                             name="text"
                             id="bottomInput"
-                            placeholder="destination" />
+                            placeholder="destination" /> */}
+
+                            <input
+                                type="text"
+                                name="destination"
+                                onChange={(e)=>this.handleInputChange(e)}
+                                value={this.state.destination}
+                                id="mapFormDestination"
+                                placeholder="destination"/>
                     </Row>
 
                     <Row>

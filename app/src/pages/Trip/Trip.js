@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { ReactBingmaps } from "react-bingmaps";
 import axios from "axios";
-import FormInput from "../../components/Forms/Input";
 import { Button } from 'reactstrap';
 import "./style.css";
 import { Row, Col } from 'reactstrap';
