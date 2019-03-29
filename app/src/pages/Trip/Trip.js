@@ -4,6 +4,11 @@ import axios from "axios";
 import { Button, Row, Col } from 'reactstrap';
 import "./style.css";
 
+window.onbeforeunload = function() {
+    localStorage.removeItem("origin");
+    localStorage.removeItem("destination");
+    return '';
+  };
 
 class Trip extends Component {
 
@@ -13,6 +18,12 @@ class Trip extends Component {
         destination: "",
         origin: "",
         directions: {}
+    }
+
+    componentDidMount()
+    {
+        this.setState({origin: localStorage.getItem("origin"), destination: localStorage.getItem("destination")});
+        // this.handleFormSubmit(this.state.origin, this.state.destination);
     }
 
     handleFormSubmit = (e, formOrigin, formDestination) => {
