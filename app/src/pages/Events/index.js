@@ -17,9 +17,9 @@ class Events extends Component {
         });
     }
     handleFormSubmit = () => {
-        axios.post("v1/events", { destination: this.state.searchEvents })
+        axios.post("/v1/events", { location: this.state.searchEvents })
             .then(res => {
-                // console.log(res.data.events.event, "data");
+                // console.log(res.data, "data");
                 this.setState({ resultEvent: res.data.events.event });
             })
             .catch(err => console.log(err))
@@ -29,7 +29,7 @@ class Events extends Component {
         // var destinationVar = localStorage.getItem("destination");
         //testing
         // destinationVar = "Seattle,WA";
-        axios.post("v1/events", { destination: localStorage.getItem("destination") })
+        axios.post("v1/events", { location: localStorage.getItem("destination") })
             .then(res => {
                 // console.log(res.data.events.event, "data");
                 this.setState({ resultEvent: res.data.events.event });
@@ -82,7 +82,7 @@ class Events extends Component {
                 </Col>
                 <Col xs="3" >
                     Search other cities for more events!
-                        <Input
+                        <input
                         // type="text"
                         name="searchEvents"
                         onChange={(e) => this.handleInputChange(e)}
@@ -91,8 +91,7 @@ class Events extends Component {
                     />
                     <Button
                         id="eventButton"
-                        onClick={(e) =>
-                            this.handleInputChange(this.state.searchEvents)}>
+                        onClick={(e) => this.handleFormSubmit(e)}>
                         Clicky Clicky
                     </Button>
                 </Col>
