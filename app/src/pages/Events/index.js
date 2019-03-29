@@ -15,6 +15,8 @@ class Events extends Component {
         this.setState({
             [name]: value
         });
+    }
+    handleFormSubmit = () => {
         axios.post("v1/events", { destination: this.state.searchEvents })
             .then(res => {
                 // console.log(res.data.events.event, "data");
@@ -23,7 +25,6 @@ class Events extends Component {
             .catch(err => console.log(err))
     };
     componentDidMount() {
-        // handleFormSubmit() {
         console.log("helllooooo!")
         // var destinationVar = localStorage.getItem("destination");
         //testing
@@ -40,6 +41,7 @@ class Events extends Component {
             <Row className="topRow">
                 <Col xs="1" />
                 <Col xs="2" >
+                    Click a button for fun road trip games.
                     <Toogle1
                         gameName={"Categories"}
                         rules={"One person picks a category (ex: Britney Spear’s songs, NFL teams, flavors of La Croix) and everyone takes turns naming something in that category until someone (the loser) is stumped."} />
@@ -72,16 +74,19 @@ class Events extends Component {
                         rules={"Play an epic game of Would You Rather. Try to stump the other person with the weirdest or most difficult questions you can come up with (or find online)."} />
                 </Col>
                 <Col xs="6" className="back">
+                    <h5>List of Events in the City you searched</h5>
                     {this.state.resultEvent.map((event, key) =>
                         <li key={event.id}>{event.title}{event.description}{event.venue_address}</li>
                     )
                     }
                 </Col>
                 <Col xs="3" >
-                    <input
-                        type="text"
+                    Search other cities for more events!
+                        <Input
+                        // type="text"
+                        name="searchEvents"
+                        onChange={(e) => this.handleInputChange(e)}
                         value={this.state.searchEvents}
-                        handleInputChange={this.handleInputChange}
                     // handleFormSubmit={this.handleFormSubmit}
                     />
                     <Button
@@ -92,6 +97,7 @@ class Events extends Component {
                     </Button>
                 </Col>
             </Row >
+
         );
     }
 }
