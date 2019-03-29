@@ -77,8 +77,17 @@ class SignExpanded extends Component {
 						email: "",
 						password: ""
 					})
-					let path = `/`;
-					this.props.history.push(path);
+					if (data.token.user) {
+						this.props.history.push("/")
+
+					} else {
+						console.log(
+							"not working")
+					}
+					//if token
+					// use react router to redirect
+					//else
+					//alert
 
 				})
 				.catch(err => console.log(err));
