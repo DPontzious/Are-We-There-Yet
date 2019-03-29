@@ -4,11 +4,18 @@ import '../../pages/Register/Login.css';
 import { Motion, spring } from 'react-motion';
 import Input from './Input';
 import SubmitButton from './SubmitButton';
-// import API from "../../utils/API";
 import axios from 'axios';
 
 class SignExpanded extends Component {
 
+	constructor(props) {
+		super(props)
+		this.routeChange = this.routeChange.bind(this);
+	}
+
+	routeChange() {
+		this.props.history.push();
+	}
 
 	state = {
 		email: "",
@@ -49,50 +56,35 @@ class SignExpanded extends Component {
 						email: "",
 						password: ""
 					})
+					console.log(this.props)
+					console.log(this)
+					let path = `/trip`;
+					this.props.history.push(path);
 				})
 				.catch(err => console.log(err));
+		}
+		//send signUp call to server
+		if (this.props.type === 'signUp') {
+			let userInfo = {
+				email: this.state.email,
+				password: this.state.password
 			}
-			//send signUp call to server
-			if (this.props.type === 'signUp') {
-				let userInfo = {
-					email: this.state.email,
-					password: this.state.password
-				}
-			  //axios /v1/signup
-			  axios.post("/v1/signup", userInfo)
-					.then(({ data }) => {
-						console.log(data);
-						this.setState({
-							email: "",
-							password: ""
-						})
-						if(data.token.user){
-						this.props.history.push("/")
-
-						}else {
-							console.log(
-							  "not working")
-							}
-						//if token
-						// use react router to redirect
-						//else
-						//alert
-						
+			//axios /v1/signup
+			axios.post("/v1/signup", userInfo)
+				.then(({ data }) => {
+					console.log(data);
+					this.setState({
+						email: "",
+						password: ""
 					})
-					.catch(err => console.log(err));
-				}
-		
-	}
+					let path = `/`;
+					this.props.history.push(path);
 
-	constructor(props) {
-        super(props)
-        this.routeChange = this.routeChange.bind(this);
-      }
-    
-      routeChange() {
-        let path = `/trip`;
-        this.props.history.push(path);
-      }
+				})
+				.catch(err => console.log(err));
+		}
+
+	}
 
 	render() {
 		return (
@@ -128,11 +120,9 @@ class SignExpanded extends Component {
 										value={this.state.password}
 										onChange={this.handleInputChange}
 										placeholder="PASSWORD" />
-									<SubmitButton  type={this.props.type}clickListenerFn={this.handleSubmit}></SubmitButton>
+									<SubmitButton type={this.props.type} clickListenerFn={this.handleSubmit}></SubmitButton>
 									<a href="url" className='forgotPass'>{this.props.type === 'signIn'}</a>
 									<a href="url" className='forgotPass'>{this.props.type === 'signUp'}</a>
-									
-									{/* onClick={this.routeChange} */}
 								</form>
 							}
 						</Motion>
