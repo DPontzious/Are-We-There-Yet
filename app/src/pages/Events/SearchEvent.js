@@ -1,11 +1,13 @@
 import React from "react";
+import "./style.css";
 
 function SearchEvent(props) {
     return (
         <div className="text-center">
-            <div>{props.result}
-            </div>
-        </div>
+            {props.title}
+            {props.description}
+            {props.address}
+        </div >
     );
 }
 
