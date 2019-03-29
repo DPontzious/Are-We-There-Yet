@@ -1,41 +1,34 @@
 import React, { Component } from "react";
-// import API from "../../utils/API";
 import axios from "axios";
-// import Event from '../../components/Forms/index'
-import SearchEvent from "./SearchEvent"
 import { Button, Row, Col } from "reactstrap"
-import API from "../../utils/API";
 import Toogle1 from "../../components/Toggle/index"
 import "./style.css";
+import Input from "../../components/Forms/Input"
 
 class Events extends Component {
     state = {
         searchEvents: '',
         resultEvent: []
     }
-    // handleInputChange = event => {
-    //     const { name, value } = event.target;
-    //     this.setState({
-    //         [name]: value
-    //     });
-    // };
-    // handleFormSubmit = event => {
-
-    // componentDidMount = (event, formSearch) => {
-    // event.preventDefault();
-    // this.setState({
-    //     searchEvents: "",
-    //     result: []
-    // })
-    // axios.get("v1/events")
-    //     .then(({ data }) => {
-    //         console.log(data, "data");
-    //         this.setState({ result: data });
-    //     })
-    //     .catch(err => console.log(err))
+    handleInputChange = event => {
+        const { name, value } = event.target;
+        this.setState({
+            [name]: value
+        });
+        axios.post("v1/events", { destination: this.state.searchEvents })
+            .then(res => {
+                // console.log(res.data.events.event, "data");
+                this.setState({ resultEvent: res.data.events.event });
+            })
+            .catch(err => console.log(err))
+    };
     componentDidMount() {
+        // handleFormSubmit() {
         console.log("helllooooo!")
-        axios.get("v1/events")
+        // var destinationVar = localStorage.getItem("destination");
+        //testing
+        // destinationVar = "Seattle,WA";
+        axios.post("v1/events", { destination: localStorage.getItem("destination") })
             .then(res => {
                 // console.log(res.data.events.event, "data");
                 this.setState({ resultEvent: res.data.events.event });
@@ -81,25 +74,24 @@ class Events extends Component {
                 <Col xs="6" className="back">
                     {this.state.resultEvent.map((event, key) =>
                         <li key={event.id}>{event.title}{event.description}{event.venue_address}</li>
-                        // title={event.title}
-                        // description={event.description}
                     )
                     }
                 </Col>
                 <Col xs="3" >
-                    <h3>HEllO!!</h3>
+                    <input
+                        type="text"
+                        value={this.state.searchEvents}
+                        handleInputChange={this.handleInputChange}
+                    // handleFormSubmit={this.handleFormSubmit}
+                    />
+                    <Button
+                        id="eventButton"
+                        onClick={(e) =>
+                            this.handleInputChange(this.state.searchEvents)}>
+                        Clicky Clicky
+                    </Button>
                 </Col>
             </Row >
-            /* <div className="col-md-4">
-                    <div className="card">
-                        <Search
-                            value={this.state.search}
-                            handleInputChange={this.handleInputChange}
-                            handleFormSubmit={this.handleFormSubmit}
-                        />
-                    </div>
-                </div> */
-            // </div >
         );
     }
 }
