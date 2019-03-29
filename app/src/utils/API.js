@@ -3,7 +3,7 @@ import axios from "axios"
 
 export default {
     getEvents: function (query) {
-        return axios.get("/api/events", { params: { q: query } });
+        return axios.get("/v1/events", { params: { q: query } });
     }
 
 

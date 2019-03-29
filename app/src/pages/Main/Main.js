@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import "./style.css"
-import { Button, Row } from 'reactstrap';
+import { Button, Row, Col } from 'reactstrap';
+
 
 class Main extends Component {
-   
+
     constructor(props) {
         super(props)
         this.routeChange = this.routeChange.bind(this);
@@ -66,16 +67,17 @@ class Main extends Component {
 
                     <Row>
                         <Button color="info" id="main"
-                        onClick={this.routeChange}
-                         >
-                        Submit
+                            onClick={this.routeChange}
+                        >
+                            Submit
                         </Button>
                     </Row>
 
                 </div>
-            </main>
+            </main >
         );
     };
+
 }
-     
- export default Main;
+
+export default Main;
