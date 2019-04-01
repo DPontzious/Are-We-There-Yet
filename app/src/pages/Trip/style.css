@@ -1,17 +1,51 @@
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .searchmap{
+        width: 320px;
+        height: 400px;
+        margin-left: 5px;
+    }
+
+    #itineraryContainer{
+        width: 95vw;
+    }
+} 
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .searchmap{
+        height: 500px;
+        width: 545px;
+        margin-left: 30px;
+    }
+} 
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .searchmap{
+        width: 345px;
+    }
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .searchmap{
+        width: 100%;
+    }
+} 
+
+#searchTitle{
+    color: white;
+}
+
 .searchmap{
-    /* height: 60vh; */
-    width: 100%;
-    height: 500px;
-    /* width: 50vh; */
    border: #2f4c6d solid 6px;
    align-content: center;
    margin-top: 15px;
    margin-right: 15px;
-    margin-left: 30px;
 }
 
-#mapButton
-{
+#mapButton{
     position: relative;
     width: 75px;
     height: 40px;
@@ -20,7 +54,6 @@
 #itineraryContainer{
     overflow-y: scroll;
     height: 70vh;
-    /* width: 100%; */
     background-color: aliceblue;
     margin-left: 15px;
     margin-top: 15px;

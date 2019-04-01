@@ -12,6 +12,20 @@
   text-shadow: 4px 4px #bd974f;
   margin-bottom: 0px !important;
  }
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .jumbotron{
+    font-size: 30px;
+   }
+} 
+
+@media only screen and (min-width: 600px) {
+  .jumbotron{
+    font-size: 60px;
+   }
+} 
+
  
 /* .display-3{
 font-size: 60px !important;

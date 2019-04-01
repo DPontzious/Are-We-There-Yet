@@ -1,20 +1,49 @@
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    #cityInput{
+        width: 75px;
+    }
+    
+     .GameInfo{
+        width: 120px;
+    } 
+
+    .card{
+        width: 120px;
+    }
+} 
+
+@media only screen and (min-width: 600px) {
+     .GameInfo{
+        width: 200px;
+    } 
+
+    .card{
+        position: relative;
+        left: 142px;
+        width: 200px;
+    }
+}
+
 .topRow{
     margin-top:15px;
 }
+
 .back{
-background-color: gray;
-overflow-y: scroll;
-height: 600px;
+    background-color: gray;
+    color: white;
 }
-.searchEvents{
-/* margin-bottom: 25px; */
-width: 100%;
+
+#searchInstructions{
+    color: white;
 }
-.search{
-    color:whitesmoke;
-    font-size: 25px;
-}
+
 #eventButton{
-    margin-top:20px;
-    margin-bottom: 20px;
+    position: relative;
+    width: 75px;
+    height: 40px;
+}
+
+.color{
+    color: white;
 }
