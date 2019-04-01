@@ -23,15 +23,33 @@ router.get("/protected", requireAuth, function (req, res) {
   res.send("You have been protected!");
 });
 
-router.post("/signin", function (req, res) {
-  res.json({ token: tokenizer(req.user) });
+router.post("/signin", requireSignin, function (req, res) {
+
+  db.User.findOne({ email : req.body.email}).then(dbUser=>{
+    //check if user exists
+    console.log(dbUser)
+    if(dbUser === null){
+      res.status(400).send("BAD LOG IN, UNAUTHORIZED");
+    }else{
+      res.json({ 
+        userId : dbUser._id,
+        token: tokenizer(req.user),
+        name: dbUser.name
+      });
+    }
+
+
+
+  })
+
+
 });
 
 router.post("/signup", function (req, res) {
-  const { email, password } = req.body;
+  const { name, email, password } = req.body;
 
-  if (!email || !password) {
-    res.status(422).send({ error: "You must provide an email and password" });
+  if (!email || !password || !name) {
+    res.status(422).send({ error: "You must provide a name, email and password" });
   }
 
   db.User.findOne({ email })
@@ -41,7 +59,7 @@ router.post("/signup", function (req, res) {
         return res.status(422).send({ error: "Email already in use" });
       }
       //create new user object
-      const user = new db.User({ email, password });
+      const user = new db.User({name, email, password });
       // save the user
       user.save().then(user => {
         // respond with the success if the user existed
@@ -65,5 +83,41 @@ router.post("/events", function (req, res) {
       console.log("error", err)
       res.status(422).json(err)
     });
+})
+
+//DO #2
+router.post("/api/save", function (req, res) {
+  console.log(req.body)
+  //mongoose findOneAndUpdate({$push {origin: req.body.origin, destination: req.body.destination}})
+  db.User.findOneAndUpdate(
+    { _id: req.body.userId },
+    {
+      $push: {
+        trip: {
+          origin: req.body.origin,
+          destination: req.body.destination
+        },
+        user: { name: req.body.name}
+        
+      }
+    },
+    function (err, doc) {
+      if (err) {
+        console.log("Something wrong when updating data!");
+      }
+      console.log(doc);
+      res.json(doc);
+    });
+})
+
+//DO #3
+router.get("/api/save/:id", function (req, res) {
+  console.log(req.params.id)
+  db.User.findById(req.params.id).then(dbUser => {
+    res.json(dbUser.trips)
+    res.json(dbUser.users)
+  })
+  
+
 })
 module.exports = router;

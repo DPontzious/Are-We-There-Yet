@@ -11,15 +11,21 @@ class SavedTrips extends Component {
     }
 
     componentDidMount = () => {
-        axios.get("/api/save/" + localStorage.getItem("userId"))
-            .then(function (resp) {
-                this.setState({ trips: resp.trips })
+        if(!localStorage.getItem("token")){
+            this.props.history.replace("/")
+        }
+
+
+        axios.get("/v1/api/save/" + localStorage.getItem("userId"))
+            .then((resp) =>{
+                console.log(resp, "yayayayya")
+                this.setState({ trips: resp.data })
             })
     }
 
     render() {
         return (
-            <div>
+            <div className="savedTripsContainer">
                 <h2>Saved Trips</h2>
                 <table>
                     <tr>
@@ -28,6 +34,8 @@ class SavedTrips extends Component {
                         <th>Destination</th>
                         <th>Trip Info</th>
                     </tr>
+                    <tbody>
+
                     {this.state.trips.map((tripObj, tripInd) => {
                         return (
                             <tr>
@@ -48,6 +56,7 @@ class SavedTrips extends Component {
                             </tr>
                         )
                     })}
+                    </tbody>
                 </table>
             </div>
         )
