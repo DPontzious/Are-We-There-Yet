@@ -8,7 +8,6 @@ import {
   NavItem,
   NavLink,
 } from 'reactstrap';
-import axios from "axios";
 
 class Example extends Component {
 

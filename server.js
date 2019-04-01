@@ -4,11 +4,8 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const PORT = process.env.PORT || 3001;
-// const routes = require("./routes");
-// const PORT = process.env.PORT || 8080;
 
 // Passport configuration
-// const passport = require("passport");
 require("./services/passport");
 
 // Mongoose Connection

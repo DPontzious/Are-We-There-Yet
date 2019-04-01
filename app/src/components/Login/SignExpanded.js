@@ -2,24 +2,11 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import '../../pages/Register/Login.css';
 import { Motion, spring } from 'react-motion';
-import Input from './input';
+import Input from './Input';
 import SubmitButton from './SubmitButton';
 import axios from 'axios';
 
 class SignExpanded extends Component {
-
-	// constructor(props) {
-	// 	super(props)
-	// 	this.routeChange = this.routeChange.bind(this);
-	// }
-
-	// routeChange() {
-	// 	let path = `/trip`;
-	// 	this.props.history.push(path);
-	// 	// localStorage.setItem("email", this.state.email)
-	// 	// localStorage.setItem("password", this.state.password);
-	// 	console.log(this.state)
-	// }
 
 	state = {
 		email: "",
@@ -59,8 +46,6 @@ class SignExpanded extends Component {
 			//axios /v1/signin
 			axios.post("/v1/signin", userInfo)
 				.then(({ data }) => {
-					console.log(data);
-
 					localStorage.setItem("userId" , data.userId);
 					localStorage.getItem("name", data.name);
 
@@ -72,18 +57,22 @@ class SignExpanded extends Component {
 						var currentTrip = {
 							origin : localStorage.getItem("origin"),
 							destination : localStorage.getItem("destination"),
-							userId : localStorage.getItem("userId"),
-							name : localStorage.getItem("name")
+							userId : localStorage.getItem("userId")
 						}
-						axios.post("/v1/api/save", currentTrip)
-							.then(({ data }) => {
-								console.log(data);
+						
+						if(currentTrip.origin != null && currentTrip.destination != null){
+							axios.post("/v1/api/save", currentTrip)
+							.then((data2) => {
 								this.setState({
 									origin: "",
 									destination: "",
 								})
-
+								
 							})
+						}
+
+
+				
 
 						console.log(this.props)
 						console.log(this)
@@ -108,7 +97,6 @@ class SignExpanded extends Component {
 			//axios /v1/signup
 			axios.post("/v1/signup", userInfo)
 				.then(({ data }) => {
-					console.log(data);
 					this.setState({
 						name: "",
 						email: "",

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './Login.css';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-// import { Motion, spring } from 'react-motion';
 import NavigationPanel from '../../components/Login/NavigationPanel';
 import Modal from '../../components/Login/Modal';
 

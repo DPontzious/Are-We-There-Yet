@@ -8,7 +8,6 @@ import Events from "./pages/Events/index"
 import Jumbo from "./components/Jumbo/index"
 import Register from "./pages/Register/Register"
 import SignExpanded from "./components/Login/SignExpanded"
-import Save from "./components/Login/SignExpanded"
 import SavedTrips from "./pages/SavedTrips/SavedTrips"
 
 
@@ -29,7 +28,6 @@ function App() {
                 <Route component={NoMatch} />
 
             </Switch>
-            {/* <Route exactly pattern="/google" component={() => window.location = 'http://google.com'} /> */}
 
         </Router >
     );
