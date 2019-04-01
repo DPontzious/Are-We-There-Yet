@@ -1,10 +1,6 @@
 import React, { Component } from "react";
 import "./style.css"
-<<<<<<< HEAD
 import { Button, Row} from 'reactstrap';
-=======
-import { Button, Row, } from 'reactstrap';
->>>>>>> cf6228198df146804dbe5d572a3046435e0b2352
 
 
 class Main extends Component {
@@ -52,17 +48,7 @@ class Main extends Component {
                             id="mapFormOrigin"
                             placeholder="Starting Point" />
                     </Row>
-<<<<<<< HEAD
                     <Row>
-=======
-                    <Row className="test1">
-                        {/* <Input
-                            type="text"
-                            name="text"
-                            id="bottomInput"
-                            placeholder="destination" /> */}
-
->>>>>>> cf6228198df146804dbe5d572a3046435e0b2352
                         <input
                             type="text"
                             name="destination"
