@@ -3,12 +3,10 @@
     #cityInput{
         width: 75px;
     }
-    
      .GameInfo{
         width: 120px;
     } 
-
-    .card{
+.card{
         width: 120px;
     }
 } 
@@ -32,6 +30,8 @@
 .back{
     background-color: gray;
     color: white;
+    overflow-y: scroll;
+    height: 500px;
 }
 
 #searchInstructions{
@@ -42,8 +42,12 @@
     position: relative;
     width: 75px;
     height: 40px;
+    margin-bottom: 15px;
 }
 
 .color{
     color: white;
+}
+#cityInput{
+    margin-bottom: 5px;
 }

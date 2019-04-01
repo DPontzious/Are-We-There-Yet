@@ -26,7 +26,6 @@ function App() {
                 <Route exact path="/savedTrips" component={SavedTrips} />
                 <Route exact path="/" component={SignExpanded} />
                 <Route component={NoMatch} />
-
             </Switch>
 
         </Router >

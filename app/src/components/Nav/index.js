@@ -13,7 +13,7 @@ class Example extends Component {
 
   state = {
     trips: []
-}
+  }
   constructor(props) {
     super(props);
 
@@ -28,13 +28,13 @@ class Example extends Component {
     });
 
   }
-  
 
 
-  
+
+
   render() {
-    
-  return (
+
+    return (
       <div>
         <Navbar style={{ backgroundColor: "#f5f5f5" }} light expand="md">
           <NavbarBrand href="/">Welcome,</NavbarBrand>
@@ -58,7 +58,7 @@ class Example extends Component {
               </NavItem>
             </Nav>
           </Collapse>
-          
+
         </Navbar>
       </div>
     );
