@@ -3,7 +3,6 @@ import { ReactBingmaps } from "react-bingmaps";
 import axios from "axios";
 import { Button, Row, Col } from 'reactstrap';
 import "./style.css";
-
 class Trip extends Component {
 
     state = {
