@@ -59,7 +59,7 @@ class SavedTrips extends Component {
                             <h1> Helpful Link </h1>
                             <a href="http://hotels.com">
                                 <img border="0" alt="W3Schools" src="http://worldartsme.com/images/hotel-sign-clipart-1.jpg" width="100" height="100" margin-bottom="10px"></img></a>
-                            <a href="http://google.com">
+                            <a href="https://banana-cake-18419.herokuapp.com/">
                                 <img border="0" alt="W3Schools" src="http://images.clipartpanda.com/camp-clipart-black-and-white-1218784895192777147geant_Pictogramme_Camping.svg.hi.png" width="100" height="100"></img></a>
                             <a href="http://enterprise.com">
                                 <img border="0" alt="W3Schools" src="http://www.clker.com/cliparts/a/Y/q/g/B/G/simple-black-car-md.png" width="100" height="100"></img></a>
