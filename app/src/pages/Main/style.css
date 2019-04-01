@@ -27,9 +27,16 @@ Input{
 }
 .test{
   margin-top: 100px;
-  margin-bottom: 85px;
+  margin-bottom: 65px;
+  font-size: 30px;
+}
+.test1{
+  /* margin-top: 100px; */
+  margin-bottom: 5px;
+  font-size: 30px;
 }
 input{
 width:60%;
 border-radius: 10px;
+font-size: 30px;
 }

@@ -219,16 +219,20 @@ body {
   opacity: 1;
 }
 .Input input[type='text'] ~ label::before {
-  content: "\f007";
+  content: "\f007"; 
+  
 }
 .Input input::-webkit-input-placeholder{
   color: #FFFFFF;
+  font-size: 15px;
+ 
 }
 .Input input[type='email'] ~ label::before {
   content: "\f1fa";
 }
 .Input input[type='password'] ~ label::before {
   content: "\f023";
+  
 }
 .iconVisibility {
   opacity: 0.7;
@@ -324,3 +328,6 @@ button:active {
   height: 200px;
 
 } */
+.input{
+  height: 45px;
+}

@@ -3,7 +3,6 @@ import axios from "axios";
 import { Button, Row, Col } from "reactstrap"
 import Toogle1 from "../../components/Toggle/index"
 import "./style.css";
-import Input from "../../components/Forms/Input"
 
 class Events extends Component {
     state = {
@@ -35,13 +34,22 @@ class Events extends Component {
                 this.setState({ resultEvent: res.data.events.event });
             })
             .catch(err => console.log(err))
+    };
+    handleClick() {
+        // do something meaningful, Promises, if/else, whatever, and then
+        window.location.assign('http://groupon.com');
     }
+
+
     render() {
         return (
             <Row className="topRow">
                 <Col xs="1" />
                 <Col xs="2" >
-                    Click a button for fun road trip games.
+                    <h6 className="search">
+                        Click a button for fun road trip games.
+                </h6>
+
                     <Toogle1
                         gameName={"Categories"}
                         rules={"One person picks a category (ex: Britney Spear’s songs, NFL teams, flavors of La Croix) and everyone takes turns naming something in that category until someone (the loser) is stumped."} />
@@ -80,10 +88,10 @@ class Events extends Component {
                     )
                     }
                 </Col>
-                <Col xs="3" >
+                <Col xs="3" className="search" >
                     Search other cities for more events!
                         <input
-                        // type="text"
+                        className="searchEvents"
                         name="searchEvents"
                         onChange={(e) => this.handleInputChange(e)}
                         value={this.state.searchEvents}
@@ -92,8 +100,10 @@ class Events extends Component {
                     <Button
                         id="eventButton"
                         onClick={(e) => this.handleFormSubmit(e)}>
-                        Clicky Clicky
+                        MORE EVENTS!
                     </Button>
+                    Click here for more deals.
+                    <Button onClick={this.handleClick.bind(this)}>Groupon</Button>
                 </Col>
             </Row >
 

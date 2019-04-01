@@ -3,4 +3,18 @@
 }
 .back{
 background-color: gray;
+overflow-y: scroll;
+height: 600px;
+}
+.searchEvents{
+/* margin-bottom: 25px; */
+width: 100%;
+}
+.search{
+    color:whitesmoke;
+    font-size: 25px;
+}
+#eventButton{
+    margin-top:20px;
+    margin-bottom: 20px;
 }
