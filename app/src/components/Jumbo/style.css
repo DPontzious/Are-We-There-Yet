@@ -1,5 +1,5 @@
 .jumbotron{
-  background-image: URL("img/road_trip.jpg");
+  background-image: url("./road_trip.jpg");
   background-size: cover;
   background-position: center;
   height: 200px;

@@ -66,9 +66,9 @@ class SavedTrips extends Component {
                             </table>
                         </div>
                     </Col>
-                    <Col>
+                    <Col xs="3">
                         <h1> Helpful Link </h1>
-                        <img src="https://us.123rf.com/450wm/yitewang/yitewang1511/yitewang151100467/47556922-stock-vector-hotel-flat-icon.jpg?ver=6" alt="Italian Trulli" className="hotelPhoto"></img>
+                        {/* <img src="https://us.123rf.com/450wm/yitewang/yitewang1511/yitewang151100467/47556922-stock-vector-hotel-flat-icon.jpg?ver=6" alt="Italian Trulli" className="hotelPhoto"></img> */}
                         <Button onClick={this.handleClick.bind(this)}>Click to Find a Hotel</Button>
                         <Button onClick={this.handleClick.bind(this)}>Click to find a Camp Ground</Button>
                         <Button onClick={this.handleClick.bind(this)}>Click to find a rental card</Button>

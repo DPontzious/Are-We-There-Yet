@@ -55,7 +55,7 @@ class Events extends Component {
         return (
             <Row className="topRow">
                 <Col xs="3" >
-                    <p className="color">Click a button for fun road trip games.</p>
+                    {/* <p className="color">Click a button for fun road trip games.</p> */}
                     <Toogle1
                         gameName={"Categories"}
                         rules={"One person picks a category (ex: Britney Spear’s songs, NFL teams, flavors of La Croix) and everyone takes turns naming something in that category until someone (the loser) is stumped."} />
