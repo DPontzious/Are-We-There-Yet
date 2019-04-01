@@ -12,9 +12,6 @@ const SubmitButton = (props) => {
 	if (props.type === 'signIn') {
 		socialNets = (
 			<div className='socialNets'>
-				<FaGooglePlus className='socialNetsIcon' />
-				<FaTwitter className='socialNetsIcon' />
-				<FaFacebook className='socialNetsIcon' />
 			</div>
 		)
 	} else {

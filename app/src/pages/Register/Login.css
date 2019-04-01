@@ -30,13 +30,13 @@ body {
   justify-content: flex-start;
 }
 .Modal {
-  width: 400px;
-  height: 400px;
+  width: 500px;
+  height: 525px;
   display: flex;
   flex-direction: row;
   box-shadow: 0 6px 10px 0px rgba(0, 0, 0, 0.5);
   flex-grow: 5;
-  opacity: .9;
+  /* opacity: .7; */
 }
 .NavigationPanel {
   background-color: rgba(244, 246, 248, 0.98);
@@ -193,8 +193,8 @@ body {
   width: 60%;
 }
 .logForm h2 {
-  margin-top: 50px;
-  margin-bottom: 100px;
+  margin-top: 100px;
+  margin-bottom: 50px;
 }
 .Input {
   display: flex;
