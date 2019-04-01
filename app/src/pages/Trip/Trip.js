@@ -134,7 +134,6 @@ class Trip extends Component {
       .catch(e => console.log(e));
   };
   handleInputChange = event => {
-    console.log(this.state.destination);
     const { name, value } = event.target;
     this.setState({
       [name]: value

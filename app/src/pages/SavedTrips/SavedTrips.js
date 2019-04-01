@@ -18,7 +18,6 @@ class SavedTrips extends Component {
 
         axios.get("/v1/api/save/" + localStorage.getItem("userId"))
             .then((resp) => {
-                console.log(resp, "yayayayya")
                 this.setState({ trips: resp.data })
             })
     }
@@ -32,40 +31,32 @@ class SavedTrips extends Component {
                 <Row>
                     <Col>
                         <div className="savedTripsContainer">
-                            <h2>Saved Trips</h2>
-                            <table>
-                                <tr>
-                                    <th>Trip</th>
-                                    <th>Origin</th>
-                                    <th>Destination</th>
-                                    <th>Trip Info</th>
-                                </tr>
-                                <tbody>
+                            {
+                                this.state.trips.map((tripObj, tripInd) => {
+                                    const dataArray = tripObj.split(":");
+                                    return (
+                                        <tr>
+                                            <td>
+                                                {tripInd + 1}
+                                            </td>
+                                            <td>
+                                                {dataArray[0]}
+                                            </td>
+                                            <td>
+                                                {dataArray[1]}
+                                            </td>
+                                            <td>
+                                                <Button>
+                                                    View Trip
+                                    </Button>
+                                            </td>
+                                        </tr>
+                                    )
+                                })
+                            }
+                        </div >
 
-                                    {this.state.trips.map((tripObj, tripInd) => {
-                                        return (
-                                            <tr>
-                                                <td>
-                                                    {tripInd + 1}
-                                                </td>
-                                                <td>
-                                                    {tripObj.origin}
-                                                </td>
-                                                <td>
-                                                    {tripObj.destination}
-                                                </td>
-                                                <td>
-                                                    <button>
-                                                        View Trip
-                                    </button>
-                                                </td>
-                                            </tr>
-                                        )
-                                    })}
-                                </tbody>
-                            </table>
-                        </div>
-                    </Col>
+                    </Col >
                     <Col xs="3">
                         <h1> Helpful Link </h1>
                         {/* <img src="https://us.123rf.com/450wm/yitewang/yitewang1511/yitewang151100467/47556922-stock-vector-hotel-flat-icon.jpg?ver=6" alt="Italian Trulli" className="hotelPhoto"></img> */}
@@ -74,10 +65,10 @@ class SavedTrips extends Component {
                         <Button onClick={this.handleClick.bind(this)}>Click to find a rental card</Button>
                         <Button onClick={this.handleClick.bind(this)}></Button>
                     </Col>
-                </Row>
+                </Row >
 
-            </Container>
-        )
+            </Container >
+                    
     }
 };
 

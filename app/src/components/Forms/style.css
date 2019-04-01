@@ -1,7 +1,6 @@
 #topInput
 {
     position: relative;
-    /* top: 30px; */
     width: 100%;
     display: initial;
     font-size: 50px;
@@ -11,7 +10,6 @@
 #bottomInput
 {
     position: relative;
-    /* top: 30px; */
     width: 100%;
     display: initial;
     font-size: 50px;
@@ -22,7 +20,6 @@
 #furtherBottom
 {
     position: relative;
-    /* top: 100px; */
     width: 400px;
     height: 150px;
     display: initial;

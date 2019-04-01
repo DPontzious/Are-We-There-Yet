@@ -25,9 +25,9 @@ router.get("/protected", requireAuth, function (req, res) {
 
 router.post("/signin", requireSignin, function (req, res) {
 
+  //check if user exists
   db.User.findOne({ email : req.body.email}).then(dbUser=>{
-    //check if user exists
-    console.log(dbUser)
+    // localStorage.setItem("name", dbUser.name);
     if(dbUser === null){
       res.status(400).send("BAD LOG IN, UNAUTHORIZED");
     }else{
@@ -71,48 +71,37 @@ router.post("/signup", function (req, res) {
     });
 });
 router.post("/events", function (req, res) {
-  console.log("req", req.body)
   axios
     .get("http://api.eventful.com/json/events/search?&app_key=xrgnP4GQZxFmGt2n&keywords=books&location=" + req.body.location + "&date=Future",
       { params: req.query })
     .then(response => {
-      // console.log("response", response.data)
       res.status(200).send(response.data)
     })
     .catch(err => {
-      console.log("error", err)
       res.status(422).json(err)
     });
 })
 
 //DO #2
+
 router.post("/api/save", function (req, res) {
-  console.log(req.body)
-  //mongoose findOneAndUpdate({$push {origin: req.body.origin, destination: req.body.destination}})
   db.User.findOneAndUpdate(
     { _id: req.body.userId },
     {
       $push: {
-        trip: {
-          origin: req.body.origin,
-          destination: req.body.destination
-        },
-        user: { name: req.body.name}
-        
+        trips: req.body.origin + ":" + req.body.destination
       }
-    },
-    function (err, doc) {
+    }).then(function (doc, err) {
       if (err) {
         console.log("Something wrong when updating data!");
       }
-      console.log(doc);
       res.json(doc);
     });
 })
 
+
 //DO #3
 router.get("/api/save/:id", function (req, res) {
-  console.log(req.params.id)
   db.User.findById(req.params.id).then(dbUser => {
     res.json(dbUser.trips)
     res.json(dbUser.users)
