@@ -71,7 +71,11 @@ class SignExpanded extends Component {
 							})
 						}
 
+
 				
+
+						console.log(this.props)
+						console.log(this)
 						let path = `/`;
 						this.props.history.push(path);
 					} else {
