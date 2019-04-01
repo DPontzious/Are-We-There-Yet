@@ -27,10 +27,10 @@ class SavedTrips extends Component {
 
     render() {
         return (
-            <Container>
-                <Row>
-                    <Col>
-                        <div className="savedTripsContainer">
+            <div className="savedTripsContainer">
+                <Container>
+                    <Row>
+                        <Col>
                             {
                                 this.state.trips.map((tripObj, tripInd) => {
                                     const dataArray = tripObj.split(":");
@@ -54,21 +54,22 @@ class SavedTrips extends Component {
                                     )
                                 })
                             }
-                        </div >
-
-                    </Col >
-                    <Col xs="3">
-                        <h1> Helpful Link </h1>
-                        {/* <img src="https://us.123rf.com/450wm/yitewang/yitewang1511/yitewang151100467/47556922-stock-vector-hotel-flat-icon.jpg?ver=6" alt="Italian Trulli" className="hotelPhoto"></img> */}
-                        <Button onClick={this.handleClick.bind(this)}>Click to Find a Hotel</Button>
-                        <Button onClick={this.handleClick.bind(this)}>Click to find a Camp Ground</Button>
-                        <Button onClick={this.handleClick.bind(this)}>Click to find a rental card</Button>
-                        <Button onClick={this.handleClick.bind(this)}></Button>
-                    </Col>
-                </Row >
-
-            </Container >
-                    
+                        </Col >
+                        <Col xs="3">
+                            <h1> Helpful Link </h1>
+                            <a href="http://hotels.com">
+                                <img border="0" alt="W3Schools" src="http://worldartsme.com/images/hotel-sign-clipart-1.jpg" width="100" height="100" margin-bottom="10px"></img></a>
+                            <a href="http://google.com">
+                                <img border="0" alt="W3Schools" src="http://images.clipartpanda.com/camp-clipart-black-and-white-1218784895192777147geant_Pictogramme_Camping.svg.hi.png" width="100" height="100"></img></a>
+                            <a href="http://enterprise.com">
+                                <img border="0" alt="W3Schools" src="http://www.clker.com/cliparts/a/Y/q/g/B/G/simple-black-car-md.png" width="100" height="100"></img></a>
+                            <a href="http://chevron.com">
+                                <img border="0" alt="W3Schools" src="https://images.all-free-download.com/images/graphiclarge/gas_pump_clip_art_17082.jpg" width="100" height="100"></img></a>
+                        </Col>
+                    </Row >
+                </Container >
+            </div >
+        )
     }
 };
 
