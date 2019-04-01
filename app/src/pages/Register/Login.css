@@ -276,7 +276,7 @@ button {
   font-size: 23px;
   font-weight: 500;
   justify-content: center;
-  margin-top: 50px;
+  /* margin-top: 50px; */
   outline: none;
   padding: 5px;
   text-transform: uppercase;
