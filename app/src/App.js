@@ -27,7 +27,10 @@ function App() {
                 <Route exact path="/savedTrips" component={SavedTrips} />
                 <Route exact path="/" component={SignExpanded} />
                 <Route component={NoMatch} />
+
             </Switch>
+            {/* <Route exactly pattern="/google" component={() => window.location = 'http://google.com'} /> */}
+
         </Router >
     );
 }

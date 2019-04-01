@@ -75,6 +75,7 @@ main{
       left: 275px;
     }
 }
+<<<<<<< HEAD
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
   main{
@@ -97,4 +98,20 @@ main{
     margin-top: 100px;
     margin-bottom: 85px;
   }
+=======
+.test{
+  margin-top: 100px;
+  margin-bottom: 65px;
+  font-size: 30px;
+}
+.test1{
+  /* margin-top: 100px; */
+  margin-bottom: 5px;
+  font-size: 30px;
+}
+input{
+width:60%;
+border-radius: 10px;
+font-size: 30px;
+>>>>>>> cf6228198df146804dbe5d572a3046435e0b2352
 }
