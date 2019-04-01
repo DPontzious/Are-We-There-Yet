@@ -6,29 +6,49 @@ import "./style.css";
 
 class Events extends Component {
     state = {
-        searchEvents: '',
-        resultEvent: []
+        searchEvents: "",
+        resultEvent: [],
+        locationTitle: "",
+        loading: ""
     }
+
     handleInputChange = event => {
         const { name, value } = event.target;
         this.setState({
             [name]: value
         });
     }
+
     handleFormSubmit = () => {
+        this.setState({loading: "loading..."});
+        this.setState({resultEvent:[]});
         axios.post("/v1/events", { location: this.state.searchEvents })
             .then(res => {
+                this.setState({loading: ""});
                 this.setState({ resultEvent: res.data.events.event });
             })
             .catch(err => console.log(err))
+            this.setState({locationTitle: "List of events in " + this.state.searchEvents});
     };
+
     componentDidMount() {
-        axios.post("v1/events", { location: localStorage.getItem("destination") })
+        if(localStorage.getItem("destination") !== null)
+        {
+            this.setState({loading: "loading..."});
+            axios.post("v1/events", { location: localStorage.getItem("destination") })
             .then(res => {
+                this.setState({loading: ""});
                 this.setState({ resultEvent: res.data.events.event });
             })
             .catch(err => console.log(err))
+            this.setState({locationTitle: "List of events in " + localStorage.getItem("destination")}); 
+        }
+        else{
+            this.setState({locationTitle: "No City Searched"});
+        }
+             
     }
+
     render() {
         return (
             <Row className="topRow">
@@ -66,8 +86,8 @@ class Events extends Component {
                         rules={"Play an epic game of Would You Rather. Try to stump the other person with the weirdest or most difficult questions you can come up with (or find online)."} />
                 </Col>
                 <Col className="back">
-                {/* {this.state.searchEvents === '' ? <h5>List of Events in {this.state.searchEvents}</h5> || <h5>List of Events in your Destination<h5> } */}
-                    <h5>List of Events in {localStorage.getItem("destination")}</h5>
+                    <h4>{this.state.locationTitle}</h4>
+                    <h5>{this.state.loading}</h5>
                     {this.state.resultEvent.map((event, key) =>
                         <li key={event.id}>{event.title}{event.description}{event.venue_address}</li>
                     )}
