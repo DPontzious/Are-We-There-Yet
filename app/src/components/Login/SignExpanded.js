@@ -87,7 +87,7 @@ class SignExpanded extends Component {
 
 						console.log(this.props)
 						console.log(this)
-						let path = `/savedTrips`;
+						let path = `/`;
 						this.props.history.push(path);
 					} else {
 						alert("Bad signin. Try again!");

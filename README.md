@@ -9,26 +9,35 @@
 
 ### Overview
 
-For this project, we created a web application called `Are We There Yet?` that plots and saves road trip itineraries based on users’ point of origin and destination, including address, city, landmark, zip code, or airport code.
-It displays Road, Aerial, and Streetside views of the best route as well as a list of local events for the travel destination. It also requires user authentication (Sign in/Sign Up), and it allows users to save their travel itineraries.
+For this project, we created a full stack MERN web application called `Are We There Yet?` that plots and saves road trip itineraries based on users’ starting point and destination, including address, city, landmark, zip code, or airport code.
+
+It displays detailed directions and Road/Aerial/Streetside views of the best route map according to distance, time, and tolls. It also displays a list of local events for a searched city and fun road trip games as well as searchable Groupon deals. In addition, the app requires user authentication (Sign In/Sign Up), and it allows users to save their road trip itineraries.
 
 We created the app with HTML, CSS, JS, ReactJS, Material-UI, Bootstrap, 
-Reactstrap, Node, Express, MongoDB, Mongoose, and Sequelize. We used the Bing Maps API to plot road trip itineraries. The retrieved API data displays Road, Aerial and Streetside views of the best route according to distance, time, and tolls, and it provides detailed directions. Lastly, we deployed the app to Heroku.
+Reactstrap, Node, Express, MongoDB, Mongoose, and Sequelize. We used the Bing Maps API to plot road trip itineraries. The retrieved API data displays detailed directions and Road/Aerial/Streetside views of the best route map according to distance, time, and tolls. Lastly, we deployed the app to Heroku.
 
 ### Functionality
 
-The app features three pages:
+The app features four pages:
 
  * `Home` - the app home page
  
-    * The user is instructed to "Enter your travel destination." This page features `Starting Point` and `Destination` text fields and a `Submit` button.
+    * On this page, the user is instructed to "Enter your travel destination." This page features `Starting Point` and `Destination` text input fields and a `Submit` button.
 
- * `Trip` - this page displays the best route map and directions.
+ * `Trip` - this page displays the best route map and detailed directions.
 
-    * After the user enters their travel starting point and destination, they are taken to this page, which displays the best route map and directions.
+    * This page features `Starting Point` and `Destination` text input fields and a `Search` button.
 
- * `Events` - this page displays the list of local events for the travel destination (usually cities). There may also be a slight delay before the information is displayed.
+    * After the user enters their travel starting point and destination, they are redirected to this page, which displays the best route map and detailed directions.
 
- * `Sign in/Sign Up` - this window handles user authentication by allowing users to sign in/sign up.
+ * `Events` - this page displays a list of local events for a searched city.
  
-    * This window also allows users to save their travel itineraries.
+    * Note: There may also be a slight delay before this information is displayed.
+
+    * The user can also search for local events in other cities as well as search for `Groupon` deals.
+
+    * On the left-hand side of this page, there are ten clickable buttons for fun road trip games.
+
+ * `Recent Trips` - this page displays the table of the user's saved road trips.
+
+ * `Sign In/Sign Up` - this window handles user authentication by allowing users to sign up/sign in.
