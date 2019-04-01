@@ -1,0 +1,18 @@
+.containerForNoMatch{
+    background-image: url("./desert-landscape-with-cactus-sunset-background_43605-1150.jpg");
+    background-size: cover;
+    height: 550px
+   }
+   .fourOnefour{
+       font-size: 150px;
+       margin-top:15px;
+       text-shadow: 4px 4px #feed77;
+   }
+   .titleNot{
+       line-height: 4;
+   }
+   .notFoundButton{
+       /* width: 150px; */
+       background-color: orange;
+       color: black;
+   }

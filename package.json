@@ -9,8 +9,7 @@
     "start:dev": "concurrently \"nodemon --ignore 'app/*'\" \"yarn run app\"",
     "app": "cd app && yarn run start",
     "install": "cd app && yarn install",
-    "build": "cd app && yarn run build",
-    "heroku-postbuild": "yarn run build"
+    "build": "cd app && yarn run build"
   },
   "author": "",
   "license": "ISC",

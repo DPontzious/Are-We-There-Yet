@@ -11,8 +11,8 @@ class SignExpanded extends Component {
 	state = {
 		email: "",
 		password: "",
-		trips:"",
-		name:""
+		trips: "",
+		name: ""
 	}
 
 
@@ -55,23 +55,27 @@ class SignExpanded extends Component {
 						localStorage.setItem("token", data.token);
 						//new axios call to "/api/save" send req.body = {origin: ..., destination: ....}
 						var currentTrip = {
-							origin : localStorage.getItem("origin"),
-							destination : localStorage.getItem("destination"),
-							userId : localStorage.getItem("userId")
-						}
-						
-						if(currentTrip.origin != null && currentTrip.destination != null){
-							axios.post("/v1/api/save", currentTrip)
-							.then((data2) => {
-								this.setState({
-									origin: "",
-									destination: "",
-								})
-								
-							})
+							origin: localStorage.getItem("origin"),
+							destination: localStorage.getItem("destination"),
+							userId: localStorage.getItem("userId")
 						}
 
-				
+						if (currentTrip.origin != null && currentTrip.destination != null) {
+							axios.post("/v1/api/save", currentTrip)
+								.then((data2) => {
+									this.setState({
+										origin: "",
+										destination: "",
+									})
+
+								})
+						}
+
+
+
+
+						console.log(this.props)
+						console.log(this)
 						let path = `/`;
 						this.props.history.push(path);
 					} else {

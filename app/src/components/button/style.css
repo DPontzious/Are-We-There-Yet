@@ -11,4 +11,12 @@
     position: relative;
     width: 75px;
     height: 40px;
+    /* top: 0px; */
+    /* left: 150px; */
+    /* width: 75px; */
+}
+#notFoundButton{
+       width: 150px;
+       background-color: orange;
+       color: black;
 }

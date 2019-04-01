@@ -40,10 +40,11 @@ class Example extends Component {
   }
 
 
-  
+
+
   render() {
-    
-  return (
+
+    return (
       <div>
         <Navbar style={{ backgroundColor: "#f5f5f5" }} light expand="md">
           <NavbarBrand href="/">Welcome {this.state.user}</NavbarBrand>
@@ -67,7 +68,7 @@ class Example extends Component {
               </NavItem>
             </Nav>
           </Collapse>
-          
+
         </Navbar>
       </div>
     );
