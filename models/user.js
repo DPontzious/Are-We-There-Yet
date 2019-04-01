@@ -3,8 +3,10 @@ const Schema = mongoose.Schema;
 const bcrypt = require("bcryptjs");
 
 const UserSchema = new Schema({
+  name: String,
   email: { type: String, required: true, lowercase: true },
-  password: String
+  password: String,
+  trips: { type: Array, required: true, lowercase: true },
 });
 
 // On save hook, encrypt password

@@ -1,31 +1,34 @@
-# Create React Express App
+# PROJECT 3: Are We There Yet?
 
-## About This Boilerplate
+### Project Collaborators:
 
-This setup allows for a Node/Express/React app which can be easily deployed to Heroku.
+* Danelle Pontzious
+* Daniel Mata
+* Tanner Galloway
+* Brian Hopkins 
 
-The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
+### Overview
 
-## Starting the app locally
+For this project, we created a web application called `Are We There Yet?` that plots and saves road trip itineraries based on users’ point of origin and destination, including address, city, landmark, zip code, or airport code.
+It displays Road, Aerial, and Streetside views of the best route as well as a list of local events for the travel destination. It also requires user authentication (Sign in/Sign Up), and it allows users to save their travel itineraries.
 
-Start by installing front and backend dependencies. While in this directory, run the following command:
+We created the app with HTML, CSS, JS, ReactJS, Material-UI, Bootstrap, 
+Reactstrap, Node, Express, MongoDB, Mongoose, and Sequelize. We used the Bing Maps API to plot road trip itineraries. The retrieved API data displays Road, Aerial and Streetside views of the best route according to distance, time, and tolls, and it provides detailed directions. Lastly, we deployed the app to Heroku.
 
-```
-npm install
-```
+### Functionality
 
-This should install node modules within the server and the app folder.
+The app features three pages:
 
-After both installations complete, run the following command in your terminal:
+ * `Home` - the app home page
+ 
+    * The user is instructed to "Enter your travel destination." This page features `Starting Point` and `Destination` text fields and a `Submit` button.
 
-```
-npm start
-```
+ * `Trip` - this page displays the best route map and directions.
 
-Your app should now be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the app.
+    * After the user enters their travel starting point and destination, they are taken to this page, which displays the best route map and directions.
 
-## Deployment (Heroku)
+ * `Events` - this page displays the list of local events for the travel destination (usually cities). There may also be a slight delay before the information is displayed.
 
-To deploy, simply add and commit your changes, and push to Heroku. As is, the NPM scripts should take care of the rest.
-
-This is cool
+ * `Sign in/Sign Up` - this window handles user authentication by allowing users to sign in/sign up.
+ 
+    * This window also allows users to save their travel itineraries.
