@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./style.css"
-import { Button, Row, Col } from 'reactstrap';
+import { Button, Row} from 'reactstrap';
 import axios from 'axios';
 
 
@@ -17,7 +17,7 @@ class Main extends Component {
     }
     routeChange() {
         if (this.state.origin === "" || this.state.destination === "") {
-            return alert("Please Enter a Starting Point or Destination");
+            return alert("Please Enter a Starting Point and Destination");
         }
 
 
@@ -33,7 +33,6 @@ class Main extends Component {
         if(currentTrip.origin != null && currentTrip.destination != null){
             axios.post("/v1/api/save", currentTrip)
             .then((data2) => {
-                console.log(data2);
                 this.setState({
                     origin: "",
                     destination: "",
@@ -41,8 +40,6 @@ class Main extends Component {
                 
             })
         }
-
-
         let path = `/trip`;
         this.props.history.push(path);
     }
@@ -59,9 +56,9 @@ class Main extends Component {
             <main>
                 <div className="container">
                     <Row className="homeHead">
-                        <h3 className="title">Enter your travel destination.</h3>
+                        <h3 className="title">Enter your travel information</h3>
                     </Row>
-                    <Row className="test">
+                    <Row className="originRow">
                         <input
                             type="text"
                             name="origin"
@@ -69,34 +66,19 @@ class Main extends Component {
                             value={this.state.origin}
                             id="mapFormOrigin"
                             placeholder="Starting Point" />
-                        {/* <Input
-                            type="text"
-                            name="text"
-                            id="topInput"
-                            placeholder="starting point" /> */}
                     </Row>
                     <Row>
-                        {/* <Input
-                            type="text"
-                            name="text"
-                            id="bottomInput"
-                            placeholder="destination" /> */}
-
                         <input
                             type="text"
                             name="destination"
                             onChange={(e) => this.handleInputChange(e)}
                             value={this.state.destination}
                             id="mapFormDestination"
-                            placeholder="Destination" />
+                            placeholder="Destination"/>
                     </Row>
 
                     <Row>
-                        <Button color="info" id="main"
-                            onClick={this.routeChange}
-                        >
-                            Submit
-                        </Button>
+                        <Button color="info" id="mainButton"onClick={this.routeChange}>Submit</Button>
                     </Row>
 
                 </div>

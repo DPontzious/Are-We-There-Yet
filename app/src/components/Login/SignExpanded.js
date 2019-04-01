@@ -8,19 +8,6 @@ import axios from 'axios';
 
 class SignExpanded extends Component {
 
-	// constructor(props) {
-	// 	super(props)
-	// 	this.routeChange = this.routeChange.bind(this);
-	// }
-
-	// routeChange() {
-	// 	let path = `/trip`;
-	// 	this.props.history.push(path);
-	// 	// localStorage.setItem("email", this.state.email)
-	// 	// localStorage.setItem("password", this.state.password);
-	// 	console.log(this.state)
-	// }
-
 	state = {
 		email: "",
 		password: "",
@@ -59,8 +46,6 @@ class SignExpanded extends Component {
 			//axios /v1/signin
 			axios.post("/v1/signin", userInfo)
 				.then(({ data }) => {
-					console.log(data);
-
 					localStorage.setItem("userId" , data.userId);
 					localStorage.getItem("name", data.name);
 
@@ -74,12 +59,10 @@ class SignExpanded extends Component {
 							destination : localStorage.getItem("destination"),
 							userId : localStorage.getItem("userId")
 						}
-						console.log(currentTrip);
 						
 						if(currentTrip.origin != null && currentTrip.destination != null){
 							axios.post("/v1/api/save", currentTrip)
 							.then((data2) => {
-								console.log(data2);
 								this.setState({
 									origin: "",
 									destination: "",
@@ -110,7 +93,6 @@ class SignExpanded extends Component {
 			//axios /v1/signup
 			axios.post("/v1/signup", userInfo)
 				.then(({ data }) => {
-					console.log(data);
 					this.setState({
 						name: "",
 						email: "",

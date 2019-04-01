@@ -1,6 +1,49 @@
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    #cityInput{
+        width: 75px;
+    }
+    
+     .GameInfo{
+        width: 120px;
+    } 
+
+    .card{
+        width: 120px;
+    }
+} 
+
+@media only screen and (min-width: 600px) {
+     .GameInfo{
+        width: 200px;
+    } 
+
+    .card{
+        position: relative;
+        left: 142px;
+        width: 200px;
+    }
+}
+
 .topRow{
     margin-top:15px;
 }
+
 .back{
-background-color: gray;
+    background-color: gray;
+    color: white;
+}
+
+#searchInstructions{
+    color: white;
+}
+
+#eventButton{
+    position: relative;
+    width: 75px;
+    height: 40px;
+}
+
+.color{
+    color: white;
 }

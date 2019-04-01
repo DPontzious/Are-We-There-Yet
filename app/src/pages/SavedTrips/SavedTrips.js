@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import { ReactBingmaps } from "react-bingmaps";
 import axios from "axios";
-import { Button, Row, Col } from 'reactstrap';
+import { Button } from 'reactstrap';
 import "./style.css";
 
 class SavedTrips extends Component {
@@ -18,7 +17,6 @@ class SavedTrips extends Component {
 
         axios.get("/v1/api/save/" + localStorage.getItem("userId"))
             .then((resp) =>{
-                console.log(resp, "yayayayya")
                 this.setState({ trips: resp.data })
             })
     }

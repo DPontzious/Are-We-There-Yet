@@ -8,7 +8,6 @@ import Events from "./pages/Events/index"
 import Jumbo from "./components/Jumbo/index"
 import Register from "./pages/Register/Register"
 import SignExpanded from "./components/Login/SignExpanded"
-import Save from "./components/Login/SignExpanded"
 import SavedTrips from "./pages/SavedTrips/SavedTrips"
 
 
@@ -21,13 +20,15 @@ function App() {
             <Nav />
             <Switch>
                 <Route exact path="/" component={Main} />
-                <Route exact path="/event" component={Events} />
+                <Route exact path="/events" component={Events} />
                 <Route exact path="/trip" component={Trip} />
                 <Route exact path="/register" component={Register} />
                 <Route exact path="/savedTrips" component={SavedTrips} />
                 <Route exact path="/" component={SignExpanded} />
                 <Route component={NoMatch} />
+
             </Switch>
+
         </Router >
     );
 }

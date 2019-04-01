@@ -3,54 +3,66 @@ import axios from "axios";
 import { Button, Row, Col } from "reactstrap"
 import Toogle1 from "../../components/Toggle/index"
 import "./style.css";
-import Input from "../../components/Forms/Input"
 
 class Events extends Component {
     state = {
-        searchEvents: '',
-        resultEvent: []
+        searchEvents: "",
+        resultEvent: [],
+        locationTitle: "",
+        loading: ""
     }
+
     handleInputChange = event => {
         const { name, value } = event.target;
         this.setState({
             [name]: value
         });
     }
+
     handleFormSubmit = () => {
+        this.setState({loading: "loading..."});
+        this.setState({resultEvent:[]});
         axios.post("/v1/events", { location: this.state.searchEvents })
             .then(res => {
-                // console.log(res.data, "data");
+                this.setState({loading: ""});
                 this.setState({ resultEvent: res.data.events.event });
             })
             .catch(err => console.log(err))
+            this.setState({locationTitle: "List of events in " + this.state.searchEvents});
     };
+
     componentDidMount() {
-        console.log("helllooooo!")
-        // var destinationVar = localStorage.getItem("destination");
-        //testing
-        // destinationVar = "Seattle,WA";
-        axios.post("v1/events", { location: localStorage.getItem("destination") })
+        if(localStorage.getItem("destination") !== null)
+        {
+            this.setState({loading: "loading..."});
+            axios.post("v1/events", { location: localStorage.getItem("destination") })
             .then(res => {
-                // console.log(res.data.events.event, "data");
+                this.setState({loading: ""});
                 this.setState({ resultEvent: res.data.events.event });
             })
             .catch(err => console.log(err))
+            this.setState({locationTitle: "List of events in " + localStorage.getItem("destination")}); 
+        }
+        else{
+            this.setState({locationTitle: "No City Searched"});
+        }
+             
     }
+
     render() {
         return (
             <Row className="topRow">
-                <Col xs="1" />
-                <Col xs="2" >
-                    Click a button for fun road trip games.
+                <Col xs="4" >
+                    <p className="color">Click a button for fun road trip games.</p>
                     <Toogle1
                         gameName={"Categories"}
                         rules={"One person picks a category (ex: Britney Spear’s songs, NFL teams, flavors of La Croix) and everyone takes turns naming something in that category until someone (the loser) is stumped."} />
                     <Toogle1
                         gameName={"Alphabet"}
-                        rules={". Take turns going through the alphabet. Each player must find the next letter either on something in the car (like the stereo screen) or license plates, or road signs."} />
+                        rules={"Take turns going through the alphabet. Each player must find the next letter either on something in the car (like the stereo screen) or license plates, or road signs."} />
                     <Toogle1
                         gameName={"Guess the song"}
-                        rules={" Turn the radio on or put your Spotify/CD player on shuffle. Whoever can shout out the name of the song first, wins. (Be sure to cover you your radio screen if it says the song names as they play)."} />
+                        rules={"Turn the radio on or put your Spotify/CD player on shuffle. Whoever can shout out the name of the song first, wins. (Be sure to cover you your radio screen if it says the song names as they play)."} />
                     <Toogle1
                         gameName={"Truth or Car"}
                         rules={"A game of truth or dare where all the dares must be something that can be accomplished (safely) in the car."} />
@@ -73,27 +85,31 @@ class Events extends Component {
                         gameName={"Would You Rather"}
                         rules={"Play an epic game of Would You Rather. Try to stump the other person with the weirdest or most difficult questions you can come up with (or find online)."} />
                 </Col>
-                <Col xs="6" className="back">
-                    <h5>List of Events in the City you searched</h5>
+                <Col className="back">
+                    <h4>{this.state.locationTitle}</h4>
+                    <h5>{this.state.loading}</h5>
                     {this.state.resultEvent.map((event, key) =>
                         <li key={event.id}>{event.title}{event.description}{event.venue_address}</li>
-                    )
-                    }
+                    )}
                 </Col>
                 <Col xs="3" >
-                    Search other cities for more events!
-                        <input
-                        // type="text"
-                        name="searchEvents"
-                        onChange={(e) => this.handleInputChange(e)}
-                        value={this.state.searchEvents}
-                    // handleFormSubmit={this.handleFormSubmit}
-                    />
-                    <Button
-                        id="eventButton"
-                        onClick={(e) => this.handleFormSubmit(e)}>
-                        Clicky Clicky
-                    </Button>
+                <Row>
+                    <Col>
+                        <Row className="color">
+                            Search other cities for more events!
+                            <input
+                            id="cityInput"
+                            name="searchEvents"
+                            onChange={(e) => this.handleInputChange(e)}
+                            value={this.state.searchEvents}/>
+                        </Row>
+                        <br></br>
+                            <Row>
+                                <Button color="info" id="eventButton" onClick={(e) => this.handleFormSubmit(e)}>Search</Button>
+                            </Row>
+                    </Col>
+                </Row>
+
                 </Col>
             </Row >
 
