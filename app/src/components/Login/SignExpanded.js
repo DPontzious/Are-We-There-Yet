@@ -4,15 +4,28 @@ import '../../pages/Register/Login.css';
 import { Motion, spring } from 'react-motion';
 import Input from './input';
 import SubmitButton from './SubmitButton';
-// import API from "../../utils/API";
 import axios from 'axios';
 
 class SignExpanded extends Component {
 
+	// constructor(props) {
+	// 	super(props)
+	// 	this.routeChange = this.routeChange.bind(this);
+	// }
+
+	// routeChange() {
+	// 	let path = `/trip`;
+	// 	this.props.history.push(path);
+	// 	// localStorage.setItem("email", this.state.email)
+	// 	// localStorage.setItem("password", this.state.password);
+	// 	console.log(this.state)
+	// }
 
 	state = {
 		email: "",
-		password: ""
+		password: "",
+		trips:"",
+		name:""
 	}
 
 
@@ -38,6 +51,8 @@ class SignExpanded extends Component {
 		//send signIn call to server
 		if (this.props.type === 'signIn') {
 			let userInfo = {
+				name: this.state.name,
+				trips: this.state.trips,
 				email: this.state.email,
 				password: this.state.password
 			}
@@ -45,16 +60,48 @@ class SignExpanded extends Component {
 			axios.post("/v1/signin", userInfo)
 				.then(({ data }) => {
 					console.log(data);
-					this.setState({
-						email: "",
-						password: ""
-					})
+
+					localStorage.setItem("userId" , data.userId);
+					localStorage.getItem("name", data.name);
+
+
+					if (data.token !== null) {
+						//set token in local storage
+						localStorage.setItem("token", data.token);
+						//new axios call to "/api/save" send req.body = {origin: ..., destination: ....}
+						var currentTrip = {
+							origin : localStorage.getItem("origin"),
+							destination : localStorage.getItem("destination"),
+							userId : localStorage.getItem("userId"),
+							name : localStorage.getItem("name")
+						}
+						axios.post("/v1/api/save", currentTrip)
+							.then(({ data }) => {
+								console.log(data);
+								this.setState({
+									origin: "",
+									destination: "",
+								})
+
+							})
+
+						console.log(this.props)
+						console.log(this)
+						let path = `/savedTrips`;
+						this.props.history.push(path);
+					} else {
+						alert("Bad signin. Try again!");
+					}
+
+
 				})
 				.catch(err => console.log(err));
 		}
 		//send signUp call to server
 		if (this.props.type === 'signUp') {
 			let userInfo = {
+				// naƒ
+				name: this.state.name,
 				email: this.state.email,
 				password: this.state.password
 			}
@@ -63,6 +110,7 @@ class SignExpanded extends Component {
 				.then(({ data }) => {
 					console.log(data);
 					this.setState({
+						name: "",
 						email: "",
 						password: ""
 					})
@@ -73,10 +121,6 @@ class SignExpanded extends Component {
 						console.log(
 							"not working")
 					}
-					//if token
-					// use react router to redirect
-					//else
-					//alert
 
 				})
 				.catch(err => console.log(err));
@@ -105,6 +149,13 @@ class SignExpanded extends Component {
 								}}>
 									<h2>{this.props.type === 'signIn' ? 'SIGN IN' : 'SIGN UP'}</h2>
 									<Input
+										id="name"
+										type="text"
+										name="name"
+										value={this.state.name}
+										onChange={this.handleInputChange}
+										placeholder="NAME" />
+									<Input
 										id="email"
 										type="text"
 										name="email"
@@ -121,7 +172,6 @@ class SignExpanded extends Component {
 									<SubmitButton type={this.props.type} clickListenerFn={this.handleSubmit}></SubmitButton>
 									<a href="url" className='forgotPass'>{this.props.type === 'signIn'}</a>
 									<a href="url" className='forgotPass'>{this.props.type === 'signUp'}</a>
-
 								</form>
 							}
 						</Motion>
@@ -129,6 +179,7 @@ class SignExpanded extends Component {
 				}
 			</Motion>
 		);
+
 	}
 
 }

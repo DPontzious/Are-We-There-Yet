@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {
   Collapse,
   Navbar,
@@ -8,8 +8,13 @@ import {
   NavItem,
   NavLink,
 } from 'reactstrap';
+import axios from "axios";
 
-export default class Example extends React.Component {
+class Example extends Component {
+
+  state = {
+    trips: []
+}
   constructor(props) {
     super(props);
 
@@ -22,12 +27,18 @@ export default class Example extends React.Component {
     this.setState({
       isOpen: !this.state.isOpen
     });
+
   }
+  
+
+
+  
   render() {
-    return (
+    
+  return (
       <div>
         <Navbar style={{ backgroundColor: "#f5f5f5" }} light expand="md">
-          <NavbarBrand href="/">Welcome</NavbarBrand>
+          <NavbarBrand href="/">Welcome,</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
@@ -41,12 +52,18 @@ export default class Example extends React.Component {
                 <NavLink href="/events">Events</NavLink>
               </NavItem>
               <NavItem>
+                {localStorage.getItem("token") ? <NavLink href="/savedTrips">Recent Trips</NavLink> : null}
+              </NavItem>
+              <NavItem>
                 <NavLink href="register">Sign in/ Sign Up</NavLink>
               </NavItem>
             </Nav>
           </Collapse>
+          
         </Navbar>
       </div>
     );
   }
 }
+
+export default Example;
