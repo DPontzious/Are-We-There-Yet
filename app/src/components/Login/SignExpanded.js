@@ -24,8 +24,8 @@ class SignExpanded extends Component {
 	state = {
 		email: "",
 		password: "",
-		trips:"",
-		name:""
+		trips: "",
+		name: ""
 	}
 
 
@@ -61,7 +61,7 @@ class SignExpanded extends Component {
 				.then(({ data }) => {
 					console.log(data);
 
-					localStorage.setItem("userId" , data.userId);
+					localStorage.setItem("userId", data.userId);
 					localStorage.getItem("name", data.name);
 
 
@@ -70,10 +70,10 @@ class SignExpanded extends Component {
 						localStorage.setItem("token", data.token);
 						//new axios call to "/api/save" send req.body = {origin: ..., destination: ....}
 						var currentTrip = {
-							origin : localStorage.getItem("origin"),
-							destination : localStorage.getItem("destination"),
-							userId : localStorage.getItem("userId"),
-							name : localStorage.getItem("name")
+							origin: localStorage.getItem("origin"),
+							destination: localStorage.getItem("destination"),
+							userId: localStorage.getItem("userId"),
+							name: localStorage.getItem("name")
 						}
 						axios.post("/v1/api/save", currentTrip)
 							.then(({ data }) => {
@@ -87,7 +87,7 @@ class SignExpanded extends Component {
 
 						console.log(this.props)
 						console.log(this)
-						let path = `/savedTrips`;
+						let path = `/`;
 						this.props.history.push(path);
 					} else {
 						alert("Bad signin. Try again!");

@@ -1,3 +1,7 @@
 .savedTripsContainer{
     background-color: white
 }
+.hotelPhoto{
+    height: 200px;
+    width: 200px;
+}

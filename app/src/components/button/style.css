@@ -15,3 +15,8 @@
     /* left: 150px; */
     /* width: 75px; */
 }
+#notFoundButton{
+       width: 150px;
+       background-color: orange;
+       color: black;
+}

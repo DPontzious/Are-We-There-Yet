@@ -1,17 +1,24 @@
 import React from "react";
-import { withState } from "recompose";
+// import { withState } from "recompose";
+import { Row, Container, Button } from 'reactstrap';
+import "./style.css"
 
 function NoMatch() {
-    const h1Style = {
-        color: "white"
-      };
-    
-  return (
+    return (
+        <Container>
+            <div className="containerForNoMatch">
+                <Row>
+                    <h1 className="fourOnefour">404</h1>
+                </Row>
+                <Row>
+                    <h1 className="titleNot">Looks like you took a wrong turn.</h1>
+                </Row>
+                <Row>
+                    < button id="notFoundButton"> < a href="/" >Get Directions</a></button>
+                </Row>
+            </div>
+        </Container >
 
-
-        <div>
-            <h1 style={h1Style}>404 This Page was not Found</h1>
-        </div>
 
     )
 }
