@@ -16,9 +16,7 @@ class Register extends Component {
 
 	componentDidMount() {
 		this.setState({ mounted: true });
-		// localStorage.setItem("email", this.state.email)
-		// localStorage.setItem("password", this.state.password);
-		console.log("fired")
+	
 	}
 
 	handleSubmit = (e) => {

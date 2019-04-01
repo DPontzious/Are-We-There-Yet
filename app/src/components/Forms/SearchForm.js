@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import CarDetail from "../../pages/Gas/CarDetails";
-import Search from "../../pages/Gas";
+import Input from "../Forms/index";
 import axios from "axios"
 class Events extends Component {
     state = {
         searchEvents: '',
-        result: []
+        result: [],
+        location: ""
     }
     handleInputChange = event => {
         const { name, value } = event.target;
@@ -16,44 +17,8 @@ class Events extends Component {
     };
     handleFormSubmit = event => {
         event.preventDefault();
-        var query = "http://api.eventful.com/json/events/search?&app_key=xrgnP4GQZxFmGt2n&keywords=books&location=San+Diego&date=Future"
-        axios.get(query)
-            .then(res => {
-                console.log(res.data);
-                this.setState({ results: res.data });
-            })
-            .catch(err => console.log(err))
-    }
-    // class SearchMPG extends Component {
-    //     state = {
-    //         search: "",
-    //         result: []
-    //     }
-    //     componentDidMount() {
-    //         API.getEvent()
-    //             .then(res => this.setState(
-    //                 { result: res.data }))
-    //             .catch(err => console.log(err))
-    //         console.log(this.state.result)
-    //     }
-    //     handleInputChange = event => {
-    //         this.setState({ search: event.target.value });
-    //     };
 
-    // searchCar = carId => {
-    //     API.getMPG(carId)
-    //         .then(res => this.setState({ result: res.data.message }))
-    //         .catch(err => console.log(err));
-    // };
-    // searchCar = () => {
-    //     API.getMPG
-    //         .then(res => this.setState({ result: res.data }))
-    //         .catch(err => console.log(err));
-    // }
-    // handleFormSubmit = event => {
-    //     event.preventDefault();
-    //     this.searchCar(this.state);
-    // };
+    }
     render() {
         return (
             <div className="container">
@@ -70,15 +35,15 @@ class Events extends Component {
                                 )}
                         </div>
                     </div>
-                    {/* <div className="col-md-4">
-                        <div className="card">
-                            <Search
-                                value={this.state.search}
-                                handleInputChange={this.handleInputChange}
-                                handleFormSubmit={this.handleFormSubmit}
-                            />
-                        </div>
-                    </div> */}
+                    <Input
+                        name="loaction"
+                        value={this.state.location}
+                        handleInputChange={this.handleInputChange}
+                        handleFormSubmit={this.handleFormSubmit}
+                    />
+                    <Button>
+                        onClick={this.handleFormSubmit}
+                    </Button>
                 </div>
             </div >
         );

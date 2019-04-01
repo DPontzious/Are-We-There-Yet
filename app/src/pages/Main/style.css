@@ -22,6 +22,14 @@ Input{
 {
     position: relative;
     top: 25px;
-    left: 123px;
+    left: 300px;
     width: 75px;
+}
+.test{
+  margin-top: 100px;
+  margin-bottom: 85px;
+}
+input{
+width:60%;
+border-radius: 10px;
 }
