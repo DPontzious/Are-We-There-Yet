@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./style.css"
-import { Button, Row, Col } from 'reactstrap';
+import { Button, Row, } from 'reactstrap';
 
 
 class Main extends Component {
@@ -53,7 +53,7 @@ class Main extends Component {
                             id="topInput"
                             placeholder="starting point" /> */}
                     </Row>
-                    <Row>
+                    <Row className="test1">
                         {/* <Input
                             type="text"
                             name="text"
