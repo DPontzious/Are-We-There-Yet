@@ -32,6 +32,7 @@
 .back{
     background-color: gray;
     color: white;
+    overflow-y: scroll;
 }
 
 #searchInstructions{
@@ -42,8 +43,12 @@
     position: relative;
     width: 75px;
     height: 40px;
+    margin-bottom: 15px;
 }
 
 .color{
     color: white;
+}
+#cityInput{
+    margin-bottom: 5px;
 }

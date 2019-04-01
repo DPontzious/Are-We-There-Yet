@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import '../../pages/Register/Login.css';
 import { Motion, spring } from 'react-motion';
-import Input from './input';
+import Input from './Input';
 import SubmitButton from './SubmitButton';
 import axios from 'axios';
 

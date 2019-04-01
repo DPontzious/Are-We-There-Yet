@@ -20,39 +20,41 @@ class Events extends Component {
     }
 
     handleFormSubmit = () => {
-        this.setState({loading: "loading..."});
-        this.setState({resultEvent:[]});
+        this.setState({ loading: "loading..." });
+        this.setState({ resultEvent: [] });
         axios.post("/v1/events", { location: this.state.searchEvents })
             .then(res => {
-                this.setState({loading: ""});
+                this.setState({ loading: "" });
                 this.setState({ resultEvent: res.data.events.event });
             })
             .catch(err => console.log(err))
-            this.setState({locationTitle: "List of events in " + this.state.searchEvents});
+        this.setState({ locationTitle: "List of events in " + this.state.searchEvents });
     };
 
     componentDidMount() {
-        if(localStorage.getItem("destination") !== null)
-        {
-            this.setState({loading: "loading..."});
+        if (localStorage.getItem("destination") !== null) {
+            this.setState({ loading: "loading..." });
             axios.post("v1/events", { location: localStorage.getItem("destination") })
-            .then(res => {
-                this.setState({loading: ""});
-                this.setState({ resultEvent: res.data.events.event });
-            })
-            .catch(err => console.log(err))
-            this.setState({locationTitle: "List of events in " + localStorage.getItem("destination")}); 
+                .then(res => {
+                    this.setState({ loading: "" });
+                    this.setState({ resultEvent: res.data.events.event });
+                })
+                .catch(err => console.log(err))
+            this.setState({ locationTitle: "List of events in " + localStorage.getItem("destination") });
         }
-        else{
-            this.setState({locationTitle: "No City Searched"});
+        else {
+            this.setState({ locationTitle: "No City Searched" });
         }
-             
-    }
 
+
+    }
+    handleClick() {
+        window.location.assign('http://groupon.com');
+    }
     render() {
         return (
             <Row className="topRow">
-                <Col xs="4" >
+                <Col xs="3" >
                     <p className="color">Click a button for fun road trip games.</p>
                     <Toogle1
                         gameName={"Categories"}
@@ -93,22 +95,22 @@ class Events extends Component {
                     )}
                 </Col>
                 <Col xs="3" >
-                <Row>
-                    <Col>
-                        <Row className="color">
-                            Search other cities for more events!
+                    <Row>
+                        <Col>
+                            <Row className="color">
+                                Search other cities for more events!
                             <input
-                            id="cityInput"
-                            name="searchEvents"
-                            onChange={(e) => this.handleInputChange(e)}
-                            value={this.state.searchEvents}/>
-                        </Row>
-                        <br></br>
+                                    id="cityInput"
+                                    name="searchEvents"
+                                    onChange={(e) => this.handleInputChange(e)}
+                                    value={this.state.searchEvents} />
+                            </Row>
                             <Row>
                                 <Button color="info" id="eventButton" onClick={(e) => this.handleFormSubmit(e)}>Search</Button>
                             </Row>
-                    </Col>
-                </Row>
+                            <Button onClick={this.handleClick.bind(this)}>Click here for deals!</Button>
+                        </Col>
+                    </Row>
 
                 </Col>
             </Row >
