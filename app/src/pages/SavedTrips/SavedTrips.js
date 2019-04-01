@@ -49,27 +49,17 @@ class SavedTrips extends Component {
                                                 <Button>
                                                     View Trip
                                     </Button>
-<<<<<<< HEAD
-                                    
-                                </td>
-                                <td>
-                                    <Button>
-                                        Delete Trip
+
+                                            </td>
+                                            <td>
+                                                <Button>
+                                                    Delete Trip
                                     </Button>
-                                    
-                                </td>
-                            </tr>
-                        )
-                    })}
-                    </tbody>
-                </table>
-            </div>
-=======
+
                                             </td>
                                         </tr>
                                     )
-                                })
-                            }
+                                })}
                         </Col >
                         <Col xs="3">
                             <h1> Helpful Link </h1>
@@ -85,7 +75,6 @@ class SavedTrips extends Component {
                     </Row >
                 </Container >
             </div >
->>>>>>> 93154b3e07bdb3630b65483f4c734fe4d1ffd7e8
         )
     }
 };
