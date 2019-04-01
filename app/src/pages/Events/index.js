@@ -37,7 +37,7 @@ class Events extends Component {
     };
     handleClick() {
         // do something meaningful, Promises, if/else, whatever, and then
-        window.location.assign('http://google.com');
+        window.location.assign('http://groupon.com');
     }
 
 
