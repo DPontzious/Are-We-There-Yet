@@ -72,22 +72,24 @@ class SignExpanded extends Component {
 						var currentTrip = {
 							origin : localStorage.getItem("origin"),
 							destination : localStorage.getItem("destination"),
-							userId : localStorage.getItem("userId"),
-							name : localStorage.getItem("name")
+							userId : localStorage.getItem("userId")
 						}
-						axios.post("/v1/api/save", currentTrip)
-							.then(({ data }) => {
-								console.log(data);
+						console.log(currentTrip);
+						
+						if(currentTrip.origin != null && currentTrip.destination != null){
+							axios.post("/v1/api/save", currentTrip)
+							.then((data2) => {
+								console.log(data2);
 								this.setState({
 									origin: "",
 									destination: "",
 								})
-
+								
 							})
+						}
 
-						console.log(this.props)
-						console.log(this)
-						let path = `/savedTrips`;
+				
+						let path = `/`;
 						this.props.history.push(path);
 					} else {
 						alert("Bad signin. Try again!");

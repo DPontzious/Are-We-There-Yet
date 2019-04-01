@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./style.css"
 import { Button, Row, Col } from 'reactstrap';
+import axios from 'axios';
 
 
 class Main extends Component {
@@ -19,8 +20,29 @@ class Main extends Component {
             return alert("Please Enter a Starting Point or Destination");
         }
 
+
         localStorage.setItem("origin", this.state.origin);
         localStorage.setItem("destination", this.state.destination);
+
+        var currentTrip = {
+            origin : localStorage.getItem("origin"),
+            destination : localStorage.getItem("destination"),
+            userId : localStorage.getItem("userId")
+        }
+        
+        if(currentTrip.origin != null && currentTrip.destination != null){
+            axios.post("/v1/api/save", currentTrip)
+            .then((data2) => {
+                console.log(data2);
+                this.setState({
+                    origin: "",
+                    destination: "",
+                })
+                
+            })
+        }
+
+
         let path = `/trip`;
         this.props.history.push(path);
     }

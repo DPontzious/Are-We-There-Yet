@@ -37,21 +37,22 @@ class SavedTrips extends Component {
                     <tbody>
 
                     {this.state.trips.map((tripObj, tripInd) => {
+                        const dataArray = tripObj.split(":");
                         return (
                             <tr>
                                 <td>
                                     {tripInd + 1}
                                 </td>
                                 <td>
-                                    {tripObj.origin}
+                                    {dataArray[0]}
                                 </td>
                                 <td>
-                                    {tripObj.destination}
+                                    {dataArray[1]}
                                 </td>
                                 <td>
-                                    <button>
+                                    <Button>
                                         View Trip
-                                    </button>
+                                    </Button>
                                 </td>
                             </tr>
                         )

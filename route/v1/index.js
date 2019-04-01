@@ -28,6 +28,7 @@ router.post("/signin", requireSignin, function (req, res) {
   db.User.findOne({ email : req.body.email}).then(dbUser=>{
     //check if user exists
     console.log(dbUser)
+    // localStorage.setItem("name", dbUser.name);
     if(dbUser === null){
       res.status(400).send("BAD LOG IN, UNAUTHORIZED");
     }else{
@@ -86,6 +87,7 @@ router.post("/events", function (req, res) {
 })
 
 //DO #2
+
 router.post("/api/save", function (req, res) {
   console.log(req.body)
   //mongoose findOneAndUpdate({$push {origin: req.body.origin, destination: req.body.destination}})
@@ -93,15 +95,9 @@ router.post("/api/save", function (req, res) {
     { _id: req.body.userId },
     {
       $push: {
-        trip: {
-          origin: req.body.origin,
-          destination: req.body.destination
-        },
-        user: { name: req.body.name}
-        
+        trips: req.body.origin + ":" + req.body.destination
       }
-    },
-    function (err, doc) {
+    }).then(function (doc, err) {
       if (err) {
         console.log("Something wrong when updating data!");
       }
@@ -109,6 +105,7 @@ router.post("/api/save", function (req, res) {
       res.json(doc);
     });
 })
+
 
 //DO #3
 router.get("/api/save/:id", function (req, res) {

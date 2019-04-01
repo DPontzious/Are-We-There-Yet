@@ -12,6 +12,7 @@ class Trip extends Component {
         origin: "",
         directions: {}
     }
+
     componentDidMount = () => {
         this.setState({ origin: localStorage.getItem('origin'), destination: localStorage.getItem('destination') }, () => this.queryMap());
     }
