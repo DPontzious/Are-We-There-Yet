@@ -27,10 +27,10 @@ router.post("/signin", requireSignin, function (req, res) {
 
   //check if user exists
   db.User.findOne({ email : req.body.email}).then(dbUser=>{
-    // localStorage.setItem("name", dbUser.name);
     if(dbUser === null){
       res.status(400).send("BAD LOG IN, UNAUTHORIZED");
     }else{
+     
       res.json({ 
         userId : dbUser._id,
         token: tokenizer(req.user),

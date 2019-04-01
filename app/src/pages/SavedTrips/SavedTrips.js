@@ -51,6 +51,13 @@ class SavedTrips extends Component {
                                     <Button>
                                         View Trip
                                     </Button>
+                                    
+                                </td>
+                                <td>
+                                    <Button>
+                                        Delete Trip
+                                    </Button>
+                                    
                                 </td>
                             </tr>
                         )

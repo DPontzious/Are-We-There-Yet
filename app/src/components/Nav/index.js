@@ -12,8 +12,10 @@ import {
 class Example extends Component {
 
   state = {
-    trips: []
+    trips: [],
+    user: ''
 }
+
   constructor(props) {
     super(props);
 
@@ -28,7 +30,14 @@ class Example extends Component {
     });
 
   }
-  
+  componentWillMount(){
+    if(localStorage.getItem("name") !== null){
+      this.setState({user: localStorage.getItem("name")+ "!"})
+    }
+    else{
+      this.setState({user: ""})
+    }
+  }
 
 
   
@@ -37,7 +46,7 @@ class Example extends Component {
   return (
       <div>
         <Navbar style={{ backgroundColor: "#f5f5f5" }} light expand="md">
-          <NavbarBrand href="/">Welcome,</NavbarBrand>
+          <NavbarBrand href="/">Welcome {this.state.user}</NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>

@@ -47,7 +47,7 @@ class SignExpanded extends Component {
 			axios.post("/v1/signin", userInfo)
 				.then(({ data }) => {
 					localStorage.setItem("userId" , data.userId);
-					localStorage.getItem("name", data.name);
+					localStorage.setItem("name", data.name);
 
 
 					if (data.token !== null) {
