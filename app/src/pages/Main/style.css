@@ -1,42 +1,100 @@
 main{
-    background-image: url("../../components/Images/sign.jpg");
-    height: 600px;
-     background-size: cover;
-     background-position: initial;
+  background-image: url("../../components/Images/sign.jpg");
+  height: 600px;
+  background-size: cover;
 }
+
 *{
   text-align: center;
   justify-content: center;
-}
-.title{
+ }
+
+ .title{
   padding-top: 20px;
   font-size: 40px;
   font-family: 'Lora', serif;
   font-weight: bolder;
-}
-Input{
-  padding-top: 40px;
-}
+  }
 
-#main
-{
+  #mainButton{
     position: relative;
     top: 25px;
-    left: 300px;
     width: 75px;
+  }
+
+  input{
+    padding-top: 40px;
+    width:60%;
+    border-radius: 10px;
+  }
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  main{
+    background-position: center;
+  }
+    #mainButton{
+      left: 110px;
+    }
+
+    .originRow{
+      margin-top: 45px;
+      margin-bottom: 45px;
+    }
+
+    .title{
+      font-size: 25px;
+      }
+} 
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  main{
+    background-position: center;
+  }
+
+    #mainButton{
+      left: 160px;
+    }
+
+    .originRow{
+      margin-top: 45px;
+      margin-bottom: 45px;
+    }
+
+    .title{
+      font-size: 35px;
+      }
+} 
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+    #mainButton{
+      left: 275px;
+    }
 }
-.test{
-  margin-top: 100px;
-  margin-bottom: 65px;
-  font-size: 30px;
-}
-.test1{
-  /* margin-top: 100px; */
-  margin-bottom: 5px;
-  font-size: 30px;
-}
-input{
-width:60%;
-border-radius: 10px;
-font-size: 30px;
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  main{
+    background-position: initial;
+  }
+} 
+
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  main{
+      background-position: initial;
+    }
+
+  #mainButton{
+    left: 300px;
+  }
+
+  .originRow{
+    margin-top: 100px;
+    margin-bottom: 85px;
+  }
 }

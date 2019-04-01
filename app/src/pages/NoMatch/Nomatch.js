@@ -2,15 +2,13 @@ import React from "react";
 import { withState } from "recompose";
 
 function NoMatch() {
-    const h1Style = {
+    let styles = {
         color: "white"
-      };
-    
-  return (
+    }
 
-
+    return (
         <div>
-            <h1 style={h1Style}>404 This Page was not Found</h1>
+            <h1 style={styles}>404 This Page was not Found</h1>
         </div>
 
     )

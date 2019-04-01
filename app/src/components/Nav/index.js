@@ -49,7 +49,7 @@ class Example extends Component {
                 <NavLink href="/trip">Trip</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/event">Events</NavLink>
+                <NavLink href="/events">Events</NavLink>
               </NavItem>
               <NavItem>
                 {localStorage.getItem("token") ? <NavLink href="/savedTrips">Recent Trips</NavLink> : null}

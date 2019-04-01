@@ -15,7 +15,7 @@ class Toogle1 extends Component {
     render() {
         return (
             <div>
-                <Button color="info" onClick={this.toggle} >{this.props.gameName}</Button>
+                <Button className="GameInfo" color="info" onClick={this.toggle} >{this.props.gameName}</Button>
                 <Collapse isOpen={this.state.collapse}>
                     <Card>
                         <CardBody>
