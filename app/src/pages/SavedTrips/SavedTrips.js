@@ -61,10 +61,10 @@ class SavedTrips extends Component {
                                                 {tripInd + 1}
                                             </td>
                                             <td>
-                                                From
+                                                {dataArray[0]}
                                             </td>
                                             <td>
-                                                To
+                                                {dataArray[1]}
                                             </td>
                                             <td>
                                                 <Button>View Trip</Button>
