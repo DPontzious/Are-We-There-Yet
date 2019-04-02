@@ -109,6 +109,7 @@ class SignExpanded extends Component {
 						console.log(
 							"not working")
 					}
+					alert("Successfully Registered, Please Sign In!");
 
 				})
 				.catch(err => console.log(err));
