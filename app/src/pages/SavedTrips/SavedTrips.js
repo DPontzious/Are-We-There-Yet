@@ -36,42 +36,59 @@ class SavedTrips extends Component {
                             this.state.trips.map((tripObj, tripInd) => {
                                 const dataArray = tripObj.split(":");
                                 return (
-                                    <tr>
-                                        <td>
-                                            {tripInd + 1}
-                                        </td>
-                                        <td>
-                                            {dataArray[0]}
-                                        </td>
-                                        <td>
-                                            {dataArray[1]}
-                                        </td>
-                                        <td>
-                                            <Button>
-                                                View Trip
-                                    </Button>
-
-                                        </td>
-                                        <td>
-                                            <Button>
-                                                Delete Trip
-                                    </Button>
-
-                                        </td>
-                                    </tr>
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                Trip ID
+                                            </td>
+                                            <td>
+                                                From
+                                            </td>
+                                            <td>
+                                                To
+                                            </td>
+                                            {/* <td>
+                                                <Button>View Trip</Button>
+                                            </td>
+                                            <td>
+                                                <Button>Delete Trip</Button>
+                                            </td> */}
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                {tripInd + 1}
+                                            </td>
+                                            <td>
+                                                {dataArray[0]}
+                                            </td>
+                                            <td>
+                                                {dataArray[1]}
+                                            </td>
+                                            <td>
+                                                <Button>View Trip</Button>
+                                            </td>
+                                            <td>
+                                                <Button>Delete Trip</Button>
+                                            </td>
+                                        </tr>
+                                    </table>
                                 )
                             })}
                     </Col >
-                    <Col xs="3">
+                    <Col xs="3" className="iconBack">
                         <h1> Helpful Link </h1>
-                        <a href="http://hotels.com">
-                            <img border="0" alt="W3Schools" src="http://worldartsme.com/images/hotel-sign-clipart-1.jpg" width="100" height="100" margin-bottom="10px"></img></a>
-                        <a href="https://banana-cake-18419.herokuapp.com/">
-                            <img border="0" alt="W3Schools" src="http://images.clipartpanda.com/camp-clipart-black-and-white-1218784895192777147geant_Pictogramme_Camping.svg.hi.png" width="100" height="100"></img></a>
-                        <a href="http://enterprise.com">
-                            <img border="0" alt="W3Schools" src="http://www.clker.com/cliparts/a/Y/q/g/B/G/simple-black-car-md.png" width="100" height="100"></img></a>
-                        <a href="http://chevron.com">
-                            <img border="0" alt="W3Schools" src="https://images.all-free-download.com/images/graphiclarge/gas_pump_clip_art_17082.jpg" width="100" height="100"></img></a>
+                        <Row>
+                            <a href="http://hotels.com">
+                                <img border="0" alt="W3Schools" src="http://worldartsme.com/images/hotel-sign-clipart-1.jpg" width="100" height="100" margin-bottom="10px"></img></a>
+                            <a href="https://banana-cake-18419.herokuapp.com/">
+                                <img border="0" alt="W3Schools" src="http://images.clipartpanda.com/camp-clipart-black-and-white-1218784895192777147geant_Pictogramme_Camping.svg.hi.png" width="100" height="100"></img></a>
+                        </Row>
+                        <Row>
+                            <a href="http://enterprise.com">
+                                <img border="0" alt="W3Schools" src="http://www.clker.com/cliparts/a/Y/q/g/B/G/simple-black-car-md.png" width="100" height="100"></img></a>
+                            <a href="http://chevron.com">
+                                <img border="0" alt="W3Schools" src="https://images.all-free-download.com/images/graphiclarge/gas_pump_clip_art_17082.jpg" width="100" height="100"></img></a>
+                        </Row>
                     </Col>
                 </Row >
                 {/* </Container > */}
