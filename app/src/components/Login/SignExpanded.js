@@ -46,7 +46,7 @@ class SignExpanded extends Component {
 			//axios /v1/signin
 			axios.post("/v1/signin", userInfo)
 				.then(({ data }) => {
-					localStorage.setItem("userId" , data.userId);
+					localStorage.setItem("userId", data.userId);
 					localStorage.setItem("name", data.name);
 
 
@@ -109,13 +109,12 @@ class SignExpanded extends Component {
 						console.log(
 							"not working")
 					}
-
+					alert("Successfully Registered, Please Sign In!");
 				})
 				.catch(err => console.log(err));
 		}
 
 	}
-
 	render() {
 		return (
 			<Motion style={{

@@ -28,7 +28,8 @@
 }
 
 .back{
-    background-color: gray;
+    background-color:#b4b1b1;
+    border: 5px solid gray;
     color: white;
     overflow-y: scroll;
     height: 500px;
