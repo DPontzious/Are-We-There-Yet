@@ -15,13 +15,19 @@ class Register extends Component {
 
 	componentDidMount() {
 		this.setState({ mounted: true });
-	
+
 	}
+	// componentDidUpdate(prevProps) {
+	// 	if (this.props.match.params.game !== prevProps.match.params.game) {
+	// 		var game = this.props.match.params.game;
+	// 		this.searchGameData(game);
+	// 	}
+	// }
 
 	handleSubmit = (e) => {
 		this.setState({ mounted: false });
-		e.preventDefault();
-		console.log("fired")
+		// e.preventDefault();
+		// console.log("fired")
 	}
 
 	render() {
@@ -33,7 +39,7 @@ class Register extends Component {
 			child = (
 				<div className="App_test">
 					<NavigationPanel></NavigationPanel>
-					<Modal onSubmit={this.handleSubmit} history={this.props.history}/>
+					<Modal onSubmit={this.handleSubmit} history={this.props.history} />
 				</div>
 			);
 		}

@@ -32,28 +32,30 @@ class SavedTrips extends Component {
                 <Row>
                     <Col xs="7" className="testestest">
                         <p className="titleSavedTrips">SAVED TRIPS</p>
-                        {
-                            this.state.trips.map((tripObj, tripInd) => {
-                                const dataArray = tripObj.split(":");
-                                return (
-                                    <table>
-                                        <tr>
-                                            <td>
-                                                Trip ID
+                        <table>
+                            <tr>
+                                <td>
+                                    ID -
                                             </td>
-                                            <td>
-                                                From
+                                <td>
+                                    Start -
                                             </td>
-                                            <td>
-                                                To
+                                <td>
+                                    Destination -
                                             </td>
-                                            {/* <td>
+                                {/* <td>
                                                 <Button>View Trip</Button>
                                             </td>
                                             <td>
                                                 <Button>Delete Trip</Button>
                                             </td> */}
-                                        </tr>
+                            </tr>
+                        </table>
+                        {
+                            this.state.trips.map((tripObj, tripInd) => {
+                                const dataArray = tripObj.split(":");
+                                return (
+                                    <table classname="tableStyle">
                                         <tr>
                                             <td>
                                                 {tripInd + 1}
