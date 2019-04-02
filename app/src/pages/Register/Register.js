@@ -26,7 +26,7 @@ class Register extends Component {
 
 	handleSubmit = (e) => {
 		this.setState({ mounted: false });
-		// e.preventDefault();
+		e.preventDefault();
 		// console.log("fired")
 	}
 
