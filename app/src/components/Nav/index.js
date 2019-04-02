@@ -14,7 +14,7 @@ class Example extends Component {
   state = {
     trips: [],
     user: ''
-}
+  }
 
   constructor(props) {
     super(props);
@@ -30,12 +30,12 @@ class Example extends Component {
     });
 
   }
-  componentWillMount(){
-    if(localStorage.getItem("name") !== null){
-      this.setState({user: localStorage.getItem("name")+ "!"})
+  componentWillMount() {
+    if (localStorage.getItem("name") !== null) {
+      this.setState({ user: localStorage.getItem("name") + "!" })
     }
-    else{
-      this.setState({user: ""})
+    else {
+      this.setState({ user: "" })
     }
   }
 

@@ -200,8 +200,8 @@ body {
   display: flex;
   flex-direction: row;
   border-bottom: 1px solid rgba(255, 252, 232, 0.1);
-  padding: 10px;
-  margin-bottom: 15px;
+  /* padding: 10px; */
+  /* margin-bottom: 15px; */
   color: #FFFCE8;
   text-transform: uppercase;
 }
