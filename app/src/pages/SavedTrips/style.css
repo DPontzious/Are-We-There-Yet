@@ -24,3 +24,7 @@ border: 5px solid gray;
     border: 5px solid gray;
     margin-left:15px;
 }
+table{
+    /* border-collapse: separate; */
+    border-spacing: 35px;
+}
